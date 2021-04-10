@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-04-09T12:05:00.307200Z</date>
+  <millis>1617969900307</millis>
+  <nanos>200000</nanos>
+  <sequence>0</sequence>
+  <logger>logger</logger>
+  <level>INFO</level>
+  <class>GUI.InicioSesion</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Inicio del programa Fri Apr 09 14:05:00 CEST 2021</message>
+</record>
+</log>
