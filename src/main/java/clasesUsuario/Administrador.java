@@ -1,4 +1,4 @@
-package Clases;
+package clasesUsuario;
 
 /**
  * CLase Administrador que hereda de Usuario

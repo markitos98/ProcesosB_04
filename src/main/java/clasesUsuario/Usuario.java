@@ -1,4 +1,4 @@
-package Clases;
+package clasesUsuario;
 
 /**
  * Clase Usuario Clase Padre de Cliente y Admin

@@ -1,4 +1,4 @@
-package Clases;
+package clasesUsuario;
 
 /**
  * Clase Cliente que hereda de Usuario
