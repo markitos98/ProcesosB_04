@@ -3,7 +3,7 @@ package clasesUsuario;
 /**
  * Clase Usuario Clase Padre de Cliente y Admin
  * @author marcos
- *Prueba
+ *
  */
 abstract class Usuario {
 

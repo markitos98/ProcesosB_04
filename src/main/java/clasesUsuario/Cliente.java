@@ -3,7 +3,7 @@ package clasesUsuario;
 /**
  * Clase Cliente que hereda de Usuario
  * @author marcos
- *Prueba
+ *
  */
 public class Cliente extends Usuario {
 	public int id;

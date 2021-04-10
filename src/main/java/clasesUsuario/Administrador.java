@@ -31,6 +31,6 @@ public class Administrador extends Usuario {
 		this.esAdmin = esAdmin;
 	}
 
-//prueba
+
 
 }
