@@ -68,8 +68,8 @@ public class MenuPrincipal extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 
 				dispose();
-				Cartelera cartelera = new Cartelera();
-				cartelera.setVisible(true);
+				//Cartelera cartelera = new Cartelera();
+				//cartelera.setVisible(true);
 			}
 		});
 		btnCartelera.setBackground(Color.ORANGE);

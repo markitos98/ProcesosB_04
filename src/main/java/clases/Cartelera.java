@@ -20,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
+import GUI.MenuPrincipal;
+
 
 /**
  * Ventana Cartelera donde se visualizan las películas, se obtiene una lista de las películas de la base de datos y en funcion de su posicion se establecen en los labels, únicamente se visualizará en caso de haber 12 peliculas en la base de datos
@@ -68,7 +70,7 @@ public class Cartelera extends JFrame {
 
 
 
-		JLabel lblCartelera = new JLabel("CARTELERA - CINE DEUSTO-PSC”);
+		JLabel lblCartelera = new JLabel("CARTELERA - CINE DEUSTO-PSC");
 		lblCartelera.setBorder(BorderFactory.createLineBorder(Color.ORANGE,7));
 		lblCartelera.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCartelera.setForeground(Color.GRAY);
@@ -108,8 +110,8 @@ public class Cartelera extends JFrame {
 		JLabel lblP6 = new JLabel("");
 
 		lblP6.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		l
 		
+	
 
 		JLabel lblP7 = new JLabel("");
 
