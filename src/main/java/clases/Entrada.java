@@ -2,22 +2,23 @@ package clases;
 
 /**
  * Clase Entrada con sus atributos
- * @author alex
+ * @author leire
  *
  */
 
 public class Entrada{
 
 	private Pelicula infoPelicula;
+	private Sesion infoSesion;
 	private int precio;
 	private int cantidad;
 
 
 
-	public Entrada(Pelicula infoPelicula,  int precio, int cantidad) {
+	public Entrada(Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) {
 		super();
 		this.infoPelicula = infoPelicula;
-		
+		this.infoSesion = infoSesion;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
@@ -30,7 +31,14 @@ public class Entrada{
 		this.infoPelicula = infoPelicula;
 	}
 
-	
+	public Sesion getInfoSesion() {
+		return infoSesion;
+	}
+
+	public void setInfoSesion(Sesion infoSesion) {
+
+		this.infoSesion = infoSesion;
+	}
 
 	public int getPrecio() {
 		return precio;
@@ -51,11 +59,9 @@ public class Entrada{
 	public void mostrarInfoEntrada() {
 		System.out.println();               
 		System.out.println("Película:" + "<" + infoPelicula.getTitulo() + ">");
+		System.out.println("Sesion:" + "<" + infoSesion.getHora() + ">");
 		System.out.println("Cantidad:" + "<" + cantidad + ">");
 		System.out.println("Precio:" + "<" + precio + ">");
 
+	}}
 
-
-
-	}
-}
