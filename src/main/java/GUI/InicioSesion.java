@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+
 /**
  * Ventana de Inicio de Sesion para Clientes
  * @author alex
@@ -130,6 +131,10 @@ public class InicioSesion {
 		btnNewButton_1.setBorderPainted(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				CambiarImagen cam= new CambiarImagen();
+				cam.main();
+
 				frame.dispose();
 
 
