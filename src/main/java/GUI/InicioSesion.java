@@ -161,6 +161,12 @@ public class InicioSesion {
 		frame.getContentPane().add(lblNewLabel_2);
 
 		JButton btnNewButton_2 = new JButton("Registrarse");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Registro registro= new Registro();
+				registro.abrirRegistro();
+			}
+		});
 		btnNewButton_2.setBackground(Color.ORANGE);
 		btnNewButton_2.setOpaque(true);
 		btnNewButton_2.setBorderPainted(false);

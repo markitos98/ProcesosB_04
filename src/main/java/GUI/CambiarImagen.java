@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.Image;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,7 +28,7 @@ public class CambiarImagen {
 
 		int velmil= velocidad*1000;
 
-		MenuPrincipal cartelera= new MenuPrincipal();
+		final MenuPrincipal cartelera= new MenuPrincipal();
 		cartelera.setVisible(true);
 
 		//tarea para ir cambiando las imágenes del menú principal cada x segundos
