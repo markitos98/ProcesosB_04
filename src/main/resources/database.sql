@@ -8,4 +8,4 @@ CREATE SCHEMA cinebd;
 /* CREATE THE USER 'spq' AT LOCAL SERVER WITH PASSWORD 'spq' */
 CREATE USER IF NOT EXISTS 'spq'@'%' IDENTIFIED BY 'spq';
 
-GRANT ALL ON bibliotecadb.* TO 'spq'@'%';
+GRANT ALL ON cinebd.* TO 'spq'@'%';

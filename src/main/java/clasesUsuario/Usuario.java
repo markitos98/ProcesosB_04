@@ -1,10 +1,14 @@
 package clasesUsuario;
 
+import javax.jdo.annotations.PersistenceCapable;
+
 /**
  * Clase Usuario Clase Padre de Cliente y Admin
  * @author marcos
  *
  */
+
+@PersistenceCapable
 abstract class Usuario {
 
 	public String username;
