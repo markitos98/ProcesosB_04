@@ -1,10 +1,14 @@
 package clasesUsuario;
 
+import javax.jdo.annotations.PersistenceCapable;
+
 /**
  * Clase Cliente que hereda de Usuario
  * @author marcos
  *
  */
+
+@PersistenceCapable
 public class Cliente extends Usuario {
 	public int id;
 	public String email;
@@ -22,6 +26,12 @@ public class Cliente extends Usuario {
 		this.apellido_1 = apellido_1;
 		this.apellido_2 = apellido_2;
 		this.fecha_nac = fecha_nac;
+	}
+	// Este constructor es solo para pobrar la BBDD
+	public Cliente(String nombre, String apellido) {
+		
+		this.nombre = nombre;
+		this.apellido_1 = apellido;
 	}
 
 	public Cliente() {

@@ -8,7 +8,7 @@ import javax.jdo.annotations.PersistenceCapable;
  *
  */
 
-@PersistenceCapable
+
 abstract class Usuario {
 
 	public String username;
