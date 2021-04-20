@@ -5,6 +5,8 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+import clasesUsuario.Cliente;
+
 
 /**
  * Clase Pelicula
@@ -47,6 +49,20 @@ public class Pelicula
 
 	}
 
+	public Pelicula(Pelicula p) {
+		super();
+		this.titulo= p.titulo;
+		this.genero = p.genero;
+		this.anyo = p.anyo;
+		this.sinopsis = p.sinopsis;
+		this.duracion =p.duracion;
+		this.trailer = p.trailer;
+		this.rutaFoto = p.rutaFoto;
+		this.rutaFotoMenu = p.rutaFotoMenu;
+		this.poster = posterPelicula(p.titulo);
+		this.cartel = cartelPelicula(p.titulo);
+		this.sala = p.sala;
+	}
 
 
 	public String getTitulo() {
