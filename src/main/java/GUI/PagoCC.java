@@ -15,13 +15,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-
-
 /**
- * Ventana de pago que genera un pdf al realizar una compra y añade una entrada a la base de datos
+ * 
  * @author alex
  *
  */
+
 public class PagoCC {
 
 	private JFrame frame3;
