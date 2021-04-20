@@ -31,7 +31,6 @@ public class PagoCC {
 	private int limiteCCV=3;
 	private JTextField textNombre;
 	static int entraInicial=0;
-
 	public int cantidad;
 	public int preciot;
 	/**
