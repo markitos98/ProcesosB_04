@@ -22,6 +22,13 @@ public class Entrada{
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
+	public Entrada(Entrada e) {
+		super();
+		this.infoPelicula = e.infoPelicula;
+		this.infoSesion = e.infoSesion;
+		this.precio = e.precio;
+		this.cantidad = e.cantidad;
+	}
 
 	public Pelicula getInfoPelicula() {
 		return infoPelicula;
