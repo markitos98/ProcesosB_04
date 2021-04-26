@@ -1,10 +1,14 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+
 /**
  * Clase Entrada con sus atributos
  * @author leire
  *
  */
+
+@PersistenceCapable
 
 public class Entrada{
 

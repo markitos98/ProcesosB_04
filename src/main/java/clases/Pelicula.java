@@ -2,7 +2,8 @@ package clases;
 
 import java.awt.Image;
 
-
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 import javax.swing.ImageIcon;
 
 import clasesUsuario.Cliente;
@@ -14,9 +15,11 @@ import clasesUsuario.Cliente;
  *
  */
 
-
+@PersistenceCapable
 public class Pelicula 
 {
+	
+	@PrimaryKey
 	private String titulo;
 	private String genero; 
 	private int anyo;

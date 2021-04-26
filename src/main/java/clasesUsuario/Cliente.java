@@ -1,6 +1,7 @@
 package clasesUsuario;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 /**
  * Clase Cliente que hereda de Usuario
@@ -10,7 +11,10 @@ import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
 public class Cliente extends Usuario {
+	
+	
 	public int id;
+	@PrimaryKey
 	public String email;
 	public String nombre;
 	public String apellido_1;

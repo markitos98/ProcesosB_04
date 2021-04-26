@@ -1,10 +1,15 @@
 package clasesUsuario;
 
+import javax.jdo.annotations.PersistenceCapable;
+
 /**
  * CLase Administrador que hereda de Usuario
  * @author marcos
  *
  */
+
+
+
 public class Administrador extends Usuario {
 
 	protected boolean esAdmin;
