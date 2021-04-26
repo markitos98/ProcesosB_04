@@ -11,25 +11,34 @@ import javax.jdo.Transaction;
 
 import clasesUsuario.Cliente;
 
-public class Database {
+
+
+public  class Database {
+	
+	private PersistenceManagerFactory pmf;
+
+	
+	public Database() {
+		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+	}
+	
+
 
 	
 	//añade el usuario a la base de datos
 	
-	public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,
+	 public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,
 			String apellido_2, String fecha_nac) {
 
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-
-		PersistenceManager pm = pmf.getPersistenceManager();
+		 PersistenceManager pm = pmf.getPersistenceManager();
+		
 		Transaction tx = pm.currentTransaction();
 
 		try {
 			tx.begin();
 
-			Random r = new 
 			
-			Cliente usuario = new Cliente(id,username, password, email, nombre, apellido_1, apellido_2, fecha_nac);
+			Cliente usuario = new Cliente(username, password, email, nombre, apellido_1, apellido_2, fecha_nac);
 			pm.makePersistent(usuario);
 
 			tx.commit();
@@ -46,7 +55,6 @@ public class Database {
 	public boolean	 comprobarEmail(String emailText, String emailDB) {
 		
 		
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		
 		Query<Cliente> q = pm.newQuery(Cliente.class);
@@ -72,4 +80,5 @@ public class Database {
 		
 		
 	}
+
 }

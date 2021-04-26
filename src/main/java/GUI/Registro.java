@@ -21,7 +21,12 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import GUI.InicioSesion;
-import database.Database;
+import database.*;
+
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Transaction;
 
 
 /**
@@ -256,7 +261,7 @@ public class Registro {
 		passContr.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		passContr.setBounds(250, 292, 146, 26);
 		frame1.getContentPane().add(passContr);
-
+		
 		JButton btnRegis = new JButton("Registrarse\r\n");
 		btnRegis.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 		btnRegis.setBackground(Color.ORANGE);
@@ -264,11 +269,18 @@ public class Registro {
 		btnRegis.setOpaque(true);
 		btnRegis.setBorderPainted(false);
 
-
+		
 		btnRegis.setBounds(46, 362, 155, 29);
 		frame1.getContentPane().add(btnRegis);
+		if (btnRegis.getModel().isPressed()) {
+			
+			Database db = new Database();
+          db.anyadirUsuario(txtUser.getText(),passContr.getName(),txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
+          InicioSesion.abrirInicioSesion();
+	}
+		
 			}
 	public static void abrirRegistro() {
-		Registro registro= new Registro();
+		Registro registro = new Registro();
 	}
 }
