@@ -272,12 +272,22 @@ public class Registro {
 		
 		btnRegis.setBounds(46, 362, 155, 29);
 		frame1.getContentPane().add(btnRegis);
-		if (btnRegis.getModel().isPressed()) {
+		btnRegis.addActionListener(new ActionListener() {
 			
+			public void actionPerformed(ActionEvent e) {
+				
+				
 			Database db = new Database();
-          db.anyadirUsuario(txtUser.getText(),passContr.getName(),txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
-          InicioSesion.abrirInicioSesion();
-	}
+	          db.anyadirUsuario(txtUser.getText(),passContr.getName(),txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
+	          JOptionPane.showMessageDialog(frame1, "Usuario registrado");
+	          InicioSesion.abrirInicioSesion();
+				
+			}
+		});
+		
+		
+		
+	
 		
 			}
 	public static void abrirRegistro() {

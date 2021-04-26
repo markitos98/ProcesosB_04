@@ -164,7 +164,6 @@ public class InicioSesion {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Registro registro= new Registro();
-				registro.abrirRegistro();
 			}
 		});
 		btnNewButton_2.setBackground(Color.ORANGE);
