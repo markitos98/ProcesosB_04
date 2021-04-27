@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import database.Database;
+
 
 /**
  * Ventana de Inicio de Sesion para Clientes
@@ -30,6 +32,7 @@ public class InicioSesion {
 	public JTextField textField;
 	public JPasswordField passwordField;
 	public static Logger log;
+	
 
 	/**
 	 * Launch the application.
@@ -132,11 +135,28 @@ public class InicioSesion {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				CambiarImagen cam= new CambiarImagen();
-				cam.main();
+				
+				String passText = new String(passwordField.getPassword());
+				
+				Database db = new Database();
+				if(db.comprobrarUsuario(textField.getText(), passText)) {
+					
+					CambiarImagen cam= new CambiarImagen();
+					cam.main();
 
-				frame.dispose();
+					frame.dispose();
 
+				
+				
+				}else {
+					
+					JOptionPane.showMessageDialog(frame, "El usuario y la contraseña no coinciden");
+				}
+				
+				
+				
+				
+			
 
 
 			}

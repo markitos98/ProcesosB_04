@@ -1,6 +1,11 @@
 package clasesUsuario;
 
+import javax.jdo.annotations.Discriminator;
+import javax.jdo.annotations.DiscriminatorStrategy;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 /**
  * Clase Usuario Clase Padre de Cliente y Admin
@@ -9,7 +14,10 @@ import javax.jdo.annotations.PersistenceCapable;
  */
 
 
-abstract class Usuario {
+@PersistenceCapable
+@Discriminator(strategy=DiscriminatorStrategy.VALUE_MAP, column="tipo")
+public abstract class Usuario {
+
 
 	public String username;
 	public String password;

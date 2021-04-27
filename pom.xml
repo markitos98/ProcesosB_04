@@ -130,7 +130,7 @@
 							</execution>
 						</executions>
 						<configuration>
-							<mainClass>database.DatosPrueba</mainClass>
+							<mainClass>GUI.inicioSesion</mainClass>
 						</configuration>
 					</plugin>
 				</plugins>

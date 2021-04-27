@@ -8,37 +8,30 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-
 import clasesUsuario.Cliente;
+import clasesUsuario.Usuario;
 
+public class Database {
 
-
-public  class Database {
-	
 	private PersistenceManagerFactory pmf;
 
-	
 	public Database() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
-	
 
+	// añade el usuario a la base de datos
 
-	
-	//añade el usuario a la base de datos
-	
-	 public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,
+	public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,
 			String apellido_2, String fecha_nac) {
 
-		 PersistenceManager pm = pmf.getPersistenceManager();
-		
+		PersistenceManager pm = pmf.getPersistenceManager();
+
 		Transaction tx = pm.currentTransaction();
 
 		try {
 			tx.begin();
 
-			
-			Cliente usuario = new Cliente(username, password, email, nombre, apellido_1, apellido_2, fecha_nac);
+			Usuario usuario = new Cliente(username, password, email, nombre, apellido_1, apellido_2, fecha_nac);
 			pm.makePersistent(usuario);
 
 			tx.commit();
@@ -50,35 +43,54 @@ public  class Database {
 		}
 	}
 
-	//Comprueba que el email de registro no esta ya en al Base de datos
-		
-	public boolean	 comprobarEmail(String emailText, String emailDB) {
-		
-		
+	// Comprueba que el email de registro no esta ya en al Base de datos
+
+	public boolean comprobarEmail(String emailText) {
+
 		PersistenceManager pm = pmf.getPersistenceManager();
-		
+
 		Query<Cliente> q = pm.newQuery(Cliente.class);
-		q.setOrdering("surname desc");
-		
 		List<Cliente> users = q.executeList();
 
 		int i = 0;
-		while(i < users.size()) {
-			
+		while (i < users.size()) {
+
 			Cliente cliente = users.get(i);
-			
-			if(emailText.equals(cliente.email)) {
-				
+
+			if (emailText.equals(cliente.email)) {
+
 				return false;
 			}
 
+			i++;
+		}
 
-	i++;
-		}		
-		
 		return true;
+
+	}
+
+	public boolean comprobrarUsuario(String usuario, String contrasenya) {
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Query<Cliente> q = pm.newQuery(Cliente.class);
+		List<Cliente> users = q.executeList();
+
 		
-		
+		int i = 0;
+		while (i < users.size()) {
+
+			Cliente cliente = users.get(i);
+
+			if (usuario.equals(cliente.username) && contrasenya.equals(cliente.password)) {
+
+				return true;
+				
+			}
+
+			i++;
+		}
+		return false;
 	}
 
 }

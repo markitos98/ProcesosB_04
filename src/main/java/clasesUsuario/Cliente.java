@@ -1,5 +1,8 @@
 package clasesUsuario;
 
+import javax.jdo.annotations.Discriminator;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
@@ -9,12 +12,13 @@ import javax.jdo.annotations.PrimaryKey;
  *
  */
 
-@PersistenceCapable
+
+@PersistenceCapable(detachable="true")
+@Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)
+@Discriminator(value="Cliente")
 public class Cliente extends Usuario {
 	
 	
-	public int id;
-	@PrimaryKey
 	public String email;
 	public String nombre;
 	public String apellido_1;
@@ -24,7 +28,7 @@ public class Cliente extends Usuario {
 	public Cliente(String username, String password, String email, String nombre, String apellido_1, String apellido_2,
 			String fecha_nac) {
 		super(username, password);
-		this.id=id;
+		
 		this.email = email;
 		this.nombre = nombre;
 		this.apellido_1 = apellido_1;
@@ -40,7 +44,7 @@ public class Cliente extends Usuario {
 
 	public Cliente() {
 		super("","");
-		this.id=0;
+		;
 		this.email = "";
 		this.nombre = "";
 		this.apellido_1 = "";
@@ -49,7 +53,6 @@ public class Cliente extends Usuario {
 	}
 	public Cliente(Cliente c) {
 		super(c.username, c.password);
-		this.id= c.id;
 		this.email = c.email;
 		this.nombre = c.nombre;
 		this.apellido_1 = c.apellido_1;
@@ -57,9 +60,7 @@ public class Cliente extends Usuario {
 		this.fecha_nac = c.fecha_nac;
 	}
 
-	public int getId() {
-		return id;
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -72,9 +73,7 @@ public class Cliente extends Usuario {
 		return nombre;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

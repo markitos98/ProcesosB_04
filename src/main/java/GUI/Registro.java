@@ -113,7 +113,7 @@ public class Registro {
 				{
 					frame1.dispose();
 					//Abre Inicio de Sesion
-					InicioSesion.abrirInicioSesion();
+					
 
 				}
 			}
@@ -276,13 +276,26 @@ public class Registro {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				
+			
 			Database db = new Database();
-	          db.anyadirUsuario(txtUser.getText(),passContr.getName(),txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
-	          JOptionPane.showMessageDialog(frame1, "Usuario registrado");
-	          InicioSesion.abrirInicioSesion();
+			
+			
+			if(db.comprobarEmail(txtEmail.getText())) {
 				
+				String passText = new String(passContr.getPassword());
+		          db.anyadirUsuario(txtUser.getText(),passText,txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
+		      
+		          JOptionPane.showMessageDialog(frame1, "Usuario registrado");
+		          frame1.dispose();
+		          
+		          
+			}else {
+				
+				JOptionPane.showMessageDialog(frame1, "Ya hay un usuario registrado con este correo");
 			}
+			
+				
+}
 		});
 		
 		
