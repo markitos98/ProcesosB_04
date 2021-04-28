@@ -1,5 +1,6 @@
 package database;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -7,6 +8,8 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
+
+import org.datanucleus.store.Extent;
 
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
@@ -42,7 +45,62 @@ public class Database {
 			pm.close();
 		}
 	}
+	
+	
+	
+	
+	public void deleteUsuario(Usuario usuario) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
 
+		try {
+			tx.begin();
+			System.out.println(" * Delete an usuario: " + usuario);
+			
+			pm.deletePersistent(usuario);
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println(" $ Error deleting an object: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+	}
+	
+	
+	public Usuario getUsuario(String email) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
+		Usuario usuario = null; 
+
+		try {
+			System.out.println("  * Querying a Usuario by email: " + email);
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE email == '" + email + "'");
+			query.setUnique(true);
+			usuario = (Usuario) query.execute();
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying a Usuario: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return usuario;
+	}
+	
 	// Comprueba que el email de registro no esta ya en al Base de datos
 
 	public boolean comprobarEmail(String emailText) {
