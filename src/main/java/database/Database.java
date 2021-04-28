@@ -62,7 +62,7 @@ public class Database {
 			
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println(" $ Error deleting an object: " + ex.getMessage());
+			System.out.println(" $ Error deleting an usuario: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
