@@ -1,12 +1,16 @@
+/Users/alex/git/ProcesosB_04/src/main/java/database/DatosPrueba.java
 /Users/alex/git/ProcesosB_04/src/main/java/GUI/CambiarImagen.java
 /Users/alex/git/ProcesosB_04/src/main/java/clases/Cartelera.java
 /Users/alex/git/ProcesosB_04/src/main/java/clasesUsuario/Cliente.java
 /Users/alex/git/ProcesosB_04/src/main/java/database/Database.java
 /Users/alex/git/ProcesosB_04/src/main/java/GUI/InicioSesionAdmin.java
+/Users/alex/git/ProcesosB_04/src/main/java/GUI/PagoCC.java
 /Users/alex/git/ProcesosB_04/src/main/java/clases/Pelicula.java
+/Users/alex/git/ProcesosB_04/src/main/java/GUI/Pago.java
 /Users/alex/git/ProcesosB_04/src/main/java/GUI/InicioSesion.java
 /Users/alex/git/ProcesosB_04/src/main/java/clases/Entrada.java
 /Users/alex/git/ProcesosB_04/src/main/java/clases/Sesion.java
+/Users/alex/git/ProcesosB_04/src/main/java/GUI/PagoPaypal.java
 /Users/alex/git/ProcesosB_04/src/main/java/GUI/MenuPrincipal.java
 /Users/alex/git/ProcesosB_04/src/main/java/clasesUsuario/Administrador.java
 /Users/alex/git/ProcesosB_04/src/main/java/clases/Genero.java
