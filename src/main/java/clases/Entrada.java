@@ -34,6 +34,9 @@ public class Entrada{
 		this.cantidad = e.cantidad;
 	}
 
+	public Entrada() {
+		super();
+	}
 	public Pelicula getInfoPelicula() {
 		return infoPelicula;
 	}
