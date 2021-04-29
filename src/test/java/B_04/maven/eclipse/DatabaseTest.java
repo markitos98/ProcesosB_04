@@ -17,14 +17,16 @@ public class DatabaseTest {
 	Database databaseMock;
 	private Usuario u;
 	private Cliente cl;
-	
+	private String email;
 	
 	public void getUsuarioTest() {
 		 u= new Usuario() {
 		};
+	
 		cl= new Cliente();
-		
-		
-		
+		cl.setEmail("prueba@gamil.com");
+		email= cl.getEmail();
+		when(databaseMock.getUsuario(anystring())).thenReturn(u);
+	
 }
 }
