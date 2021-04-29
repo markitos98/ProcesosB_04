@@ -22,7 +22,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import javax.swing.SwingConstants;
 
-import GUI.MenuPrincipal;
+import gui.MenuPrincipal;
 
 
 /**
