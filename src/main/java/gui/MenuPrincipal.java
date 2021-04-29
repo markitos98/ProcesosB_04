@@ -7,6 +7,9 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Level;
 
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
@@ -19,6 +22,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import clases.Pelicula;
+import datos.Multimedia;
 /**
  * Ventana Principal donde se accede a cartelera y peliculas
  * @author marcos
@@ -33,7 +39,8 @@ public class MenuPrincipal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	public JLabel lblNewLabel_1= new JLabel();
 	public JLabel lblPosM;
-
+	
+	private static HashMap<String, ArrayList<Pelicula>> favoritos = new HashMap<>();
 
 
 	/**
@@ -144,10 +151,15 @@ public class MenuPrincipal extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
-
-
+		
 	}
-
+	public static void aniadirAFavoritos(String nombre,Pelicula p) {
+		if(!favoritos.containsKey(nombre)) {
+			favoritos.put(nombre, new ArrayList<>());
+		}
+		favoritos.get(nombre).add(p);
+		
+	}
 
 	public static void main(String[] args) {
 		try {
