@@ -24,6 +24,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import clases.Pelicula;
+import datos.Multimedia;
 
 /**
  * Ventana Principal donde se accede a cartelera y peliculas
@@ -160,7 +161,27 @@ public class MenuPrincipal extends JDialog {
 		favoritos.get(nombre).add(p);
 		
 	}
-
+	public static Pelicula eliminarDeFavoritos(String nombre, String titulo) {
+		boolean enc=false;
+		int pos = 0;
+		Pelicula eliminado;
+		
+		while(!enc && pos<favoritos.get(nombre).size()) {
+			if(favoritos.get(nombre).get(pos).getTitulo()==titulo)
+				enc = true;
+			else
+				pos++;
+		}
+		if(enc) {
+			eliminado = favoritos.get(nombre).get(pos);
+			favoritos.get(nombre).remove(pos);
+			
+			return eliminado;
+			
+		}
+		return null;
+		
+	}
 	public static void main(String[] args) {
 		try {
 			MenuPrincipal dialog = new MenuPrincipal();
