@@ -13,7 +13,7 @@ import javax.jdo.annotations.PrimaryKey;
  *
  */
 
-//Comentarios
+
 
 @PersistenceCapable
 @Discriminator(strategy=DiscriminatorStrategy.VALUE_MAP, column="tipo")
