@@ -26,7 +26,7 @@ public class DatabaseTest {
 		cl= new Cliente();
 		cl.setEmail("prueba@gamil.com");
 		email= cl.getEmail();
-		when(databaseMock.getUsuario(anystring())).thenReturn(u);
+		when(databaseMock.getUsuario(anyString())).thenReturn(u);
 	
 }
 }
