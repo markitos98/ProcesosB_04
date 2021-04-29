@@ -24,7 +24,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import clases.Pelicula;
-import datos.Multimedia;
+
 
 /**
  * Ventana Principal donde se accede a cartelera y peliculas
