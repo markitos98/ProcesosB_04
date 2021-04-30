@@ -48,6 +48,19 @@ public class Database {
 	
 	
 	
+	public void updateUsuario(String username, String password, String email, String nombre, String apellido_1,
+			String apellido_2, String fecha_nac) {
+		
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		
+		Usuario usuario = getUsuario(email); 
+		anyadirUsuario(usuario.getUsername(),usuario.getPassword(),email,nombre,apellido_1,apellido_2,fecha_nac) ;
+		deleteUsuario(usuario);
+		
+	}
+	
+	
 	
 	public void deleteUsuario(Usuario usuario) {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -73,17 +86,17 @@ public class Database {
 	}
 	
 	
-	public Usuario getUsuario(String email) {
+	public Usuario getUsuario(String username) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(4);
 		Transaction tx = pm.currentTransaction();
 		Usuario usuario = null; 
 
 		try {
-			System.out.println("  * Querying a Usuario by email: " + email);
+			System.out.println("  * Querying a Usuario by username: " + username);
 			tx.begin();
 			
-			Query<?> query = pm.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE email == '" + email + "'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE username == '" + username + "'");
 			query.setUnique(true);
 			usuario = (Usuario) query.execute();
 			
