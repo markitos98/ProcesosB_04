@@ -58,7 +58,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 		
 	}
 
-	
+	a
 	public Usuario getUsuario(String username) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(4);

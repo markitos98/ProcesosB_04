@@ -14,3 +14,5 @@ public interface ICine extends Remote {
 	
 	public Usuario getUsuario(String nombre) throws RemoteException;
 }
+
+a

@@ -38,7 +38,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		this.usuarioDAO = new UsuarioDAO();
 		this.peliculaDAO = new PeliculaDAO();
 	}
-		
+		a
 	
 
 	@Override
