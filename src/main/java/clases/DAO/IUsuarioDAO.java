@@ -13,7 +13,9 @@ public interface IUsuarioDAO {
 	public Usuario getUsuario(String username);
 	
 	
-	public comprobarUsuario(a)
+	public comprobarUsuario();
+	
+	public void deleteUsuario(Usuario usuario);
 	
 	
 }

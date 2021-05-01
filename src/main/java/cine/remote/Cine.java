@@ -38,7 +38,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		this.usuarioDAO = new UsuarioDAO();
 		this.peliculaDAO = new PeliculaDAO();
 	}
-		a
+		
 	
 
 	@Override
@@ -56,5 +56,12 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		Usuario u = usuarioDAO.getUsuario(nombre);
 		
 		return u;
+	}
+
+	@Override
+	public void deleteUsuario(String nombre) throws RemoteException {
+		Usuario u = getUsuario(nombre);
+		usuarioDAO.deleteUsuario(u);
+		
 	}
 }

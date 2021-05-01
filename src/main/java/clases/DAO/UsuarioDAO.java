@@ -58,7 +58,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 		
 	}
 
-	a
+	
 	public Usuario getUsuario(String username) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(4);
@@ -85,6 +85,41 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 
 		return usuario;
+	}
+
+
+
+	@Override
+	public void comprobarUsuario() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void deleteUsuario(Usuario usuario) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println(" * Delete an usuario: " + usuario);
+			
+			pm.deletePersistent(usuario);
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println(" $ Error deleting an usuario: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
 	}
 	
 }
