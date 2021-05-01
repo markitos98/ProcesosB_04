@@ -164,4 +164,35 @@ public class Database {
 		return false;
 	}
 
+	public List<Cliente> getUsuarios() {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		List<Cliente> usuarios= new ArrayList<Cliente>();
+		usuarios.clear();
+
+		try {
+			System.out.println("  * Querying Usuarios");
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT* FROM " + Cliente.class+"'");
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			List<Cliente> clientes = (List<Cliente>) query.execute();
+			for(Cliente c: clientes) {
+				usuarios.add(c);
+			}
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return usuarios;
+	}
 }
