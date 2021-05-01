@@ -13,7 +13,7 @@ public interface IUsuarioDAO {
 	public Usuario getUsuario(String username);
 	
 	
-	public comprobarUsuario()
+	public comprobarUsuario(a)
 	
 	
 }
