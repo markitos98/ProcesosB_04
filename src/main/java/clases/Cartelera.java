@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import javax.swing.SwingConstants;
@@ -37,7 +38,7 @@ public class Cartelera extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	private JScrollPane panScrol;
 
 	/**
 	 * Launch the application.
@@ -65,12 +66,13 @@ public class Cartelera extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(null);
+		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
 		setContentPane(contentPane);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
-
-
+		
 
 		JLabel lblCartelera = new JLabel("CARTELERA - CINE DEUSTO-PSC");
 		lblCartelera.setBorder(BorderFactory.createLineBorder(Color.ORANGE,7));
