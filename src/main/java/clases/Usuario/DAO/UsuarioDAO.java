@@ -33,7 +33,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 			pm.makePersistent(u);
 			tx.commit();
 		} catch (Exception ex) {
-			logger.error("$ Error guardando mesa: " + ex.getMessage());
+			logger.error("$ Error guardando usuario: " + ex.getMessage());
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
