@@ -1,4 +1,4 @@
-package clases.Usuario.DAO;
+package clases.DAO;
 
 public interface IPeliculaDAO {
 
