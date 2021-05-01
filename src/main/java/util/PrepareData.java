@@ -30,7 +30,6 @@ public class PrepareData {
 			Cliente cl4= new Cliente("gorka","1690","gorka@gmail.com","Gorka","Zarate","Perez","27/12/2000");
 			pm.makePersistent(cl4);
 
-		
 			
 			tx.commit();
 		} finally {
