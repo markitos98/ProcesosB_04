@@ -12,6 +12,8 @@ import javax.jdo.annotations.PersistenceCapable;
 
 public class Entrada{
 
+	
+	private int id;
 	private Pelicula infoPelicula;
 	private Sesion infoSesion;
 	private int precio;
@@ -19,8 +21,9 @@ public class Entrada{
 
 
 
-	public Entrada(Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) {
+	public Entrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) {
 		super();
+		this.setId((int)(Math.random()*10000+1));
 		this.infoPelicula = infoPelicula;
 		this.infoSesion = infoSesion;
 		this.precio = precio;
@@ -77,5 +80,11 @@ public class Entrada{
 		System.out.println("Cantidad:" + "<" + cantidad + ">");
 		System.out.println("Precio:" + "<" + precio + ">");
 
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}}
 
