@@ -32,7 +32,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 		usuarios.clear();
 
 		try {
-			System.out.println("  * Querying Usuarios");
+			System.out.println("  * Querying Peliculas");
 			tx.begin();
 
 			Query<?> query = pm.newQuery("SELECT* FROM " + Pelicula.class + "'");
@@ -45,7 +45,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 			tx.commit();
 		} catch (Exception ex) {
-			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
+			System.out.println("  $ Error querying Peliculas: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -65,11 +65,11 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 		try {
 			tx.begin();
-			logger.info("* Guardando usuario: " + p.getTitulo());
+			logger.info("* Guardando pelicula: " + p.getTitulo());
 			pm.makePersistent(p);
 			tx.commit();
 		} catch (Exception ex) {
-			logger.error("$ Error guardando usuario: " + ex.getMessage());
+			logger.error("$ Error guardando pelicula: " + ex.getMessage());
 		} finally {
 			if (tx.isActive()) {
 				tx.rollback();
