@@ -25,6 +25,7 @@ import javax.swing.border.EmptyBorder;
 
 import clases.Cartelera;
 import clases.Pelicula;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 /**
@@ -104,15 +105,16 @@ public class MenuPrincipal extends JDialog {
 				.addGroup(gl_contentPanel.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addComponent(lblCine, GroupLayout.DEFAULT_SIZE, 1678, Short.MAX_VALUE)
-							.addContainerGap())
-						.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
-							.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 1362, GroupLayout.PREFERRED_SIZE)
-							.addGap(138))
+						.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPanel.createSequentialGroup()
+								.addComponent(lblCine, GroupLayout.DEFAULT_SIZE, 1678, Short.MAX_VALUE)
+								.addContainerGap())
+							.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
+								.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 1336, GroupLayout.PREFERRED_SIZE)
+								.addGap(164)))
 						.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
 							.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 239, GroupLayout.PREFERRED_SIZE)
-							.addGap(719))))
+							.addGap(718))))
 		);
 		gl_contentPanel.setVerticalGroup(
 			gl_contentPanel.createParallelGroup(Alignment.LEADING)
@@ -120,10 +122,10 @@ public class MenuPrincipal extends JDialog {
 					.addContainerGap()
 					.addComponent(lblCine, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
 					.addGap(90)
-					.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 505, GroupLayout.PREFERRED_SIZE)
-					.addGap(61)
+					.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 482, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
 					.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(78, Short.MAX_VALUE))
+					.addContainerGap(144, Short.MAX_VALUE))
 		);
 		contentPanel.setLayout(gl_contentPanel);
 
