@@ -1,5 +1,8 @@
 package clases.DAO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -85,16 +88,8 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 
 		return usuario;
-	}
-
-
-
-	@Override
-	public void comprobarUsuario() {
-		// TODO Auto-generated method stub
 		
 	}
-
 
 
 	@Override
@@ -121,5 +116,64 @@ public class UsuarioDAO implements IUsuarioDAO {
 		}
 		
 	}
-	
+
+	@Override
+	public List<Cliente> getUsuarios() {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		List<Cliente> usuarios= new ArrayList<Cliente>();
+		usuarios.clear();
+
+		try {
+			System.out.println("  * Querying Usuarios");
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT* FROM " + Cliente.class+"'");
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			List<Cliente> clientes = (List<Cliente>) query.execute();
+			for(Cliente c: clientes) {
+				usuarios.add(c);
+			}
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return usuarios;
+	}
+
+
+	@Override
+	public boolean comprobarUsuario(String usuario, String contrasenya) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Query<Cliente> q = pm.newQuery(Cliente.class);
+		List<Cliente> users = q.executeList();
+
+		
+		int i = 0;
+		while (i < users.size()) {
+
+			Cliente cliente = users.get(i);
+
+			if (usuario.equals(cliente.username) && contrasenya.equals(cliente.password)) {
+
+				return true;
+				
+			}
+
+			i++;
+		}
+		return false;
+		
+	}	
 }
