@@ -136,7 +136,7 @@ public class InicioSesion {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
-				String passText = new String(passwordField.getPassword());
+				//String passText = new String(passwordField.getPassword());
 				
 				//Database db = new Database();
 				//if(db.comprobrarUsuario(textField.getText(), passText)) {

@@ -2,15 +2,14 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2021-05-02T09:16:46.536131Z</date>
-  <millis>1619947006536</millis>
-  <nanos>131000</nanos>
+  <date>2021-05-02T09:20:46.315362Z</date>
+  <millis>1619947246315</millis>
+  <nanos>362000</nanos>
   <sequence>0</sequence>
   <logger>logger</logger>
   <level>INFO</level>
   <class>gui.InicioSesion</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Inicio del programa Sun May 02 11:16:46 CEST 2021</message>
+  <message>Inicio del programa Sun May 02 11:20:46 CEST 2021</message>
 </record>
-</log>

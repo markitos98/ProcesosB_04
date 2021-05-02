@@ -92,7 +92,7 @@ public class MenuPrincipal extends JDialog {
 		lblPosM.setLabelFor(lblPosM);
 		lblPosM.setHorizontalAlignment(SwingConstants.TRAILING);
 
-		ImageIcon im= new ImageIcon("./resources/PostersMenuPrincipal/avengers.jpeg");
+		ImageIcon im= new ImageIcon("./PostersMenuPrincipal/avengers.jpeg");
 		Icon ic= new ImageIcon(im.getImage().getScaledInstance(1445,597,Image.SCALE_DEFAULT));
 		lblPosM.setIcon(ic);
 		this.repaint();
@@ -155,7 +155,7 @@ public class MenuPrincipal extends JDialog {
 		}
 		
 	}
-	public static void aniadirAFavoritos(String nombre,Pelicula p) {
+	/*public static void aniadirAFavoritos(String nombre,Pelicula p) {
 		if(!favoritos.containsKey(nombre)) {
 			favoritos.put(nombre, new ArrayList<>());
 		}
@@ -180,9 +180,9 @@ public class MenuPrincipal extends JDialog {
 			return eliminado;
 			
 		}
-		return null;
+		return null;*/
 		
-	}
+//	}
 	public static void main(String[] args) {
 		try {
 			MenuPrincipal dialog = new MenuPrincipal();

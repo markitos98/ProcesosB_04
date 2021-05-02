@@ -89,7 +89,7 @@ public class CambiarImagen {
 
 				case 4:
 					contador=0;
-					ImageIcon im11= new ImageIcon("./resources/PostersMenuPrincipal/avengers.jpeg");
+					ImageIcon im11= new ImageIcon(".PostersMenuPrincipal/avengers.jpeg");
 					Icon ic11= new ImageIcon(im11.getImage().getScaledInstance(1445,597,Image.SCALE_DEFAULT));
 					cartelera.lblPosM.setIcon(ic11);
 					cartelera.repaint();
