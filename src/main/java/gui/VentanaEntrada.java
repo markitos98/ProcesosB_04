@@ -170,8 +170,8 @@ public class VentanaEntrada extends JDialog {
 		btnAsiento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				//Asientos as= new Asientos();
-				//as.main();
+				Asientos as= new Asientos();
+				as.main();
 			}
 		});
 		btnAsiento.setBackground(Color.ORANGE);
