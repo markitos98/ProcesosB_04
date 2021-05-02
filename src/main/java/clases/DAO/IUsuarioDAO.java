@@ -1,5 +1,8 @@
 package clases.DAO;
 
+import java.util.List;
+
+import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 
 public interface IUsuarioDAO {
@@ -12,11 +15,15 @@ public interface IUsuarioDAO {
 	
 	public Usuario getUsuario(String username);
 	
-	
+
 	public boolean comprobarUsuario(String usuario, String contrasenya);
 	
 	public void deleteUsuario(Usuario usuario);
 
+	List<Cliente> getUsuarios();
+
+
 	
+
 	
 }
