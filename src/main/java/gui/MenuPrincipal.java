@@ -100,31 +100,31 @@ public class MenuPrincipal extends JDialog {
 		lblPosM.setBorder(BorderFactory.createLineBorder(Color.ORANGE,5));
 		GroupLayout gl_contentPanel = new GroupLayout(contentPanel);
 		gl_contentPanel.setHorizontalGroup(
-				gl_contentPanel.createParallelGroup(Alignment.LEADING)
+			gl_contentPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPanel.createSequentialGroup()
-						.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPanel.createSequentialGroup()
-										.addContainerGap()
-										.addComponent(lblCine, GroupLayout.DEFAULT_SIZE, 1678, Short.MAX_VALUE))
-								.addGroup(gl_contentPanel.createSequentialGroup()
-										.addGap(732)
-										.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 239, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPanel.createSequentialGroup()
-										.addGap(118)
-										.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 1445, GroupLayout.PREFERRED_SIZE)))
-						.addContainerGap())
-				);
+					.addContainerGap()
+					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPanel.createSequentialGroup()
+							.addComponent(lblCine, GroupLayout.DEFAULT_SIZE, 1678, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
+							.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 1362, GroupLayout.PREFERRED_SIZE)
+							.addGap(138))
+						.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
+							.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 239, GroupLayout.PREFERRED_SIZE)
+							.addGap(719))))
+		);
 		gl_contentPanel.setVerticalGroup(
-				gl_contentPanel.createParallelGroup(Alignment.LEADING)
+			gl_contentPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPanel.createSequentialGroup()
-						.addContainerGap()
-						.addComponent(lblCine, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-						.addGap(41)
-						.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 597, GroupLayout.PREFERRED_SIZE)
-						.addGap(61)
-						.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(41, Short.MAX_VALUE))
-				);
+					.addContainerGap()
+					.addComponent(lblCine, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
+					.addGap(90)
+					.addComponent(lblPosM, GroupLayout.PREFERRED_SIZE, 505, GroupLayout.PREFERRED_SIZE)
+					.addGap(61)
+					.addComponent(btnCartelera, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(78, Short.MAX_VALUE))
+		);
 		contentPanel.setLayout(gl_contentPanel);
 
 
