@@ -2,7 +2,9 @@ package cine.remote;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
+import clases.Pelicula;
 import clases.DAO.IPeliculaDAO;
 import clases.DAO.IUsuarioDAO;
 import clases.DAO.PeliculaDAO;
@@ -63,5 +65,23 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		Usuario u = getUsuario(nombre);
 		usuarioDAO.deleteUsuario(u);
 		
+	}
+
+	@Override
+	public List<Pelicula> getPeliculas() throws RemoteException {
+		
+		List<Pelicula> cartelera = peliculaDAO.getPeliculas();
+		
+		
+		return cartelera;
+	}
+
+	@Override
+	public void anyadirPelicula(String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer,
+			String rutaFoto, String rutaFotoMenu, int sala) throws RemoteException {
+		
+		Pelicula peli = new Pelicula(titulo, genero, anyo, sinopsis, duracion, trailer, rutaFoto, rutaFotoMenu, sala);
+		
+		peliculaDAO.anyadirPelicula(peli);
 	}
 }
