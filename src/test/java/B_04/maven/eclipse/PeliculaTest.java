@@ -119,4 +119,12 @@ public class PeliculaTest {
 		assertEquals(12, empty.getSala());
 	}
 	
+	@Test
+    public void testMostrarInfoPelicula() {
+
+        assertEquals("Película:" + "<" + "Escape Room" + ">", "Película:" + "<" + p.getTitulo() + ">");
+        assertEquals("Género:" + "<" + "TERROR" + ">", "Género:" + "<" + p.getGenero() + ">");
+        assertEquals("Sinopsis:" + "<" + "hola" + ">", "Sinopsis:" + "<" + p.getSinopsis() + ">");
+        assertEquals("Duracion:" + "<" + 198 + ">", "Duracion:" + "<" + p.getDuracion() + ">");
+    }
 }
