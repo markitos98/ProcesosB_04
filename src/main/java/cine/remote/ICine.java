@@ -24,5 +24,10 @@ public interface ICine extends Remote {
 		
 	public void anyadirPelicula(String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer,String rutaFoto, String rutaFotoMenu,int sala) throws RemoteException;
 	
+	public boolean comprobarUsuario(String usuario, String contrasenya)throws RemoteException;
+	
+	public boolean comprobarEmail(String emailText) throws RemoteException;
+	
+	
 }
 

@@ -84,4 +84,22 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		
 		peliculaDAO.anyadirPelicula(peli);
 	}
+
+	@Override
+	public boolean comprobarUsuario(String usuario, String contrasenya) throws RemoteException {
+		// TODO Auto-generated method stub
+		boolean comUsuario= usuarioDAO.comprobarUsuario(usuario, contrasenya);
+		
+		return comUsuario;
+	}
+
+	@Override
+	public boolean comprobarEmail(String emailText) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+		boolean comEmail= usuarioDAO.comprobarEmail(emailText);
+		return comEmail;
+	}
+
+	
 }
