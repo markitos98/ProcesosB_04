@@ -21,9 +21,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+
+
 import javax.swing.SwingConstants;
 
 import gui.MenuPrincipal;
+import gui.VentanaPelicula;
+
 
 
 /**
@@ -62,14 +66,14 @@ public class Cartelera extends JFrame {
 	 */
 	public Cartelera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(60, 10, 1200, 700);
+		setBounds(60, 10, 1700, 1000);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(null);
+		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		//setContentPane(contentPane);
-		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		
+		setContentPane(contentPane);
+
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
 		
@@ -82,7 +86,7 @@ public class Cartelera extends JFrame {
 		lblCartelera.setOpaque(true);
 		lblCartelera.setBackground(Color.ORANGE);
 
-		this.getContentPane().add(panScrol);
+
 
 		JLabel lblP1= new JLabel();
 	
@@ -97,7 +101,15 @@ public class Cartelera extends JFrame {
 		JLabel lblP3 = new JLabel("");
 
 		lblP3.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				VentanaPelicula vp= new VentanaPelicula();
+				vp.setVisible(true);
+			}
+		});
+
 		
 
 		JLabel lblP4 = new JLabel("");

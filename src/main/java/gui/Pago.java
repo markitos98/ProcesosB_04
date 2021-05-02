@@ -17,6 +17,9 @@ import javax.swing.UIManager;
 import javax.swing.ImageIcon;
 import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
+
+import clases.Pelicula;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -39,20 +42,6 @@ public class Pago {
 	 * Launch the application.
 	 */
 
-	public static void main(String[] args) {
-
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pago window = new Pago();
-					window.frame3.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 
 	/**
 	 * Create the application.
@@ -62,6 +51,7 @@ public class Pago {
 		initialize();
 		frame3.setVisible(true);
 	}
+
 
 	/**
 	 * Initialize the contents of the frame.

@@ -132,7 +132,7 @@ public class InicioSesion {
 		btnNewButton_1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		btnNewButton_1.setOpaque(true);
 		btnNewButton_1.setBorderPainted(false);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		/*btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
@@ -160,7 +160,7 @@ public class InicioSesion {
 
 
 			}
-		});
+		});*/
 		btnNewButton_1.setForeground(Color.GRAY);
 		btnNewButton_1.setBackground(Color.ORANGE);
 		btnNewButton_1.setBounds(85, 194, 141, 29);
