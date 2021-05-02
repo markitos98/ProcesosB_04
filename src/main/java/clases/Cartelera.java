@@ -42,7 +42,7 @@ public class Cartelera extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JScrollPane panScrol;
+
 
 	/**
 	 * Launch the application.
@@ -70,7 +70,7 @@ public class Cartelera extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(null);
-		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
 		
 		setContentPane(contentPane);
 
