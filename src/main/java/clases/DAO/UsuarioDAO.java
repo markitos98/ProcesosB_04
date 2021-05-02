@@ -1,5 +1,7 @@
 package clases.DAO;
 
+import java.util.List;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -88,10 +90,30 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 
 
-
 	@Override
-	public void comprobarUsuario() {
+	public boolean comprobarUsuario(String usuario, String contrasenya) {
 		// TODO Auto-generated method stub
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Query<Cliente> q = pm.newQuery(Cliente.class);
+		List<Cliente> users = q.executeList();
+
+		
+		int i = 0;
+		while (i < users.size()) {
+
+			Cliente cliente = users.get(i);
+
+			if (usuario.equals(cliente.username) && contrasenya.equals(cliente.password)) {
+
+				return true;
+				
+			}
+
+			i++;
+		}
+		return false;
 		
 	}
 

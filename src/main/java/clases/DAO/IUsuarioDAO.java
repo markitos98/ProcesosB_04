@@ -13,9 +13,10 @@ public interface IUsuarioDAO {
 	public Usuario getUsuario(String username);
 	
 	
-	public comprobarUsuario();
+	public boolean comprobarUsuario(String usuario, String contrasenya);
 	
 	public void deleteUsuario(Usuario usuario);
+
 	
 	
 }

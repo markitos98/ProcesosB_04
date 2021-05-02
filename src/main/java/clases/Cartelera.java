@@ -62,14 +62,14 @@ public class Cartelera extends JFrame {
 	 */
 	public Cartelera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(60, 10, 1700, 1000);
+		setBounds(60, 10, 1200, 700);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(null);
-		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		setContentPane(contentPane);
-
+		//setContentPane(contentPane);
+		panScrol = new JScrollPane(contentPane,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
 		
@@ -82,7 +82,7 @@ public class Cartelera extends JFrame {
 		lblCartelera.setOpaque(true);
 		lblCartelera.setBackground(Color.ORANGE);
 
-
+		this.getContentPane().add(panScrol);
 
 		JLabel lblP1= new JLabel();
 	
