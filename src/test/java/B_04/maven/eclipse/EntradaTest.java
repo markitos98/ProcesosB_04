@@ -60,5 +60,23 @@ public class EntradaTest {
 	public void testGetInfoPelicula() {
 		assertEquals(p, e.getInfoPelicula());
 		assertEquals(p, prueba.getInfoPelicula());
+		
+	}
+	
+	@Test
+	public void testGetPrecioTotal() {
+		assertEquals(24, e.getPrecioTotal());
+		assertEquals(24, prueba.getPrecioTotal());
+
+		
+	}
+	
+	
+	@Test
+	public void testGetNombre() {
+		
+		assertEquals("Mario", e.getNombre());
+		assertEquals("Mario", prueba.getNombre());
+
 	}
 }
