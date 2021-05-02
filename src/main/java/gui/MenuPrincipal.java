@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import clases.Cartelera;
 import clases.Pelicula;
 
 
@@ -76,8 +77,8 @@ public class MenuPrincipal extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 
 				dispose();
-				//Cartelera cartelera = new Cartelera();
-				//cartelera.setVisible(true);
+				Cartelera cartelera = new Cartelera();
+				cartelera.setVisible(true);
 			}
 		});
 		btnCartelera.setBackground(Color.ORANGE);
@@ -91,7 +92,7 @@ public class MenuPrincipal extends JDialog {
 		lblPosM.setLabelFor(lblPosM);
 		lblPosM.setHorizontalAlignment(SwingConstants.TRAILING);
 
-		ImageIcon im= new ImageIcon("./PostersMenuPrincipal/avengers.jpeg");
+		ImageIcon im= new ImageIcon("./resources/PostersMenuPrincipal/avengers.jpeg");
 		Icon ic= new ImageIcon(im.getImage().getScaledInstance(1445,597,Image.SCALE_DEFAULT));
 		lblPosM.setIcon(ic);
 		this.repaint();

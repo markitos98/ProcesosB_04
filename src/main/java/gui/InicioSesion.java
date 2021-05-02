@@ -132,14 +132,14 @@ public class InicioSesion {
 		btnNewButton_1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		btnNewButton_1.setOpaque(true);
 		btnNewButton_1.setBorderPainted(false);
-		/*btnNewButton_1.addActionListener(new ActionListener() {
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
 				String passText = new String(passwordField.getPassword());
 				
-				Database db = new Database();
-				if(db.comprobrarUsuario(textField.getText(), passText)) {
+				//Database db = new Database();
+				//if(db.comprobrarUsuario(textField.getText(), passText)) {
 					
 					CambiarImagen cam= new CambiarImagen();
 					cam.main();
@@ -148,10 +148,10 @@ public class InicioSesion {
 
 				
 				
-				}else {
+				//}else {
 					
-					JOptionPane.showMessageDialog(frame, "El usuario y la contraseña no coinciden");
-				}
+				//	JOptionPane.showMessageDialog(frame, "El usuario y la contraseña no coinciden");
+				//}
 				
 				
 				
@@ -160,7 +160,7 @@ public class InicioSesion {
 
 
 			}
-		});*/
+		});
 		btnNewButton_1.setForeground(Color.GRAY);
 		btnNewButton_1.setBackground(Color.ORANGE);
 		btnNewButton_1.setBounds(85, 194, 141, 29);
