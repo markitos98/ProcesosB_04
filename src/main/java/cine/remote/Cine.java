@@ -99,6 +99,8 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		
 		boolean comEmail= usuarioDAO.comprobarEmail(emailText);
 		return comEmail;
+		
+		
 	}
 
 	
