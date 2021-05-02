@@ -30,7 +30,7 @@ public interface ICine extends Remote {
 	
 	public boolean comprobarEmail(String emailText) throws RemoteException;
 	
-	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) throws RemoteException;
+	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) throws RemoteException;
 	
 	public void deleteEntrada(int id) throws RemoteException;
 }
