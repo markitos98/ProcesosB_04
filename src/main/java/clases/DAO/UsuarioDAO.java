@@ -178,4 +178,30 @@ public class UsuarioDAO implements IUsuarioDAO {
 		return false;
 		
 	}	
+	
+	
+	@Override
+	public boolean comprobarEmail(String emailText) {
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+
+		Query<Cliente> q = pm.newQuery(Cliente.class);
+		List<Cliente> users = q.executeList();
+
+		int i = 0;
+		while (i < users.size()) {
+
+			Cliente cliente = users.get(i);
+
+			if (emailText.equals(cliente.email)) {
+
+				return false;
+			}
+
+			i++;
+		}
+
+		return true;
+
+	}
 }

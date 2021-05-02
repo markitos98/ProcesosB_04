@@ -22,6 +22,8 @@ public interface IUsuarioDAO {
 
 	List<Cliente> getUsuarios();
 
+	public boolean comprobarEmail(String emailText);
+
 
 	
 
