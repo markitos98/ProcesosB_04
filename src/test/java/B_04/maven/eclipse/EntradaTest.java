@@ -22,7 +22,7 @@ public class EntradaTest {
 	public void setUp() {
 		p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 		s=  new Sesion(22.00);
-		e=  new Entrada(p,s,12,2);
+		e=  new Entrada(40,p,s,12,2);
 		prueba=  new Entrada(e);
 		empty= new Entrada();
 		
@@ -45,5 +45,20 @@ public class EntradaTest {
 		e.setCantidad(4);
 		assertEquals(4, e.getCantidad());
 	}
+	@Test
+	public void testGetId() {
+		assertEquals(40, e.getId());
+		assertEquals(40, prueba.getId());
+	}
+	@Test
+	public void testGetInfoSesion() {
+		assertEquals(s, e.getInfoSesion());
+		assertEquals(s, prueba.getInfoSesion());
+	}
 	
+	@Test
+	public void testGetInfoPelicula() {
+		assertEquals(p, e.getInfoPelicula());
+		assertEquals(p, prueba.getInfoPelicula());
+	}
 }
