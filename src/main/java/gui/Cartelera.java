@@ -1,4 +1,4 @@
-package clases;
+package gui;
 
 
 import java.awt.Color;
@@ -24,9 +24,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 import javax.swing.SwingConstants;
-
-import gui.MenuPrincipal;
-import gui.VentanaPelicula;
 
 
 

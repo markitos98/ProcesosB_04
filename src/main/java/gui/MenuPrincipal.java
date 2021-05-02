@@ -23,7 +23,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import clases.Cartelera;
 import clases.Pelicula;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
