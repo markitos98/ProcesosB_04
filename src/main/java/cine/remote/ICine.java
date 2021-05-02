@@ -4,7 +4,9 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
+import clases.Entrada;
 import clases.Pelicula;
+import clases.Sesion;
 import clasesUsuario.Usuario;
 
 public interface ICine extends Remote {
@@ -24,10 +26,12 @@ public interface ICine extends Remote {
 		
 	public void anyadirPelicula(String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer,String rutaFoto, String rutaFotoMenu,int sala) throws RemoteException;
 	
-	public boolean comprobarUsuario(String usuario, String contrasenya)throws RemoteException;
+	public boolean comprobarUsuario(String usuario, String contrasenya) throws RemoteException;
 	
 	public boolean comprobarEmail(String emailText) throws RemoteException;
 	
+	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) throws RemoteException;
 	
+	public void deleteEntrada(int id) throws RemoteException;
 }
 

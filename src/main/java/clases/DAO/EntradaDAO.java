@@ -3,11 +3,13 @@ package clases.DAO;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 
 import clases.Entrada;
+import clasesUsuario.Usuario;
 
 public class EntradaDAO implements IEntradaDAO{
 
@@ -67,6 +69,36 @@ public class EntradaDAO implements IEntradaDAO{
 
 			pm.close();
 		}
+	}
+
+	
+	
+	public Entrada getEntrada(int id) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
+		Entrada entrada = null; 
+
+		try {
+			System.out.println("  * Querying a Usuario by entrada: " + id);
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Entrada.class.getName() + " WHERE id == '" + id + "'");
+			query.setUnique(true);
+			entrada = (Entrada) query.execute();
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying a Usuario: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return entrada;
 	}
 
 }

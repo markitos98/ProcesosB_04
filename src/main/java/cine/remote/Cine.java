@@ -4,7 +4,11 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import clases.Entrada;
 import clases.Pelicula;
+import clases.Sesion;
+import clases.DAO.EntradaDAO;
+import clases.DAO.IEntradaDAO;
 import clases.DAO.IPeliculaDAO;
 import clases.DAO.IUsuarioDAO;
 import clases.DAO.PeliculaDAO;
@@ -23,6 +27,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 
 	private IPeliculaDAO peliculaDAO;
 
+	private IEntradaDAO entradaDAO;
 	
 	public Cine(IUsuarioDAO usuarioDAO ) throws RemoteException {
 		super();
@@ -34,11 +39,16 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		this.peliculaDAO = peliculaDAO;
 	}
 	
+	public Cine(IEntradaDAO entradaDAO ) throws RemoteException {
+		super();
+		this.entradaDAO = entradaDAO;
+	}
 	
 	public Cine() throws RemoteException {
 		//super();
 		this.usuarioDAO = new UsuarioDAO();
 		this.peliculaDAO = new PeliculaDAO();
+		this.entradaDAO = new EntradaDAO();
 	}
 		
 	
@@ -88,7 +98,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 	@Override
 	public boolean comprobarUsuario(String usuario, String contrasenya) throws RemoteException {
 		// TODO Auto-generated method stub
-		boolean comUsuario= usuarioDAO.comprobarUsuario(usuario, contrasenya);
+		boolean comUsuario = usuarioDAO.comprobarUsuario(usuario, contrasenya);
 		
 		return comUsuario;
 	}
@@ -100,6 +110,23 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		boolean comEmail= usuarioDAO.comprobarEmail(emailText);
 		return comEmail;
 		
+		
+	}
+
+	@Override
+	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad) throws RemoteException {
+		
+		Entrada entrada = new Entrada(id, infoPelicula, infoSesion , precio, cantidad);
+		
+		entradaDAO.anyadirEntrada(entrada);	
+				
+	}
+
+	@Override
+	public void deleteEntrada(int id) throws RemoteException {
+		Entrada entrada =  entradaDAO.getEntrada(id);
+		
+		entradaDAO.deleteEntrada(entrada);
 		
 	}
 
