@@ -1,10 +1,15 @@
 package clasesUsuario;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.jdo.annotations.Discriminator;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
+
+import clases.Pelicula;
 
 /**
  * Clase Cliente que hereda de Usuario
@@ -24,7 +29,7 @@ public class Cliente extends Usuario {
 	public String apellido_1;
 	public String apellido_2;
 	public String fecha_nac;
-
+	private static HashMap<String, ArrayList<Pelicula>> favoritos = new HashMap<>();
 	public Cliente(String username, String password, String email, String nombre, String apellido_1, String apellido_2,
 			String fecha_nac) {
 		super(username, password);
@@ -102,6 +107,32 @@ public class Cliente extends Usuario {
 		this.fecha_nac = fecha_nac;
 	}
 
-
+	public static void aniadirAFavoritos(String nombre,Pelicula p) {
+		if(!favoritos.containsKey(nombre)) {
+			favoritos.put(nombre, new ArrayList<>());
+		}
+		favoritos.get(nombre).add(p);
+		
+	}
+	public static Pelicula eliminarDeFavoritos(String nombre, String titulo) {
+		boolean enc=false;
+		int pos = 0;
+		Pelicula eliminado;
+		
+		while(!enc && pos<favoritos.get(nombre).size()) {
+			if(favoritos.get(nombre).get(pos).getTitulo()==titulo)
+				enc = true;
+			else
+				pos++;
+		}
+		if(enc) {
+			eliminado = favoritos.get(nombre).get(pos);
+			favoritos.get(nombre).remove(pos);
+			
+			return eliminado;
+			
+		}
+		return null;
+			}
 
 }

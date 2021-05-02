@@ -42,7 +42,7 @@ public class MenuPrincipal extends JDialog {
 	public JLabel lblNewLabel_1= new JLabel();
 	public JLabel lblPosM;
 	
-	private static HashMap<String, ArrayList<Pelicula>> favoritos = new HashMap<>();
+
 
 
 	/**
@@ -156,34 +156,7 @@ public class MenuPrincipal extends JDialog {
 		}
 		
 	}
-	/*public static void aniadirAFavoritos(String nombre,Pelicula p) {
-		if(!favoritos.containsKey(nombre)) {
-			favoritos.put(nombre, new ArrayList<>());
-		}
-		favoritos.get(nombre).add(p);
-		
-	}
-	public static Pelicula eliminarDeFavoritos(String nombre, String titulo) {
-		boolean enc=false;
-		int pos = 0;
-		Pelicula eliminado;
-		
-		while(!enc && pos<favoritos.get(nombre).size()) {
-			if(favoritos.get(nombre).get(pos).getTitulo()==titulo)
-				enc = true;
-			else
-				pos++;
-		}
-		if(enc) {
-			eliminado = favoritos.get(nombre).get(pos);
-			favoritos.get(nombre).remove(pos);
-			
-			return eliminado;
-			
-		}
-		return null;*/
-		
-//	}
+
 	public static void main(String[] args) {
 		try {
 			MenuPrincipal dialog = new MenuPrincipal();
