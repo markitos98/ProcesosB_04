@@ -130,12 +130,12 @@ public class Pago {
 			
 				Usuario user = Database.getUsuario(persona);
 				
-				PaymentEnum paymentType = user.getPaymentType();
-				try{
-					PaymentGatewayFactory.getInstance().create(paymentType).pay(persona, cantidad);
-				}catch(Exception e) {
-					
-				}
+//				PaymentEnum paymentType = user.getPaymentType();
+//				try{
+//					PaymentGatewayFactory.getInstance().create(paymentType).pay(persona, cantidad);
+//				}catch(Exception e) {
+//					
+//				}
 				
 				
 				/*Pago pago=new Pago();
