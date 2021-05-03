@@ -7,8 +7,12 @@ Crear las tablas en la BBDD
 mvn datanucleus:schema-create
 
 
-Ejecutar los teses
+Ejecutar los testes
 
 mvn test
+
+Introducir datos en la BBDD
+
+mvn exec:java -Pcliente
 
 
