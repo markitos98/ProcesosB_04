@@ -9,6 +9,6 @@ mvn datanucleus:schema-create
 
 Ejecutar los teses
 
-mvn test
+mvn tes
 
 
