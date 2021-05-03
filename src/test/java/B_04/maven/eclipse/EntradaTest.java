@@ -49,6 +49,7 @@ public class EntradaTest {
 	public void testGetId() {
 		assertEquals(40, e.getId());
 		assertEquals(40, prueba.getId());
+		
 	}
 	@Test
 	public void testGetInfoSesion() {
@@ -65,6 +66,7 @@ public class EntradaTest {
 	
 	@Test
 	public void testGetPrecioTotal() {
+		System.out.println(e.getPrecioTotal());
 		assertEquals(24, e.getPrecioTotal());
 		assertEquals(24, prueba.getPrecioTotal());
 

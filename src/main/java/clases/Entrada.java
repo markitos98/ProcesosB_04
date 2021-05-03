@@ -25,17 +25,18 @@ public class Entrada{
 
 	public Entrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
 		super();
-		this.setId((int)(Math.random()*10000+1));
+		this.id= id;
 		this.infoPelicula = infoPelicula;
 		this.infoSesion = infoSesion;
 		this.precio = precio;
 		this.cantidad = cantidad;
-		this.precio = precioTotal;
+		this.precioTotal = precioTotal;
 		this.nombre = nombre;
 		
 	}
 	public Entrada(Entrada e) {
 		super();
+		this.id= e.id;
 		this.infoPelicula = e.infoPelicula;
 		this.infoSesion = e.infoSesion;
 		this.precio = e.precio;
