@@ -18,13 +18,6 @@ import javax.swing.ImageIcon;
 import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
 
-import org.SlavaLenin.EassyBooking.app.data.Pago;
-import org.SlavaLenin.EassyBooking.app.data.User;
-import org.SlavaLenin.EassyBooking.app.db.DBManager;
-import org.SlavaLenin.EassyBooking.app.gateway.PaymentGatewayFactory;
-import org.SlavaLenin.EassyBooking.app.gateway.payment.PaymentEnum;
-import org.SlavaLenin.EassyBooking.app.log.ServerLogger;
-
 import clases.Pelicula;
 import clasesUsuario.Usuario;
 import database.Database;
