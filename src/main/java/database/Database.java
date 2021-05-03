@@ -16,7 +16,7 @@ import clasesUsuario.Usuario;
 
 public class Database {
 
-	private PersistenceManagerFactory pmf;
+	private static PersistenceManagerFactory pmf;
 
 	public Database() {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
@@ -86,7 +86,7 @@ public class Database {
 	}
 	
 	
-	public Usuario getUsuario(String username) {
+	public static Usuario getUsuario(String username) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(4);
 		Transaction tx = pm.currentTransaction();

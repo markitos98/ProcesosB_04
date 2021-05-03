@@ -18,10 +18,21 @@ import javax.swing.ImageIcon;
 import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
 
+import org.SlavaLenin.EassyBooking.app.data.Pago;
+import org.SlavaLenin.EassyBooking.app.data.User;
+import org.SlavaLenin.EassyBooking.app.db.DBManager;
+import org.SlavaLenin.EassyBooking.app.gateway.PaymentGatewayFactory;
+import org.SlavaLenin.EassyBooking.app.gateway.payment.PaymentEnum;
+import org.SlavaLenin.EassyBooking.app.log.ServerLogger;
+
 import clases.Pelicula;
+import clasesUsuario.Usuario;
+import database.Database;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Calendar;
+import java.util.logging.Logger;
 
 
 /**
@@ -34,6 +45,7 @@ public class Pago {
 	private JFrame frame3;
 	static int entraInicial=0;
 	public int cantidad;
+	public String persona;
 	public int preciot;
 	public static final String EMAIL_PATTER = 
 			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -50,6 +62,10 @@ public class Pago {
 		super();
 		initialize();
 		frame3.setVisible(true);
+	}
+	public Pago(String persona, int cantidad) {
+		this.persona=persona;
+		this.cantidad=cantidad;
 	}
 
 
@@ -118,6 +134,22 @@ public class Pago {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				PagoCC cc= new PagoCC();
+			
+				Usuario user = Database.getUsuario(persona);
+				
+				PaymentEnum paymentType = user.getPaymentType();
+				try{
+					PaymentGatewayFactory.getInstance().create(paymentType).pay(persona, cantidad);
+				}catch(Exception e) {
+					
+				}
+				
+				
+				/*Pago pago=new Pago();
+				pago.setDate(Calendar.getInstance().getTime());
+				pago.setExtraInfo(String.valueOf(amount));
+				Database.storePago(pago);*/
+				
 				
 			}
 		});

@@ -53,13 +53,10 @@ public class PagoCC {
 
 	/**
 	 * Create the application.
+	 * @param cantidad2 
+	 * @param persona 
 	 */
-	public PagoCC() {
-		super();
-		initialize();
-		frame3.setVisible(true);
-	}
-
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */

@@ -9,7 +9,7 @@ import org.mockito.Mock;
 import clasesUsuario.Usuario;
 import database.Database;
 import clasesUsuario.Cliente;
-
+import static org.mockito.ArgumentMatch.anyString;
 public class DatabaseTest {
 	
 	@Mock
