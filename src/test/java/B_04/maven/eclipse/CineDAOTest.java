@@ -1,4 +1,4 @@
-package B_04.maven.eclipse;
+/*package B_04.maven.eclipse;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
@@ -60,4 +60,4 @@ public class CineDAOTest {
 		
 		assertTrue(cine.comprobarUsuario("John", "Smith"));
 	}
-}
+}*/

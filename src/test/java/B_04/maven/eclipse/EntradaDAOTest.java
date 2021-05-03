@@ -1,4 +1,4 @@
-package B_04.maven.eclipse;
+/*package B_04.maven.eclipse;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
@@ -53,4 +53,4 @@ Cine cine;
 		assertEquals(e1.getPrecioTotal(), entrada.getPrecioTotal());
 	}
 	
-}
+}*/
