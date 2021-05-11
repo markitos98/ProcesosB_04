@@ -218,7 +218,7 @@
 
 	<profiles>
 		<profile>
-			<id>cliente</id>
+			<id>datos</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -234,6 +234,28 @@
 						</executions>
 						<configuration>
 							<mainClass>database.DatosPrueba</mainClass>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>cliente</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>java</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>gui.InicioSesion</mainClass>
 						</configuration>
 					</plugin>
 				</plugins>
