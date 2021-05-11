@@ -17,4 +17,8 @@ mvn jacoco:report
 
 Introducir datos en la BBDD
 
-mvn exec:java -Pcliente
+mvn exec:java -Pdatos
+
+Arrancar cliente
+
+mvn exec:java -Pclient
