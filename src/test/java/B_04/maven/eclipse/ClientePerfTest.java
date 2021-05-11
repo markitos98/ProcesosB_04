@@ -35,7 +35,7 @@ public class ClientePerfTest {
     public ContiPerfRule rule = new ContiPerfRule();
 	
 	@Test
-	@PerfTest(invocations = 120)
+	@PerfTest(invocations = 40)
 	public void testCrearCliente() throws Exception {
 	    Cliente cliente=new Cliente();
 	   cliente.setUsername("username");
@@ -47,28 +47,28 @@ public class ClientePerfTest {
 	   cliente.setFecha_nac("fechanac");
 	}
 	@Test
-	@PerfTest(invocations = 120)
+	@PerfTest(invocations = 40)
 	public void testGetClientes() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.getUsuario(c.getUsername());
 	   
 	}
 	@Test
-	@PerfTest(invocations = 120)
+	@PerfTest(invocations = 40)
 	public void testComprobarClientes() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.comprobarUsuario(c.getUsername(),c.getPassword());
 	   
 	}
 	@Test
-	@PerfTest(invocations = 120)
+	@PerfTest(invocations = 40)
 	public void testComprobarEmail() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.comprobarEmail(c.getEmail());
 	   
 	}
 	@Test
-	@PerfTest(invocations = 120)
+	@PerfTest(invocations = 40)
 	public void testDeleteUsuario() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.deleteUsuario(c);
