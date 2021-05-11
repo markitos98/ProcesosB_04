@@ -11,6 +11,10 @@ Ejecutar los testes
 
 mvn test
 
+Ejecutar SOLO tests unitarios
+
+mvn test -DargLine="-Dcontiperf.active=false"
+
 Informe de Cobertura Jacoco
 
 mvn jacoco:report
@@ -22,3 +26,7 @@ mvn exec:java -Pdatos
 Arrancar cliente
 
 mvn exec:java -Pclient
+
+Ejecutar test integracion
+
+mvn verify -Pintegration
