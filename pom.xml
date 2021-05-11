@@ -48,22 +48,22 @@
 			<version>8.0.23</version>
 		</dependency>
 		<dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>1.9.5</version>
-   		</dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		 <dependency>
-            <groupId>org.databene</groupId>
-            <artifactId>contiperf</artifactId>
-            <version>2.2.0</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.databene</groupId>
+			<artifactId>contiperf</artifactId>
+			<version>2.2.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -83,7 +83,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-		<plugin>
+			<plugin>
 				<groupId>com.soebes.maven.plugins</groupId>
 				<artifactId>doxygen-maven-plugin</artifactId>
 				<version>1.1.0</version>
@@ -104,13 +104,13 @@
 						</goals>
 						<configuration>
 							<outputDirectory>../docs</outputDirectory>
-								<resources>          
-									<resource>
+							<resources>
+								<resource>
 									<directory>${basedir}/target/doxygen/html</directory>
 									<filtering>true</filtering>
-									</resource>
-								</resources>              
-						</configuration>            
+								</resource>
+							</resources>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -118,6 +118,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.21.0</version>
+				<configuration>
+					<excludedGroups>categories.IntegrationTest</excludedGroups>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.datanucleus</groupId>
@@ -155,9 +158,9 @@
 							The coverage is higher -->
 						<ignoreTrivial>true</ignoreTrivial>
 						<!-- <excludes> <exclude>src/main/java/client/*.class</exclude> <exclude>src/main/java/server/Server.class</exclude> 
-							<exclude>src/main/java/server/**/I*.*</exclude> This lines is for excluding from 
-							the instrumentation and the coverage calculations all the classes from server 
-							down <exclude>src/main/java/server/**/*</exclude> </excludes> -->
+							<exclude>src/main/java/server/**/I*.*</exclude> This lines is for excluding 
+							from the instrumentation and the coverage calculations all the classes from 
+							server down <exclude>src/main/java/server/**/*</exclude> </excludes> -->
 					</instrumentation>
 					<check>
 						<branchRate>50</branchRate>
@@ -240,6 +243,31 @@
 			</build>
 		</profile>
 		<profile>
+			<id>integration</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.22.0</version>
+						<configuration>
+							<includes>
+								<include>**/*</include>
+							</includes>
+							<groups>categories.IntegrationTest</groups>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
 			<id>client</id>
 			<build>
 				<plugins>
@@ -262,7 +290,7 @@
 			</build>
 		</profile>
 	</profiles>
-<reporting>
+	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -301,5 +329,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	
+
 </project>
