@@ -240,7 +240,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>cliente</id>
+			<id>client</id>
 			<build>
 				<plugins>
 					<plugin>
