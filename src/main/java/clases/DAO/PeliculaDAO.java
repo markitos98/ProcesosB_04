@@ -28,8 +28,8 @@ public class PeliculaDAO implements IPeliculaDAO {
 	public List<Pelicula> getPeliculas() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		List<Pelicula> usuarios = new ArrayList<Pelicula>();
-		usuarios.clear();
+		List<Pelicula> pelicula = new ArrayList<Pelicula>();
+		pelicula.clear();
 
 		try {
 			System.out.println("  * Querying Peliculas");
@@ -40,7 +40,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 			@SuppressWarnings("unchecked")
 			List<Pelicula> peliculas = (List<Pelicula>) query.execute();
 			for (Pelicula c : peliculas) {
-				usuarios.add(c);
+				pelicula.add(c);
 			}
 
 			tx.commit();
@@ -54,7 +54,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 			pm.close();
 		}
 
-		return usuarios;
+		return pelicula;
 	}
 
 	@Override
