@@ -64,14 +64,14 @@ public class ClientePerfTest {
 	   
 	}
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void testComprobarEmail() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.comprobarEmail(c.getEmail());
 	   
 	}
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void testDeleteUsuario() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.deleteUsuario(c);
