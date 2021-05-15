@@ -11,6 +11,7 @@ import javax.jdo.Transaction;
 
 import org.datanucleus.store.Extent;
 
+import clases.Pelicula;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 
@@ -194,5 +195,36 @@ public class Database {
 		}
 
 		return usuarios;
+	}
+	public List<Pelicula> getPeliculas() {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		List<Pelicula> pelis= new ArrayList<Pelicula>();
+		pelis.clear();
+
+		try {
+			System.out.println("  * Querying Pelicula");
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT* FROM " + Pelicula.class+"'");
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			List<Pelicula> peliculas = (List<Pelicula>) query.execute();
+			for(Pelicula p: peliculas) {
+				pelis.add(p);
+			}
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying Pelicula: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return pelis;
 	}
 }

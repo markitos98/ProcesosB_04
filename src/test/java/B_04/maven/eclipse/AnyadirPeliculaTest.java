@@ -1,6 +1,7 @@
 package B_04.maven.eclipse;
 
 import static org.junit.Assert.assertEquals;
+
 import static org.mockito.Mockito.when;
 
 import javax.swing.JTextField;

@@ -56,7 +56,7 @@ public class VentanaEntrada extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public VentanaEntrada() {
+	public VentanaEntrada(Pelicula p) {
 		setResizable(false);
 		setForeground(Color.ORANGE);
 		setBackground(Color.GRAY);
@@ -70,11 +70,11 @@ public class VentanaEntrada extends JDialog {
 		JLabel lblPos = new JLabel("");
 		lblPos.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		Image fotomenu;
-		//fotomenu= getToolkit().getImage(p.getRutaFoto());
-		//fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
+		fotomenu= getToolkit().getImage(p.getRutaFoto());
+		fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
 
 
-		//lblPos.setIcon(new ImageIcon(fotomenu));
+		lblPos.setIcon(new ImageIcon(fotomenu));
 
 		JLabel lblHor = new JLabel("Horario");
 		lblHor.setForeground(Color.ORANGE);

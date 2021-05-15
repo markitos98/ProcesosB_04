@@ -50,7 +50,7 @@ public class VentanaPelicula extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public VentanaPelicula() {
+	public VentanaPelicula(Pelicula p) {
 		setResizable(false);
 		setForeground(Color.ORANGE);
 		setBackground(Color.GRAY);
@@ -67,11 +67,11 @@ public class VentanaPelicula extends JDialog {
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		Image fotomenu;
-		//fotomenu= getToolkit().getImage(p.getRutaFoto());
-		//fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
+		fotomenu= getToolkit().getImage(p.getRutaFoto());
+		fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
 
 
-		//lblNewLabel.setIcon(new ImageIcon(fotomenu));
+		lblNewLabel.setIcon(new ImageIcon(fotomenu));
 
 
 
@@ -104,23 +104,18 @@ public class VentanaPelicula extends JDialog {
 		lblTrailer.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 
 		JButton btnTrailer = new JButton("Ver ahora");
-		//btnTrailer.addActionListener(new ActionListener() {
-		//	public void actionPerformed(ActionEvent arg0) {
-		//		try {
-		//			URL url = new URL(p.getTrailer());
-		//			try {
-		//				Desktop.getDesktop().browse(url.toURI());
-		//			} catch (IOException e) {
-		//				e.printStackTrace();
-		//			} catch (URISyntaxException e) {
-		//				e.printStackTrace();
-		//			}
-		//		} catch (MalformedURLException e1) {
-		//			e1.printStackTrace();
-		//		}
-		//
-		//	}
-		//});
+		btnTrailer.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			
+			try {
+				verTrailer(p.getTrailer());
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		}
+		});
 		btnTrailer.setBackground(Color.ORANGE);
 		btnTrailer.setForeground(Color.GRAY);
 		btnTrailer.setOpaque(true);
@@ -230,7 +225,7 @@ public class VentanaPelicula extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
-						VentanaEntrada entrada= new VentanaEntrada();
+						VentanaEntrada entrada= new VentanaEntrada(p);
 
 						entrada.setVisible(true);
 					}
@@ -261,4 +256,17 @@ public class VentanaPelicula extends JDialog {
 			}
 		}
 	}
+	public void verTrailer(String trailer) throws MalformedURLException {
+		
+		
+		URL url = new URL(trailer);
+					try {
+						Desktop.getDesktop().browse(url.toURI());
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (URISyntaxException e) {
+					e.printStackTrace();
+				}
+				
+}
 }

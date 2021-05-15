@@ -3,6 +3,7 @@ package gui;
 
 import java.awt.Color;
 
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -21,9 +22,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-
+import database.Database;
+import clases.Pelicula;
+import gui.VentanaPelicula;
 
 import javax.swing.SwingConstants;
+
+
 
 
 
@@ -91,6 +96,7 @@ public class Cartelera extends JFrame {
 	
 		lblP1.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		
+		
 		JLabel lblP2= new JLabel();
 
 		lblP2.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
@@ -100,14 +106,7 @@ public class Cartelera extends JFrame {
 		JLabel lblP3 = new JLabel("");
 
 		lblP3.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				VentanaPelicula vp= new VentanaPelicula();
-				vp.setVisible(true);
-			}
-		});
+		
 
 		
 
