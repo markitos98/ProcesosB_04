@@ -23,6 +23,7 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import database.Database;
+
 import clases.Pelicula;
 import gui.VentanaPelicula;
 
@@ -44,8 +45,8 @@ public class Cartelera extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
-	 
+
+
 
 
 	/**
@@ -74,13 +75,13 @@ public class Cartelera extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(null);
-		
-		
+
+
 		setContentPane(contentPane);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
-		
+
 
 		JLabel lblCartelera = new JLabel("CARTELERA - CINE DEUSTO-PSC");
 		lblCartelera.setBorder(BorderFactory.createLineBorder(Color.ORANGE,7));
@@ -93,75 +94,212 @@ public class Cartelera extends JFrame {
 
 
 		JLabel lblP1= new JLabel();
-	
+
 		lblP1.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
-		
+		lblP1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(1));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
 		JLabel lblP2= new JLabel();
 
 		lblP2.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
-		
+
+		lblP2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(2));
+				vp.setVisible(true);
+
+
+
+			}
+		});
 
 		JLabel lblP3 = new JLabel("");
 
 		lblP3.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(3));
+				vp.setVisible(true);
 
-		
+
+
+			}
+		});
+
+
 
 		JLabel lblP4 = new JLabel("");
 
 		lblP4.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
-		
+		lblP4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(4));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
 
 		JLabel lblP5 = new JLabel("");
 
 		lblP5.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(5));
+				vp.setVisible(true);
+
+
+
+			}
+		});
 
 		JLabel lblP6 = new JLabel("");
 
 		lblP6.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
-	
+		lblP6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(6));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
+
 
 		JLabel lblP7 = new JLabel("");
 
 		lblP7.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-				
 
+		lblP7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(7));
+				vp.setVisible(true);
+
+
+
+			}
+		});
 
 		JLabel lblP8 = new JLabel("");
 
 		lblP8.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
-		
+		lblP8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(8));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
+
 
 		JLabel lblP9 = new JLabel("");
 
 		lblP9.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP9.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(9));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
 
 		JLabel lblP10 = new JLabel("");
 
 		lblP10.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
+				vp.setVisible(true);
+
+
+
+			}
+		});
 
 		JLabel lblP11 = new JLabel("");
 
 		lblP11.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP11.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(11));
+				vp.setVisible(true);
+
+
+
+			}
+		});
+
 
 
 		JLabel lblP12 = new JLabel("");
 
 		lblP12.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		
+		lblP12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Database db= new Database();
+				List<Pelicula> peliculas= db.getPeliculas();
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(21));
+				vp.setVisible(true);
 
 
-		
+
+			}
+		});
+
+
+
+
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 				gl_contentPane.createParallelGroup(Alignment.LEADING)
