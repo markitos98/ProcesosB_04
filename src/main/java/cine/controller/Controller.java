@@ -71,4 +71,19 @@ public class Controller {
 		
 	}
 	
+	
+public boolean comprobarUsurio(String username, String contraseña) throws RemoteException {
+		
+		boolean utilizado = false;
+		try{
+			boolean free = cl.getService().comprobarUsuario(username, contraseña);
+			if (free == true) {
+				utilizado = true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return utilizado;
+		
+	}
 }
