@@ -48,4 +48,27 @@ public class Controller {
 	}
 
 	
+	public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,String apellido_2,String fech_nac){
+		try{
+    		cl.getService().anyadirUsuario(username, password, email, nombre, apellido_1, apellido_2, fech_nac);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	}
+	
+	public boolean comprobarEmail(String username) throws RemoteException {
+		
+		boolean utilizado = false;
+		try{
+			boolean free = cl.getService().comprobarEmail(username);
+			if (free == true) {
+				utilizado = true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			}
+		return utilizado;
+		
+	}
+	
 }

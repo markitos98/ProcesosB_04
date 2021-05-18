@@ -3,11 +3,13 @@ import java.awt.Color;
 
 
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.PrintStream;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +17,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
+import cine.controller.Controller;
 import database.*;
 
 
@@ -24,8 +28,11 @@ import database.*;
  * @author gorkazarate
  *
  */
-public class Registro {
+public class Registro extends JFrame {
 
+	
+	
+	public Controller controller;
 	public JFrame frame1;
 	public JTextField txtUser;
 	public JTextField txtEmail;
@@ -44,46 +51,48 @@ public class Registro {
 	/**
 	 * Create the application.
 	 */
-	public Registro() {
-		super();
-		initialize();
-		frame1.setVisible(true);
-	}
+	
 
+	public Registro(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
+	}
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
-		frame1 = new JFrame();
-		frame1.getContentPane().setBackground(Color.GRAY);
-		frame1.setBackground(Color.GRAY);
-		frame1.setBounds(600, 250, 450, 500);
-		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame1.getContentPane().setLayout(null);
+	private void ventana() {
+		getContentPane().setBackground(Color.GRAY);
+		setBackground(Color.GRAY);
+		setBounds(600, 250, 450, 500);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 
 		JLabel lblUser = new JLabel("Username\r\n");
 		lblUser.setForeground(Color.ORANGE);
 		lblUser.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblUser.setBounds(46, 87, 115, 20);
-		frame1.getContentPane().add(lblUser);
+		getContentPane().add(lblUser);
 
 		JLabel lblApe1 = new JLabel("1er Apellido");
 		lblApe1.setForeground(Color.ORANGE);
 		lblApe1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblApe1.setBounds(46, 191, 115, 20);
-		frame1.getContentPane().add(lblApe1);
+		getContentPane().add(lblApe1);
 
 		JLabel lblApe2 = new JLabel("2ndo Apellido");
 		lblApe2.setForeground(Color.ORANGE);
 		lblApe2.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblApe2.setBounds(46, 227, 135, 20);
-		frame1.getContentPane().add(lblApe2);
+		getContentPane().add(lblApe2);
 
 		JLabel lblEmail = new JLabel("Email");
 		lblEmail.setForeground(Color.ORANGE);
 		lblEmail.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblEmail.setBounds(46, 123, 69, 20);
-		frame1.getContentPane().add(lblEmail);
+		getContentPane().add(lblEmail);
 
 
 
@@ -101,7 +110,7 @@ public class Registro {
 
 				if(cmd.equals("Open70"))
 				{
-					frame1.dispose();
+					 Registro.this.dispose();
 					//Abre Inicio de Sesion
 					
 
@@ -110,7 +119,7 @@ public class Registro {
 		});
 
 		btnCancelar.setBounds(254, 362, 155, 29);
-		frame1.getContentPane().add(btnCancelar);
+		getContentPane().add(btnCancelar);
 
 
 
@@ -119,19 +128,19 @@ public class Registro {
 		txtUser = new JTextField();
 		txtUser.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtUser.setBounds(250, 85, 146, 26);
-		frame1.getContentPane().add(txtUser);
+		getContentPane().add(txtUser);
 		txtUser.setColumns(10);
 
 		txtEmail = new JTextField();
 		txtEmail.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtEmail.setBounds(250, 121, 146, 26);
-		frame1.getContentPane().add(txtEmail);
+		getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
 
 		txtApe1 = new JTextField();
 		txtApe1.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtApe1.setBounds(250, 189, 146, 26);
-		frame1.getContentPane().add(txtApe1);
+		getContentPane().add(txtApe1);
 		txtApe1.setColumns(10);
 		txtApe1.addKeyListener(new KeyListener(){
 
@@ -154,7 +163,7 @@ public class Registro {
 		txtApe2 = new JTextField();
 		txtApe2.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtApe2.setBounds(250, 225, 146, 26);
-		frame1.getContentPane().add(txtApe2);
+		getContentPane().add(txtApe2);
 		txtApe2.setColumns(10);
 		txtApe2.addKeyListener(new KeyListener(){
 
@@ -178,7 +187,7 @@ public class Registro {
 		lblIntroduceTusDatos.setForeground(Color.ORANGE);
 		lblIntroduceTusDatos.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 28));
 		lblIntroduceTusDatos.setBounds(46, 17, 398, 52);
-		frame1.getContentPane().add(lblIntroduceTusDatos);
+		getContentPane().add(lblIntroduceTusDatos);
 
 		JButton btnVueltaAlLogin = new JButton("Volver a Inicio de Sesión");
 		btnVueltaAlLogin.setBackground(Color.GRAY);
@@ -193,24 +202,24 @@ public class Registro {
 
 				if(cmd1.equals("Open1"))
 				{
-					frame1.dispose();
+					 Registro.this.dispose();
 					new InicioSesion();
 				}
 			}
 		});
 		btnVueltaAlLogin.setBounds(112, 415, 229, 31);
-		frame1.getContentPane().add(btnVueltaAlLogin);
+		getContentPane().add(btnVueltaAlLogin);
 
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setForeground(Color.ORANGE);
 		lblNombre.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblNombre.setBounds(46, 155, 87, 20);
-		frame1.getContentPane().add(lblNombre);
+		getContentPane().add(lblNombre);
 
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtNombre.setBounds(250, 151, 146, 26);
-		frame1.getContentPane().add(txtNombre);
+		getContentPane().add(txtNombre);
 		txtNombre.setColumns(10);
 		txtNombre.addKeyListener(new KeyListener(){
 
@@ -233,24 +242,24 @@ public class Registro {
 		lblFechaNacimiento.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblFechaNacimiento.setForeground(Color.ORANGE);
 		lblFechaNacimiento.setBounds(46, 262, 155, 20);
-		frame1.getContentPane().add(lblFechaNacimiento);
+		getContentPane().add(lblFechaNacimiento);
 
 		JLabel lblContrasea = new JLabel("Contraseña");
 		lblContrasea.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblContrasea.setForeground(Color.ORANGE);
 		lblContrasea.setBounds(46, 294, 103, 20);
-		frame1.getContentPane().add(lblContrasea);
+		getContentPane().add(lblContrasea);
 
 		txtFecha = new JTextField();
 		txtFecha.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtFecha.setBounds(250, 262, 146, 26);
-		frame1.getContentPane().add(txtFecha);
+		getContentPane().add(txtFecha);
 		txtFecha.setColumns(10);
 
 		passContr = new JPasswordField();
 		passContr.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		passContr.setBounds(250, 292, 146, 26);
-		frame1.getContentPane().add(passContr);
+		getContentPane().add(passContr);
 		
 		JButton btnRegis = new JButton("Registrarse\r\n");
 		btnRegis.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
@@ -261,27 +270,33 @@ public class Registro {
 
 		
 		btnRegis.setBounds(46, 362, 155, 29);
-		frame1.getContentPane().add(btnRegis);
+		getContentPane().add(btnRegis);
 		btnRegis.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				
 			
-			Database db = new Database();
 			
-			
-			if(db.comprobarEmail(txtEmail.getText())) {
-				
-				String passText = new String(passContr.getPassword());
-		          db.anyadirUsuario(txtUser.getText(),passText,txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
-		      
-		          JOptionPane.showMessageDialog(frame1, "Usuario registrado");
-		          frame1.dispose();
-		          
-		          
-			}else {
-				
-				JOptionPane.showMessageDialog(frame1, "Ya hay un usuario registrado con este correo");
+			try {
+				if(controller.comprobarEmail(txtEmail.getText())) {
+					
+					String passText = new String(passContr.getPassword());
+				      controller.anyadirUsuario(txtUser.getText(),passText,txtEmail.getText(), txtNombre.getText(), txtApe1.getText(), txtApe2.getText(), txtFecha.getText());
+				  
+				      JOptionPane.showMessageDialog(frame1, "Usuario registrado");
+				      Registro.this.dispose();
+				      
+				      
+				}else {
+					
+					JOptionPane.showMessageDialog(frame1, "Ya hay un usuario registrado con este correo");
+				}
+			} catch (HeadlessException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (RemoteException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 			
 				
@@ -293,7 +308,16 @@ public class Registro {
 	
 		
 			}
-	public static void abrirRegistro() {
-		Registro registro = new Registro();
-	}
+	public void ejecutarVentana() {
+		try {
+			final Registro Ventana = new Registro(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 }

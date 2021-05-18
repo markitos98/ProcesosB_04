@@ -44,7 +44,7 @@ public class InicioSesion extends JFrame {
 	
 	public InicioSesion(Controller controller) {
 		this.controller = controller;
-		ventana();
+		initialize();
 		this.setVisible(true);
 	}
 	
@@ -67,8 +67,7 @@ public class InicioSesion extends JFrame {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						InicioSesion window = new InicioSesion();
-						window.frame.setVisible(true);
+						InicioSesion window = new InicioSesion(controller);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -95,35 +94,34 @@ public class InicioSesion extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.GRAY);
-		frame.setResizable(false);
-		frame.setForeground(Color.DARK_GRAY);
-		frame.getContentPane().setForeground(Color.DARK_GRAY);
-		frame.setBounds(600, 300, 491, 356);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		getContentPane().setBackground(Color.GRAY);
+		setResizable(false);
+		setForeground(Color.DARK_GRAY);
+		getContentPane().setForeground(Color.DARK_GRAY);
+		setBounds(600, 300, 491, 356);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Usuario\r\n");
 		lblNewLabel.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblNewLabel.setForeground(Color.ORANGE);
 		lblNewLabel.setBounds(85, 105, 91, 20);
-		frame.getContentPane().add(lblNewLabel);
+		getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Contraseña");
 		lblNewLabel_1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblNewLabel_1.setForeground(Color.ORANGE);
 		lblNewLabel_1.setBounds(85, 137, 128, 20);
-		frame.getContentPane().add(lblNewLabel_1);
+		getContentPane().add(lblNewLabel_1);
 
 		textField = new JTextField();
 		textField.setBounds(254, 104, 146, 26);
-		frame.getContentPane().add(textField);
+		getContentPane().add(textField);
 		textField.setColumns(10);
 
 		passwordField = new JPasswordField();
 		passwordField.setBounds(254, 135, 146, 26);
-		frame.getContentPane().add(passwordField);
+		getContentPane().add(passwordField);
 
 		JButton btnNewButton = new JButton("Cancelar\r\n");
 		btnNewButton.setOpaque(true);
@@ -131,14 +129,14 @@ public class InicioSesion extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				frame.dispose();
+				InicioSesion.this.dispose();
 			}
 		});
 		btnNewButton.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		btnNewButton.setBackground(Color.ORANGE);
 		btnNewButton.setForeground(Color.GRAY);
 		btnNewButton.setBounds(254, 194, 142, 29);
-		frame.getContentPane().add(btnNewButton);
+		getContentPane().add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Aceptar\r\n");
 		btnNewButton_1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
@@ -156,7 +154,7 @@ public class InicioSesion extends JFrame {
 					CambiarImagen cam= new CambiarImagen();
 					cam.main();
 
-					frame.dispose();
+					InicioSesion.this.dispose();
 
 				
 				
@@ -176,7 +174,7 @@ public class InicioSesion extends JFrame {
 		btnNewButton_1.setForeground(Color.GRAY);
 		btnNewButton_1.setBackground(Color.ORANGE);
 		btnNewButton_1.setBounds(85, 194, 141, 29);
-		frame.getContentPane().add(btnNewButton_1);
+		getContentPane().add(btnNewButton_1);
 
 		JLabel lblIntroduceTusDatos = new JLabel("CINE DEUSTO-PSC");
 		lblIntroduceTusDatos.setForeground(Color.ORANGE);
@@ -184,18 +182,19 @@ public class InicioSesion extends JFrame {
 		lblIntroduceTusDatos.setBackground(Color.WHITE);
 		lblIntroduceTusDatos.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 28));
 		lblIntroduceTusDatos.setBounds(43, 24, 398, 50);
-		frame.getContentPane().add(lblIntroduceTusDatos);
+		getContentPane().add(lblIntroduceTusDatos);
 
 		JLabel lblNewLabel_2 = new JLabel("¿No tienes cuenta?");
 		lblNewLabel_2.setForeground(Color.ORANGE);
 		lblNewLabel_2.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 		lblNewLabel_2.setBounds(85, 244, 168, 16);
-		frame.getContentPane().add(lblNewLabel_2);
+		getContentPane().add(lblNewLabel_2);
 
 		JButton btnNewButton_2 = new JButton("Registrarse");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Registro registro= new Registro();
+				Registro registro= new Registro(controller);
+				registro.setVisible(true);
 			}
 		});
 		btnNewButton_2.setBackground(Color.ORANGE);
@@ -211,7 +210,7 @@ public class InicioSesion extends JFrame {
 		btnNewButton_2.setBackground(Color.ORANGE);
 		btnNewButton_2.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		btnNewButton_2.setBounds(254, 242, 138, 29);
-		frame.getContentPane().add(btnNewButton_2);
+		getContentPane().add(btnNewButton_2);
 	}
 
 
