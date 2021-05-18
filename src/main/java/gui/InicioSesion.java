@@ -20,24 +20,36 @@ import javax.swing.SwingUtilities;
 
 import database.Database;
 
+import cine.controller.Controller;
+
 
 /**
  * Ventana de Inicio de Sesion para Clientes
  * @author alex
  *
  */
-public class InicioSesion {
+public class InicioSesion extends JFrame {
 
 	public JFrame frame;
 	public JTextField textField;
 	public JPasswordField passwordField;
 	public static Logger log;
-	
+	private Controller controller;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	
+	
+	
+	public InicioSesion(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
+	}
+	
+	
+	public void ventana(){
 
 		//Creacion del Logger
 		try {
@@ -203,11 +215,18 @@ public class InicioSesion {
 	}
 
 
-	//Método para abrir ventana
-	public static void abrirInicioSesion() {
-		InicioSesion login= new InicioSesion();
-
-	}
+	public void ejecutarVentana() {
+		try {
+			final InicioSesion Ventana = new InicioSesion(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 
 
 }

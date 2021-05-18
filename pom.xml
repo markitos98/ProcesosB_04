@@ -17,7 +17,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
+		<server.IP>127.0.0.1</server.IP>
+		<server.port>1099</server.port>
+		<server.Name>CineRMI</server.Name>
 		<config.files.dir>${basedir}/src/main/resources</config.files.dir>
+			<policy.file>${basedir}/src/main/resources/security/java.policy</policy.file>
 		<doxygen.config.file>${basedir}/src/main/resources/Doxyfile</doxygen.config.file>
 	</properties>
 
@@ -69,6 +73,18 @@
 			<artifactId>log4j</artifactId>
 			<version>[1.2.17, )</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+			<scope>compile</scope>
+		</dependency> 
 
 	</dependencies>
 
@@ -288,8 +304,95 @@
 					</plugin>
 				</plugins>
 			</build>
+
+		
+		</profile>
+		
+		
+		<!-- run as 'mvn exec:java -Pserver' -->
+		<profile>
+			<id>server</id>
+			<build>
+		
+				<plugins>
+					<plugin>
+						<artifactId>maven-clean-plugin</artifactId>
+						<version>3.0.0</version>
+						<configuration>
+							<filesets>
+								<fileset>
+									<directory>${basedir}</directory>
+									<includes>
+										<include>*.log</include>
+										<include>*.ods</include>
+									</includes>
+								</fileset>
+							</filesets>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<fork>true</fork>
+							<forkedVmArgs>
+								<!-- Disable verifier to avoid issues with Java 7 verifier and code 
+									instrumentation -->
+								<forkedVmArg>-Xverify:none</forkedVmArg>
+							</forkedVmArgs>
+
+							<mainClass>server.MainServer</mainClass>
+							<systemProperties>
+
+								<systemProperty>
+									<key>java.security.manager</key>
+									<value>java.rmi.RMISecurityManager</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.rmi.server.codebase</key>
+									<value>file:${basedir}/target/classes/</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.security.policy</key>
+									<value>${policy.file}</value>
+								</systemProperty>
+							</systemProperties>
+							<arguments>
+								<argument>${server.IP}</argument>
+								<argument>${server.port}</argument>
+								<argument>${server.Name}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- run as 'mvn exec:java -Pcontroller' -->
+		<profile>
+			<id>controller</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<mainClass>cine.controller.Controller</mainClass>
+							<arguments>
+								<argument>${server.IP}</argument>
+								<argument>${server.port}</argument>
+								<argument>${server.Name}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 	</profiles>
+
 	<reporting>
 		<plugins>
 			<plugin>
