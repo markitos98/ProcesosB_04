@@ -12,6 +12,7 @@ import gui.InicioSesion;
 public class Controller {
 
 	
+	
 	private MainClient cl;
 	private InicioSesion is;
 	
