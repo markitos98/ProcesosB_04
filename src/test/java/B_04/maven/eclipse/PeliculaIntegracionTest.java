@@ -49,9 +49,8 @@ public class PeliculaIntegracionTest {
 	@Test
 	@PerfTest(invocations = 40)
 	public void testGetPelicula() throws Exception {
-		
-		PeliculaDAO pdao= new PeliculaDAO();
-	   pdao.getPeliculas();
+		 PeliculaDAO pdao= new PeliculaDAO();
+		 pdao.getPelicula(p.getTitulo());
 	}
 	
 	@Test
