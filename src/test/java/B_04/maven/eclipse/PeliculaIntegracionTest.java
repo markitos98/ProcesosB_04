@@ -1,10 +1,14 @@
 package B_04.maven.eclipse;
 
+import java.awt.List;
+import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Rule;
 import org.junit.Test;
+
 
 import clases.Pelicula;
 import clases.DAO.PeliculaDAO;
@@ -13,7 +17,8 @@ import junit.framework.JUnit4TestAdapter;
 
 public class PeliculaIntegracionTest {
 	private Pelicula p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
-
+	
+	
 	static Logger logger = Logger.getLogger(PeliculaIntegracionTest.class.getName());
 
 	// If you use the EmptyReportModule, the report is not generated
@@ -44,8 +49,9 @@ public class PeliculaIntegracionTest {
 	@Test
 	@PerfTest(invocations = 40)
 	public void testGetPelicula() throws Exception {
-	  
-	   
+		
+		PeliculaDAO pdao= new PeliculaDAO();
+	   pdao.getPeliculas();
 	}
 	
 	@Test
