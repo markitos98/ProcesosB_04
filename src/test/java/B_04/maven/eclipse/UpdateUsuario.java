@@ -23,7 +23,7 @@ public class UpdateUsuario {
 	
 	
 	private Cliente c2;
-	private Cliente c;
+
 	
 	private static JTextField textField1;
 	private static JTextField textField2;
@@ -38,7 +38,7 @@ public class UpdateUsuario {
 	@Before
 	public void setUp() throws Exception {
 	
-		c=  new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
+	
 		
 		c2= new Cliente("gorka","1234","gorka@gmail.com","Gorka","Zarate","Jayo","01/09/1999");
 		
