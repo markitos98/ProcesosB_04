@@ -1,8 +1,10 @@
 package gui;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -146,22 +148,30 @@ public class InicioSesion extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				
-				//String passText = new String(passwordField.getPassword());
+				String passText = new String(passwordField.getPassword());
 				
-				//Database db = new Database();
-				//if(db.comprobrarUsuario(textField.getText(), passText)) {
-					
-					CambiarImagen cam= new CambiarImagen();
-					cam.main();
+				
+				try {
+					if(controller.comprobarUsurio(textField.getText(), passText)) {
+						
+						CambiarImagen cam= new CambiarImagen();
+						cam.main();
 
-					InicioSesion.this.dispose();
+						InicioSesion.this.dispose();
 
-				
-				
-				//}else {
 					
-				//	JOptionPane.showMessageDialog(frame, "El usuario y la contraseña no coinciden");
-				//}
+					
+					}else {
+						
+						JOptionPane.showMessageDialog(frame, "El usuario y la contraseña no coinciden");
+					}
+				} catch (HeadlessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				
 				
