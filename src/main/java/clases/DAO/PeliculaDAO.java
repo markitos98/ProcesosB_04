@@ -12,7 +12,6 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 
 import clases.Pelicula;
-import clasesUsuario.Cliente;
 
 public class PeliculaDAO implements IPeliculaDAO {
 
@@ -78,5 +77,34 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 		}
 	}
+	
+	public Pelicula getPelicula(String titulo) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
+		Pelicula pelicula = null; 
+
+		try {
+			System.out.println("  * Querying a Pelicula by titulo: " + titulo);
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Pelicula.class.getName() + " WHERE titulo == '" + titulo + "'");
+			query.setUnique(true);
+			pelicula = (Pelicula) query.execute();
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying a Pelicula: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return pelicula;
+	}
+
 
 }
