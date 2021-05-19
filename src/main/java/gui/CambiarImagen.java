@@ -8,6 +8,8 @@ import java.util.TimerTask;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import cine.controller.Controller;
+
 /**
  * Clase que permite mediante una tarea que las imagenes vayan cambiando en base a un Timer
  * @author alex
@@ -16,7 +18,8 @@ import javax.swing.ImageIcon;
 public class CambiarImagen {
 
 	static int contador=0;
-
+	public static Controller controller;
+	
 	public static void main () {
 
 
@@ -28,7 +31,7 @@ public class CambiarImagen {
 
 		int velmil= velocidad*1000;
 
-		final MenuPrincipal cartelera= new MenuPrincipal();
+		final MenuPrincipal cartelera= new MenuPrincipal(controller);
 		cartelera.setVisible(true);
 
 		//tarea para ir cambiando las imágenes del menú principal cada x segundos

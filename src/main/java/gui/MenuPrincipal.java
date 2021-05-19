@@ -21,8 +21,10 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
+import cine.controller.Controller;
 import clases.Pelicula;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
@@ -41,10 +43,14 @@ public class MenuPrincipal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	public JLabel lblNewLabel_1= new JLabel();
 	public JLabel lblPosM;
-	
+	public Controller controller;
 
 
-
+	public MenuPrincipal(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -54,7 +60,7 @@ public class MenuPrincipal extends JDialog {
 	 * Create the dialog.
 	 */
 
-	public MenuPrincipal() {
+	public void ventana() {
 		setBounds(60, 10, 1700, 1000);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.GRAY);
@@ -77,7 +83,7 @@ public class MenuPrincipal extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 
 				dispose();
-				Cartelera cartelera = new Cartelera();
+				Cartelera cartelera = new Cartelera(controller);
 				cartelera.setVisible(true);
 			}
 		});
@@ -157,20 +163,18 @@ public class MenuPrincipal extends JDialog {
 		
 	}
 
-	public static void main(String[] args) {
+	public void ejecutarVentana() {
 		try {
-			MenuPrincipal dialog = new MenuPrincipal();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-
-
-
-
-
+			final MenuPrincipal Ventana = new MenuPrincipal(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.exit(1);  
 		}
-	}
+}
 
 
 }
