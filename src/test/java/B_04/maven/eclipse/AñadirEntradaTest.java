@@ -46,7 +46,7 @@ public class AñadirEntradaTest{
 	}
 	
 	@Test
-	public void testAnyadirCliente() {
+	public void testAnyadirEntrada() {
 		
 		Entrada e= new Entrada();
 		when(textField1.getText()).thenReturn("1");

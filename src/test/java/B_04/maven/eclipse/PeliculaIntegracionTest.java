@@ -47,14 +47,14 @@ public class PeliculaIntegracionTest {
 	    
 	}
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 2)
 	public void testGetPelicula() throws Exception {
 		 PeliculaDAO pdao= new PeliculaDAO();
 		 pdao.getPelicula(p.getTitulo());
 	}
 	
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void anyadirPelicula() throws Exception {
 		 PeliculaDAO pdao= new PeliculaDAO();
 		 pdao.anyadirPelicula(p);

@@ -1,7 +1,6 @@
-B_04/maven/eclipse/AdminTest.class
-B_04/maven/eclipse/SesionTest.class
-B_04/maven/eclipse/PeliculaTest.class
-B_04/maven/eclipse/EntradaTest.class
-B_04/maven/eclipse/ClienteTest.class
-B_04/maven/eclipse/DatabaseTest.class
-B_04/maven/eclipse/GeneroTest.class
+B_04\maven\eclipse\PeliculaTest.class
+B_04\maven\eclipse\EntradaTest.class
+B_04\maven\eclipse\SesionTest.class
+B_04\maven\eclipse\ClienteTest.class
+B_04\maven\eclipse\GeneroTest.class
+B_04\maven\eclipse\AdminTest.class
