@@ -15,17 +15,17 @@ import clases.DAO.PeliculaDAO;
 import clases.DAO.UsuarioDAO;
 import junit.framework.JUnit4TestAdapter;
 
-public class PeliculaIntegracionTest {
+public class PeliculaPerfTest {
 	private Pelicula p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 	
 	
-	static Logger logger = Logger.getLogger(PeliculaIntegracionTest.class.getName());
+	static Logger logger = Logger.getLogger(PeliculaPerfTest.class.getName());
 
 	// If you use the EmptyReportModule, the report is not generated
 	//@Rule public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());
 	
 	public static junit.framework.Test suite() {
-		 return new JUnit4TestAdapter(PeliculaIntegracionTest.class);
+		 return new JUnit4TestAdapter(PeliculaPerfTest.class);
 	}
 	
 	@Rule
