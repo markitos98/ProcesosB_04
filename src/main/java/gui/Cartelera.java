@@ -28,6 +28,9 @@ import clases.Pelicula;
 import gui.VentanaPelicula;
 
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+
+import cine.controller.Controller;
 
 
 
@@ -45,31 +48,20 @@ public class Cartelera extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	public Controller controller;
 
 
-
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-
-					Cartelera frame = new Cartelera();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+	public Cartelera(Controller controller) {
+		this.controller = controller;
+		Cartelera();
+		this.setVisible(true);
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Cartelera() {
+	public void Cartelera() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(60, 10, 1700, 1000);
 		contentPane = new JPanel();
@@ -396,7 +388,7 @@ public class Cartelera extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				dispose();
-				MenuPrincipal menu= new MenuPrincipal();
+				MenuPrincipal menu= new MenuPrincipal(controller);
 				menu.setVisible(true);
 
 			}
@@ -427,4 +419,17 @@ public class Cartelera extends JFrame {
 
 	}
 
+	
+	public void ejecutarVentana() {
+		try {
+			final Cartelera Ventana = new Cartelera(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
 }
