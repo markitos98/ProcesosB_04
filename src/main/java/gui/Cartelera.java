@@ -54,14 +54,14 @@ public class Cartelera extends JFrame {
 	
 	public Cartelera(Controller controller) {
 		this.controller = controller;
-		Cartelera();
+		ventana();
 		this.setVisible(true);
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public void Cartelera() {
+	public void ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(60, 10, 1700, 1000);
 		contentPane = new JPanel();
@@ -70,8 +70,7 @@ public class Cartelera extends JFrame {
 
 
 		setContentPane(contentPane);
-		Database db= new Database();
-		List<Pelicula> peliculas= db.getPeliculas();
+		List<Pelicula> peliculas = controller.getPeliculas();
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
@@ -94,8 +93,7 @@ public class Cartelera extends JFrame {
 		lblP1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(0));
 				vp.setVisible(true);
 
@@ -112,8 +110,7 @@ public class Cartelera extends JFrame {
 		lblP2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(1));
 				vp.setVisible(true);
 
@@ -130,8 +127,7 @@ public class Cartelera extends JFrame {
 		lblP3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(2));
 				vp.setVisible(true);
 
@@ -150,8 +146,7 @@ public class Cartelera extends JFrame {
 		lblP4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(3));
 				vp.setVisible(true);
 
@@ -169,8 +164,7 @@ public class Cartelera extends JFrame {
 		lblP5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(4));
 				vp.setVisible(true);
 
@@ -187,8 +181,7 @@ public class Cartelera extends JFrame {
 		lblP6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(5));
 				vp.setVisible(true);
 
@@ -208,8 +201,7 @@ public class Cartelera extends JFrame {
 		lblP7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(6));
 				vp.setVisible(true);
 
@@ -226,8 +218,7 @@ public class Cartelera extends JFrame {
 		lblP8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(7));
 				vp.setVisible(true);
 
@@ -246,8 +237,7 @@ public class Cartelera extends JFrame {
 		lblP9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(8));
 				vp.setVisible(true);
 
@@ -265,8 +255,7 @@ public class Cartelera extends JFrame {
 		lblP10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(9));
 				vp.setVisible(true);
 
@@ -283,8 +272,7 @@ public class Cartelera extends JFrame {
 		lblP11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
 				vp.setVisible(true);
 
@@ -303,8 +291,7 @@ public class Cartelera extends JFrame {
 		lblP12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Database db= new Database();
-				List<Pelicula> peliculas= db.getPeliculas();
+				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(11));
 				vp.setVisible(true);
 

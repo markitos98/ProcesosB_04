@@ -82,7 +82,7 @@ public class MenuPrincipal extends JDialog {
 		btnCartelera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				dispose();
+				MenuPrincipal.this.dispose();
 				Cartelera cartelera = new Cartelera(controller);
 				cartelera.setVisible(true);
 			}

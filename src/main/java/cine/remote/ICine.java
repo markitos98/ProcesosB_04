@@ -23,6 +23,8 @@ public interface ICine extends Remote {
 	
 	
 	public List<Pelicula> getPeliculas() throws RemoteException;
+	
+	public Pelicula getPelicula(String titulo) throws RemoteException;
 		
 	public void anyadirPelicula(String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer,String rutaFoto, String rutaFotoMenu,int sala) throws RemoteException;
 	
