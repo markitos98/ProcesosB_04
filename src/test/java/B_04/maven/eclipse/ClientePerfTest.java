@@ -79,4 +79,14 @@ public class ClientePerfTest {
 	}
 	
 	
+	@Test
+	@PerfTest(invocations = 40)
+	public void updateUsuario() throws Exception {
+	   UsuarioDAO udao= new UsuarioDAO();
+	   udao.updateUsuario(c.getUsername(), c.getPassword(), c.getNombre(),c.getApellido_1(), c.getApellido_2(), c.apellido_2, c.getFecha_nac());;
+	   
+	}
+	
+	
+	
 }
