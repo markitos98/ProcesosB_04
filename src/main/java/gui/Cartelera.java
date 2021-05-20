@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -49,12 +50,12 @@ public class Cartelera extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
-
+	List<Pelicula> peliculas=new ArrayList<Pelicula>();
 
 	
 	public Cartelera(Controller controller) {
 		this.controller = controller;
-		ejecutarVentana();
+		ventana();
 		this.setVisible(true);
 	}
 
@@ -70,8 +71,22 @@ public class Cartelera extends JFrame {
 
 
 		setContentPane(contentPane);
-		List<Pelicula> peliculas = controller.getPeliculas();
-
+		
+//		peliculas = controller.getPeliculas();
+		
+		 	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
+		 	peliculas.add(controller.getPelicula("Escape Room"));
+		 	peliculas.add(controller.getPelicula("Fantasy Island"));
+		 	peliculas.add(controller.getPelicula("Los Vengadores"));
+		 	peliculas.add(controller.getPelicula("Escuadron suicida"));
+		 	peliculas.add(controller.getPelicula("Mortal Kombat"));
+		 	peliculas.add(controller.getPelicula("Mulan"));
+		 	peliculas.add(controller.getPelicula("Oxygen"));
+		 	peliculas.add(controller.getPelicula("Soul"));
+		 	peliculas.add(controller.getPelicula("Stowaway"));
+		 	peliculas.add(controller.getPelicula("Twist"));
+		 	
+		 	
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
 
@@ -93,7 +108,6 @@ public class Cartelera extends JFrame {
 		lblP1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(0));
 				vp.setVisible(true);
 
@@ -110,7 +124,7 @@ public class Cartelera extends JFrame {
 		lblP2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+				
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(1));
 				vp.setVisible(true);
 
@@ -127,7 +141,7 @@ public class Cartelera extends JFrame {
 		lblP3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(2));
 				vp.setVisible(true);
 
@@ -146,7 +160,6 @@ public class Cartelera extends JFrame {
 		lblP4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(3));
 				vp.setVisible(true);
 
@@ -164,7 +177,7 @@ public class Cartelera extends JFrame {
 		lblP5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+				 
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(4));
 				vp.setVisible(true);
 
@@ -181,7 +194,7 @@ public class Cartelera extends JFrame {
 		lblP6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+				 peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(5));
 				vp.setVisible(true);
 
@@ -218,7 +231,7 @@ public class Cartelera extends JFrame {
 		lblP8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+			
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(7));
 				vp.setVisible(true);
 
@@ -237,7 +250,7 @@ public class Cartelera extends JFrame {
 		lblP9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+		
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(8));
 				vp.setVisible(true);
 
@@ -255,7 +268,7 @@ public class Cartelera extends JFrame {
 		lblP10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+				
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(9));
 				vp.setVisible(true);
 
@@ -272,7 +285,7 @@ public class Cartelera extends JFrame {
 		lblP11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
+			
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
 				vp.setVisible(true);
 
@@ -286,13 +299,13 @@ public class Cartelera extends JFrame {
 		JLabel lblP12 = new JLabel("");
 
 		lblP12.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP12.setIcon(peliculas.get(11).getPoster());
+		lblP12.setIcon(peliculas.get(10).getPoster());
 
 		lblP12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(11));
+			
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
 				vp.setVisible(true);
 
 
@@ -374,7 +387,7 @@ public class Cartelera extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				dispose();
+				Cartelera.this.dispose();
 				MenuPrincipal menu= new MenuPrincipal(controller);
 				menu.setVisible(true);
 

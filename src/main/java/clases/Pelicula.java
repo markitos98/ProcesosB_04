@@ -1,7 +1,9 @@
 package clases;
 
 import java.awt.Image;
+import java.io.Serializable;
 
+import javax.jdo.annotations.Discriminator;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 import javax.swing.ImageIcon;
@@ -15,10 +17,15 @@ import clasesUsuario.Cliente;
  *
  */
 
-@PersistenceCapable
-public class Pelicula 
+@PersistenceCapable(detachable="true")
+
+public class Pelicula implements Serializable 
 {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@PrimaryKey
 	private String titulo;
 	private String genero; 

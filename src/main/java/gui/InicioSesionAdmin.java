@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import cine.controller.Controller;
+
 
 /**
  * Ventana de Inicio de sesión para Admins
@@ -24,7 +26,8 @@ public class InicioSesionAdmin {
 	private JFrame frame;
 	private JTextField txtUser;
 	private JPasswordField passContr;
-
+	private Controller controller;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -97,7 +100,7 @@ public class InicioSesionAdmin {
 				if(cmd.equals("Open90"))
 				{
 					frame.dispose();
-					new InicioSesion();
+					new InicioSesion(controller);
 
 				}
 			}

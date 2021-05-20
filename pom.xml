@@ -381,6 +381,17 @@
 						<version>1.2.1</version>
 						<configuration>
 							<mainClass>cine.controller.Controller</mainClass>
+							<systemProperties>
+								<systemProperty>
+									<key>java.security.manager</key>
+									<value>java.rmi.RMISecurityManager</value>
+								</systemProperty>
+								<systemProperty>
+									<key>java.security.policy</key>
+									<value>${policy.file}</value>
+								</systemProperty>
+							</systemProperties>
+							
 							<arguments>
 								<argument>${server.IP}</argument>
 								<argument>${server.port}</argument>

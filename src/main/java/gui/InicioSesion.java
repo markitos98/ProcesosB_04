@@ -84,15 +84,6 @@ public class InicioSesion extends JFrame {
 	}
 
 	/**
-	 * Create the application.
-	 */
-	public InicioSesion() {
-		super();
-		initialize();
-		frame.setVisible(true);
-	}
-
-	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
@@ -154,9 +145,8 @@ public class InicioSesion extends JFrame {
 				try {
 					if(controller.comprobarUsurio(textField.getText(), passText)) {
 						
-						CambiarImagen cam= new CambiarImagen();
-						cam.main();
-
+						MenuPrincipal menuprincipal = new MenuPrincipal(controller);
+						menuprincipal.setVisible(true);
 						InicioSesion.this.dispose();
 
 					

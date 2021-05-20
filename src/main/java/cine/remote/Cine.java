@@ -133,7 +133,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 	@Override
 	public Pelicula getPelicula(String titulo) throws RemoteException {
 		
-	Pelicula p = peliculaDAO.getPelicula(titulo);
+		Pelicula p = peliculaDAO.getPelicula(titulo);
 		
 		return p;
 	}

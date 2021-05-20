@@ -82,10 +82,10 @@ public class MenuPrincipal extends JDialog {
 		btnCartelera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				
+				MenuPrincipal.this.dispose();
+
 				Cartelera cartelera = new Cartelera(controller);
 				cartelera.setVisible(true);
-				MenuPrincipal.this.dispose();
 			}
 		});
 		btnCartelera.setBackground(Color.ORANGE);
@@ -146,10 +146,10 @@ public class MenuPrincipal extends JDialog {
 				JButton cancelButton = new JButton("Salir");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						MenuPrincipal.this.dispose();
 
-						new InicioSesion();
-
+						InicioSesion sesion =new  InicioSesion(controller);
+						sesion.setVisible(true);
 					}
 				});
 				cancelButton.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 18));

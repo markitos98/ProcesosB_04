@@ -203,7 +203,7 @@ public class Registro extends JFrame {
 				if(cmd1.equals("Open1"))
 				{
 					 Registro.this.dispose();
-					new InicioSesion();
+					new InicioSesion(controller);
 				}
 			}
 		});
