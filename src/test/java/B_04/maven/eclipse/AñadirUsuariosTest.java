@@ -15,7 +15,7 @@ import org.mockito.Mockito;
 import clases.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
 
-public class getUsuariosTest {
+public class AñadirUsuariosTest {
 
 	
 	private List<Cliente> clientes;

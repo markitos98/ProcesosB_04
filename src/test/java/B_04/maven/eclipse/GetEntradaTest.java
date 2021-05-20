@@ -19,7 +19,7 @@ import junit.framework.JUnit4TestAdapter;
 
 
 
-public class getEntradaTest{
+public class GetEntradaTest{
 	private Pelicula p= new Pelicula();
 	private Sesion s= new Sesion();
 	private Entrada c= new Entrada(1,p,s,9,2,18,"gorka" );

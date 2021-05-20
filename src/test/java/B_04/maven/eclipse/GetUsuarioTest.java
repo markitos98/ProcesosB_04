@@ -12,7 +12,7 @@ import org.mockito.Mockito;
 import clases.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
 
-public class getUsuarioTest {
+public class GetUsuarioTest {
 	private Cliente c;
 	private static JTextField textField1;
 	
