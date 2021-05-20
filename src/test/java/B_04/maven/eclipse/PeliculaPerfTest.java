@@ -1,6 +1,7 @@
 package B_04.maven.eclipse;
 
 import java.awt.List;
+
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -8,13 +9,14 @@ import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
-
+import categories.IntegrationTest;
 import clases.Pelicula;
 import clases.DAO.PeliculaDAO;
 import clases.DAO.UsuarioDAO;
 import junit.framework.JUnit4TestAdapter;
-
+@Category(IntegrationTest.class)
 public class PeliculaPerfTest {
 	private Pelicula p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 	
