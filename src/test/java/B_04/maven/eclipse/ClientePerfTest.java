@@ -81,7 +81,7 @@ public class ClientePerfTest {
 	
 	@Test
 	@PerfTest(invocations = 40)
-	public void updateUsuario() throws Exception {
+	public void testupdateUsuario() throws Exception {
 	   UsuarioDAO udao= new UsuarioDAO();
 	   udao.updateUsuario(c.getUsername(), c.getPassword(),c.getEmail(), c.getNombre(),c.getApellido_1(), c.getApellido_2(), c.getFecha_nac());;
 	   
