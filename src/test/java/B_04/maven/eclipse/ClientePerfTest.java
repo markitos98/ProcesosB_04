@@ -1,12 +1,8 @@
 package B_04.maven.eclipse;
 
 import org.apache.log4j.Logger;
-
-
 import org.databene.contiperf.PerfTest;
-import org.databene.contiperf.Required;
 import org.databene.contiperf.junit.ContiPerfRule;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -17,7 +13,6 @@ import clasesUsuario.Cliente;
 import junit.framework.JUnit4TestAdapter;
 
 @Category(IntegrationTest.class)
-
 public class ClientePerfTest {
 
 	private Cliente c= new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
@@ -78,7 +73,6 @@ public class ClientePerfTest {
 	   udao.deleteUsuario(c);
 	   
 	}
-	
 	
 	@Test
 	@PerfTest(invocations = 40)
