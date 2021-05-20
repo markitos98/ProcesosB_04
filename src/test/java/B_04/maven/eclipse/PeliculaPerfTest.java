@@ -34,7 +34,7 @@ public class PeliculaPerfTest {
     public ContiPerfRule rule = new ContiPerfRule();
 	
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void testCrearPelicula() throws Exception {
 	    Pelicula pelicula=new Pelicula();
 	    pelicula.setTitulo("titulo");
@@ -49,14 +49,14 @@ public class PeliculaPerfTest {
 	    
 	}
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void testGetPelicula() throws Exception {
 		 PeliculaDAO pdao= new PeliculaDAO();
 		 pdao.getPelicula(p.getTitulo());
 	}
 	
 	@Test
-	@PerfTest(invocations = 40)
+	@PerfTest(invocations = 20)
 	public void anyadirPelicula() throws Exception {
 		 PeliculaDAO pdao= new PeliculaDAO();
 		 pdao.anyadirPelicula(p);

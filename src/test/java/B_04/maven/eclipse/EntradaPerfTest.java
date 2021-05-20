@@ -11,7 +11,6 @@ import categories.IntegrationTest;
 import clases.Entrada;
 import clases.Pelicula;
 import clases.Sesion;
-import clasesUsuario.Cliente;
 import junit.framework.JUnit4TestAdapter;
 
 
