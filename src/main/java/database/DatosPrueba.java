@@ -26,7 +26,7 @@ public class DatosPrueba {
 			pm.makePersistent(p);
 		
 			Pelicula p1=  new Pelicula("Malasaña 32","TERROR",2020,"Manolo y Candela se instalan en el madrileño barri",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","/resources/imagenes/Malasaña 32.jpg","posters/Malasaña.jpg",2);
-			pm.makePersistent(p);
+			pm.makePersistent(p1);
 			
 			Pelicula p2=  new Pelicula("Fantasy Island","TERROR",2020,"El enigmático Sr. Roarke ",110,"https://www.youtube.com/watch?v=R6gYEuYhudc&ab_channel=SonyPicturesEspa%C3%B1a","/resources/imagenes/Fantasy Island 32.jpg","posters/Malasaña.jpg",2);
 			pm.makePersistent(p2);

@@ -77,6 +77,7 @@ public class Cartelera extends JFrame {
 		 	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
 		 	peliculas.add(controller.getPelicula("Escape Room"));
 		 	peliculas.add(controller.getPelicula("Fantasy Island"));
+		 	peliculas.add(controller.getPelicula("Malasaña 32"));
 		 	peliculas.add(controller.getPelicula("Los Vengadores"));
 		 	peliculas.add(controller.getPelicula("Escuadron suicida"));
 		 	peliculas.add(controller.getPelicula("Mortal Kombat"));
@@ -299,13 +300,13 @@ public class Cartelera extends JFrame {
 		JLabel lblP12 = new JLabel("");
 
 		lblP12.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP12.setIcon(peliculas.get(10).getPoster());
+		lblP12.setIcon(peliculas.get(11).getPoster());
 
 		lblP12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(11));
 				vp.setVisible(true);
 
 
