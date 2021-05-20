@@ -48,7 +48,7 @@ public class Cartelera extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	public Controller controller;
+	private Controller controller;
 
 
 	
@@ -61,7 +61,7 @@ public class Cartelera extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public void ventana() {
+	private void ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(60, 10, 1700, 1000);
 		contentPane = new JPanel();

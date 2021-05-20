@@ -34,7 +34,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 			System.out.println("  * Querying Peliculas");
 			tx.begin();
 
-			Query<?> query = pm.newQuery("SELECT* FROM " + Pelicula.class + "'");
+			Query<?> query = pm.newQuery(Pelicula.class);
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			List<Pelicula> peliculas = (List<Pelicula>) query.execute();

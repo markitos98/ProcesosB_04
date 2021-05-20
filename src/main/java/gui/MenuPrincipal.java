@@ -43,7 +43,7 @@ public class MenuPrincipal extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	public JLabel lblNewLabel_1= new JLabel();
 	public JLabel lblPosM;
-	public Controller controller;
+	private Controller controller;
 
 
 	public MenuPrincipal(Controller controller) {
@@ -60,7 +60,7 @@ public class MenuPrincipal extends JDialog {
 	 * Create the dialog.
 	 */
 
-	public void ventana() {
+	private void ventana() {
 		setBounds(60, 10, 1700, 1000);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.GRAY);
