@@ -34,7 +34,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 			System.out.println("  * Querying Peliculas");
 			tx.begin();
 
-			Query<?> query = pm.newQuery("SELECT titulo, anyo,duracion. genero, sinopsis, duracion, trailer, RUTAFOTO,RUTAFOTOMENU,sala " + Pelicula.class + "'");
+			Query<Pelicula> query = pm.newQuery(Pelicula.class);
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			List<Pelicula> peliculas = (List<Pelicula>) query.execute();

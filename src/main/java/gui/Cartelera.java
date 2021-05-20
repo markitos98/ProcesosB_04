@@ -54,7 +54,7 @@ public class Cartelera extends JFrame {
 	
 	public Cartelera(Controller controller) {
 		this.controller = controller;
-		ventana();
+		ejecutarVentana();
 		this.setVisible(true);
 	}
 
