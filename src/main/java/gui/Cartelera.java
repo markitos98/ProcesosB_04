@@ -87,6 +87,16 @@ public class Cartelera extends JFrame {
 		 	peliculas.add(controller.getPelicula("Stowaway"));
 		 	peliculas.add(controller.getPelicula("Twist"));
 		 	
+		 System.out.println(peliculas.get(0).getSinopsis()); 
+			System.out.println(peliculas.get(1).getSinopsis());	
+		 System.out.println(peliculas.get(2).getSinopsis());	
+		 System.out.println(peliculas.get(3).getSinopsis());	
+		 System.out.println(peliculas.get(4).getSinopsis());	
+		 System.out.println(peliculas.get(5).getSinopsis());	
+		 System.out.println(peliculas.get(6).getSinopsis());	
+		 System.out.println(peliculas.get(7).getSinopsis());	
+		 System.out.println(peliculas.get(8).getSinopsis());	
+		 
 		 	
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
