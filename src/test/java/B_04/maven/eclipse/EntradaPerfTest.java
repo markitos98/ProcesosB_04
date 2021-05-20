@@ -1,6 +1,7 @@
 package B_04.maven.eclipse;
 
 import org.apache.log4j.Logger;
+
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
 import org.junit.Rule;
@@ -12,7 +13,6 @@ import clases.Entrada;
 import clases.Pelicula;
 import clases.Sesion;
 import junit.framework.JUnit4TestAdapter;
-
 
 @Category(IntegrationTest.class)
 public class EntradaPerfTest {
