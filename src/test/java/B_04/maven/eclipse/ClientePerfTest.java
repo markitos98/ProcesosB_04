@@ -39,7 +39,7 @@ public class ClientePerfTest {
 	
 	@Test
 	@PerfTest(invocations = 40)
-	public void testCrearCliente() throws Exception {
+	public void testanyadirCliente() throws Exception {
 	    Cliente cliente=new Cliente();
 	   cliente.setUsername("username");
 	   cliente.setPassword("password");
@@ -49,6 +49,7 @@ public class ClientePerfTest {
 	   cliente.setApellido_2("apellido2");
 	   cliente.setFecha_nac("fechanac");
 	}
+	
 	@Test
 	@PerfTest(invocations = 40)
 	public void testGetClientes() throws Exception {
