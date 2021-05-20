@@ -24,8 +24,7 @@ public class DatosPrueba {
 			Pelicula p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 			 Sesion s= new Sesion(22.00);
 			pm.makePersistent(p);
-			Entrada e=  new Entrada(40,p,s,12,2,24,"Mario");
-			pm.makePersistent(e);
+			
 
 			tx.commit();
 		} finally {
