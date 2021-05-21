@@ -6,6 +6,7 @@ import java.awt.Color;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -17,6 +18,7 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -52,7 +54,19 @@ public class Cartelera extends JFrame {
 	private JPanel contentPane;
 	private Controller controller;
 	List<Pelicula> peliculas=new ArrayList<Pelicula>();
-
+	private Image foto;
+	private Image foto1;
+	private Image foto2;
+	private Image foto3;
+	private Image foto4;
+	private Image foto5;
+	private Image foto6;
+	private Image foto7;
+	private Image foto8;
+	private Image foto9;
+	private Image foto10;
+	private Image foto11;
+	
 	
 	public Cartelera(Controller controller) {
 		this.controller = controller;
@@ -131,7 +145,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP1= new JLabel();
 
 		lblP1.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP1.setIcon(peliculas.get(0).getPoster());
+		foto= getToolkit().getImage(peliculas.get(0).getRutaFoto());
+        foto= foto.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP1.setIcon(new ImageIcon(foto));
 		lblP1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -146,7 +162,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP2= new JLabel();
 
 		lblP2.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP2.setIcon(peliculas.get(1).getPoster());
+		foto1= getToolkit().getImage(peliculas.get(1).getRutaFoto());
+        foto1= foto1.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP2.setIcon(new ImageIcon(foto1));
 
 		lblP2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -163,8 +181,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP3 = new JLabel("");
 
 		lblP3.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP3.setIcon(peliculas.get(2).getPoster());
-
+		foto2= getToolkit().getImage(peliculas.get(2).getRutaFoto());
+        foto2= foto2.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP3.setIcon(new ImageIcon(foto2));
 		lblP3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -182,8 +201,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP4 = new JLabel("");
 
 		lblP4.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP4.setIcon(peliculas.get(3).getPoster());
-
+		foto3= getToolkit().getImage(peliculas.get(3).getRutaFoto());
+        foto3= foto3.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP4.setIcon(new ImageIcon(foto3));
 		lblP4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -199,8 +219,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP5 = new JLabel("");
 
 		lblP5.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP5.setIcon(peliculas.get(4).getPoster());
-
+		foto4= getToolkit().getImage(peliculas.get(4).getRutaFoto());
+        foto4= foto4.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP5.setIcon(new ImageIcon(foto4));
 		lblP5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -216,8 +237,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP6 = new JLabel("");
 
 		lblP6.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP6.setIcon(peliculas.get(5).getPoster());
-
+		foto5= getToolkit().getImage(peliculas.get(5).getRutaFoto());
+        foto5= foto5.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP6.setIcon(new ImageIcon(foto5));
 		lblP6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -234,8 +256,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP7 = new JLabel("");
 
 		lblP7.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP7.setIcon(peliculas.get(6).getPoster());
-
+		foto6= getToolkit().getImage(peliculas.get(6).getRutaFoto());
+        foto6= foto6.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP7.setIcon(new ImageIcon(foto6));
 
 		lblP7.addMouseListener(new MouseAdapter() {
 			@Override
@@ -251,8 +274,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP8 = new JLabel("");
 
 		lblP8.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP8.setIcon(peliculas.get(7).getPoster());
-
+		foto7= getToolkit().getImage(peliculas.get(7).getRutaFoto());
+        foto7= foto7.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP8.setIcon(new ImageIcon(foto7));
 		lblP8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -270,8 +294,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP9 = new JLabel("");
 
 		lblP9.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP9.setIcon(peliculas.get(8).getPoster());
-
+		foto8= getToolkit().getImage(peliculas.get(8).getRutaFoto());
+        foto8= foto8.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP9.setIcon(new ImageIcon(foto8));
 		lblP9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -288,8 +313,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP10 = new JLabel("");
 
 		lblP10.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP10.setIcon(peliculas.get(9).getPoster());
-
+		foto9= getToolkit().getImage(peliculas.get(9).getRutaFoto());
+        foto9= foto9.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP10.setIcon(new ImageIcon(foto9));
 		lblP10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -305,8 +331,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP11 = new JLabel("");
 
 		lblP11.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP11.setIcon(peliculas.get(10).getPoster());
-
+		foto10= getToolkit().getImage(peliculas.get(10).getRutaFoto());
+        foto10= foto10.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP11.setIcon(new ImageIcon(foto10));
 		lblP11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -324,8 +351,9 @@ public class Cartelera extends JFrame {
 		JLabel lblP12 = new JLabel("");
 
 		lblP12.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP12.setIcon(peliculas.get(11).getPoster());
-
+		foto11= getToolkit().getImage(peliculas.get(11).getRutaFoto());
+        foto11= foto11.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        lblP12.setIcon(new ImageIcon(foto11));
 		lblP12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

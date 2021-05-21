@@ -90,8 +90,7 @@ public class InicioSesion extends JFrame {
 	private void initialize() {
 		
 		
-		
-		
+	
 		getContentPane().setBackground(Color.GRAY);
 		setResizable(false);
 		setForeground(Color.DARK_GRAY);

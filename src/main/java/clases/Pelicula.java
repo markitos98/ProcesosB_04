@@ -18,6 +18,7 @@ import clasesUsuario.Cliente;
  */
 
 @PersistenceCapable(detachable="true")
+@Discriminator(value="Pelicula")
 public class Pelicula implements Serializable 
 {
 	

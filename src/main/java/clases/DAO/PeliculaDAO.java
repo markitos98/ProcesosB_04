@@ -13,8 +13,7 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 
 import clases.Pelicula;
-import clasesUsuario.Cliente;
-import clasesUsuario.Usuario;
+
 
 
 
@@ -39,7 +38,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 		
 		try {
 
-			logger.info("  * Mostrando catalogo de libros...");
+			logger.info("  * Guardando PElicula");
 
 			Pelicula pe = null;
 			tx.begin();
@@ -55,7 +54,7 @@ public class PeliculaDAO implements IPeliculaDAO {
   			
 		} catch (Exception ex) {
 			
-			logger.error("   $ Error recuperando todos los libros: " + ex.getMessage());
+			logger.error("   $ Error guardando peliculas  " + ex.getMessage());
 		
 		} finally {
 			if (tx != null && tx.isActive()) {
