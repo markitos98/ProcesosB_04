@@ -72,9 +72,9 @@ public class Cartelera extends JFrame {
 
 		setContentPane(contentPane);
 		
-//		peliculas = controller.getPeliculas();
+		peliculas = controller.getPeliculas();
 		
-		 	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
+		 /*	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
 		 	peliculas.add(controller.getPelicula("Escape Room"));
 		 	peliculas.add(controller.getPelicula("Fantasy Island"));
 		 	peliculas.add(controller.getPelicula("Malasaña 32"));
@@ -85,7 +85,7 @@ public class Cartelera extends JFrame {
 		 	peliculas.add(controller.getPelicula("Oxygen"));
 		 	peliculas.add(controller.getPelicula("Soul"));
 		 	peliculas.add(controller.getPelicula("Stowaway"));
-		 	peliculas.add(controller.getPelicula("Twist"));
+		 	peliculas.add(controller.getPelicula("Twist"));*/
 		 	
 		 System.out.println(peliculas.get(0).getSinopsis()); 
 			System.out.println(peliculas.get(1).getSinopsis());	
