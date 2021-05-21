@@ -124,19 +124,19 @@ public class VentanaPelicula extends JDialog {
 		btnTrailer.setOpaque(true);
 		btnTrailer.setBorderPainted(false);
 
-		txtTit = new JTextField();
+		txtTit = new JTextField(p.getTitulo());
 		txtTit.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtTit.setEditable(false);
 		txtTit.setColumns(10);
 		txtTit.setVisible(true);
+		
 
-
-		txtAnyo = new JTextField();
+		txtAnyo = new JTextField(p.getAnyo());
 		txtAnyo.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtAnyo.setEditable(false);
 		txtAnyo.setColumns(10);
 
-		textDur = new JTextField();
+		textDur = new JTextField(p.getDuracion());
 		textDur.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		textDur.setEditable(false);
 		textDur.setColumns(10);
@@ -146,7 +146,7 @@ public class VentanaPelicula extends JDialog {
 		lblGenero.setBorder(BorderFactory.createLineBorder(Color.ORANGE,2));
 		lblGenero.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 
-		txtGenero = new JTextField();
+		txtGenero = new JTextField(p.getGenero());
 		txtGenero.setEditable(false);
 		txtGenero.setColumns(10);
 

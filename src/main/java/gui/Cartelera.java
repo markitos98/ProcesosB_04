@@ -72,9 +72,9 @@ public class Cartelera extends JFrame {
 
 		setContentPane(contentPane);
 		
-		peliculas = controller.getPeliculas();
+//	peliculas = controller.getPeliculas();
 		
-		 /*	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
+		 	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
 		 	peliculas.add(controller.getPelicula("Escape Room"));
 		 	peliculas.add(controller.getPelicula("Fantasy Island"));
 		 	peliculas.add(controller.getPelicula("Malasaña 32"));
@@ -85,17 +85,17 @@ public class Cartelera extends JFrame {
 		 	peliculas.add(controller.getPelicula("Oxygen"));
 		 	peliculas.add(controller.getPelicula("Soul"));
 		 	peliculas.add(controller.getPelicula("Stowaway"));
-		 	peliculas.add(controller.getPelicula("Twist"));*/
+		 	peliculas.add(controller.getPelicula("Twist"));
 		 	
-		 System.out.println(peliculas.get(0).getSinopsis()); 
-			System.out.println(peliculas.get(1).getSinopsis());	
-		 System.out.println(peliculas.get(2).getSinopsis());	
-		 System.out.println(peliculas.get(3).getSinopsis());	
-		 System.out.println(peliculas.get(4).getSinopsis());	
-		 System.out.println(peliculas.get(5).getSinopsis());	
-		 System.out.println(peliculas.get(6).getSinopsis());	
-		 System.out.println(peliculas.get(7).getSinopsis());	
-		 System.out.println(peliculas.get(8).getSinopsis());	
+		 System.out.println(peliculas.get(0).toString()); 
+			System.out.println(peliculas.get(1).toString());	
+		 System.out.println(peliculas.get(2).toString());	
+		 System.out.println(peliculas.get(3).toString());	
+		 System.out.println(peliculas.get(4).toString());	
+		 System.out.println(peliculas.get(5).toString());	
+		 System.out.println(peliculas.get(6).toString());	
+		 System.out.println(peliculas.get(7).toString());	
+		 System.out.println(peliculas.get(8).toString());	
 		 
 		 	
 		JPanel panel = new JPanel();

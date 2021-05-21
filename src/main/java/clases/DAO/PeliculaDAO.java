@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import clases.Pelicula;
 import clasesUsuario.Cliente;
+import clasesUsuario.Usuario;
 
 
 
@@ -31,21 +32,22 @@ public class PeliculaDAO implements IPeliculaDAO {
 	public List<Pelicula> getPeliculas() {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		List<Pelicula> usuarios= new ArrayList<Pelicula>();
-		usuarios.clear();
+	
+		List<Pelicula> copia = null;
+		
 
 		try {
 			System.out.println("  * Querying Usuarios");
 			tx.begin();
 			
-			Query<?> query = pm.newQuery("SELECT TITULO,GENERO, ANYO, SINOPSIS,DURACION,TRAILER, RUTAFOTO,RUTAFOTOMENU,SALA FROM " + Pelicula.class+"'");
+			Query<?> query = pm.newQuery("SELECT *FROM " + Pelicula.class);
 			query.setUnique(true);
+		
 			@SuppressWarnings("unchecked")
-			List<Pelicula> clientes = (List<Pelicula>) query.execute();
-			for(Pelicula c: clientes) {
-				usuarios.add(c);
-			}
-			
+
+			List<Pelicula>  peliculas = (List<Pelicula>) query.execute();
+				System.out.println(peliculas);
+				 copia = peliculas;
 			tx.commit();
 		} catch (Exception ex) {
 			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
@@ -57,7 +59,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 			pm.close();
 		}
 
-		return usuarios;
+		return copia;
 
 	}
 
@@ -85,30 +87,21 @@ public class PeliculaDAO implements IPeliculaDAO {
 	
 	public Pelicula getPelicula(String titulo) {
 		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
 		Transaction tx = pm.currentTransaction();
-		
-		Pelicula pelicula  = null;
-		
-		
+		Pelicula pelicula = null; 
+
 		try {
-		
-			logger.info("   * Consultado reservas de: " + titulo);
-			
+			System.out.println("  * Querying a Usuario by username: " + titulo);
 			tx.begin();
-			Query<Pelicula> query = pm.newQuery(Pelicula.class);
-			@SuppressWarnings("unchecked")
-			List<Pelicula> peliculas = (List<Pelicula>) query.execute();
-			for (Pelicula p : peliculas) {
-				if (p.getTitulo().equals(titulo)) {
-					
-					pelicula = p;
-				}
-			}
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Pelicula.class.getName() + " WHERE titulo == '" + titulo + "'");
+			query.setUnique(true);
+			pelicula = (Pelicula) query.execute();
+			
 			tx.commit();
 		} catch (Exception ex) {
-	
-			logger.error("   $ Error retreiving an extent: " + ex.getMessage());
-
+			System.out.println("  $ Error querying a Usuario: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -116,6 +109,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 			pm.close();
 		}
+
 		return pelicula;
 	}
 
