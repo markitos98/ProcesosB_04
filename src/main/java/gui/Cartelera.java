@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,46 +73,46 @@ public class Cartelera extends JFrame {
 
 		setContentPane(contentPane);
 		
-//	peliculas = controller.getPeliculas();
-		
-		 	peliculas.add(controller.getPelicula("Annabelle vuelve a casa"));
-		 	peliculas.add(controller.getPelicula("Escape Room"));
-		 	peliculas.add(controller.getPelicula("Fantasy Island"));
-		 	peliculas.add(controller.getPelicula("Malasaña 32"));
-		 	peliculas.add(controller.getPelicula("Los Vengadores"));
-		 	peliculas.add(controller.getPelicula("Escuadron suicida"));
-		 	peliculas.add(controller.getPelicula("Mortal Kombat"));
-		 	peliculas.add(controller.getPelicula("Mulan"));
-		 	peliculas.add(controller.getPelicula("Oxygen"));
-		 	peliculas.add(controller.getPelicula("Soul"));
-		 	peliculas.add(controller.getPelicula("Stowaway"));
-		 	peliculas.add(controller.getPelicula("Twist"));
-		 	
-		 	
-		 	Pelicula p1 = new Pelicula(peliculas.get(0));
-		 	
-		 System.out.println(peliculas.get(0).toString()); 
-			System.out.println(peliculas.get(1).toString());	
-		 System.out.println(peliculas.get(2).toString());	
-		 System.out.println(peliculas.get(3).toString());	
-		 System.out.println(peliculas.get(4).toString());	
-		 System.out.println(peliculas.get(5).toString());	
-		 System.out.println(peliculas.get(6).toString());	
-		 System.out.println(peliculas.get(7).toString());	
-		 System.out.println(peliculas.get(8).toString());	
+		try {
+			peliculas = controller.getCl().getService().getPeliculas();
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		 
-		 System.out.println(peliculas.get(0).getPoster()); 
-			System.out.println(peliculas.get(1).getPoster());	
-		 System.out.println(peliculas.get(2).getPoster());	
-		 System.out.println(peliculas.get(3).getPoster());	
-		 System.out.println(peliculas.get(4).getPoster());	
-		 System.out.println(peliculas.get(5).getPoster());	
-		 System.out.println(peliculas.get(6).getPoster());	
-		 System.out.println(peliculas.get(7).getPoster());	
-		 System.out.println(peliculas.get(8).getPoster());	
-		 
-		 System.out.println(p1.toString());
-		 System.out.println(p1.getPoster());
+//		if(peliculas.isEmpty() ) {
+//		
+//			Pelicula p1 = 	controller.getPelicula("Annabelle vuelve a casa");
+//			 
+//			 System.out.println(p1.toString());
+//			 
+//			 peliculas.add(p1);
+//		 	peliculas.add(controller.getPelicula("Escape Room"));
+//		 	peliculas.add(controller.getPelicula("Fantasy Island"));
+//		 	peliculas.add(controller.getPelicula("Malasaña 32"));
+//		 	peliculas.add(controller.getPelicula("Los Vengadores"));
+//		 	peliculas.add(controller.getPelicula("Escuadron suicida"));
+//		 	peliculas.add(controller.getPelicula("Mortal Kombat"));
+//		 	peliculas.add(controller.getPelicula("Mulan"));
+//		 	peliculas.add(controller.getPelicula("Oxygen"));
+//		 	peliculas.add(controller.getPelicula("Soul"));
+//		 	peliculas.add(controller.getPelicula("Stowaway"));
+//		 	peliculas.add(controller.getPelicula("Twist"));
+//		 	
+//		}
+			System.out.println(peliculas.get(0));
+		 	System.out.println(peliculas.get(1));
+		 	System.out.println(peliculas.get(2));
+		 	System.out.println(peliculas.get(3));
+		 	System.out.println(peliculas.get(4));
+		 	System.out.println(peliculas.get(5));
+		 	System.out.println(peliculas.get(6));
+		 	System.out.println(peliculas.get(7));
+		 	System.out.println(peliculas.get(8));
+		 	System.out.println(peliculas.get(9));
+		 	System.out.println(peliculas.get(10));
+		 	System.out.println(peliculas.get(11));
+	
 		 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.ORANGE);
@@ -130,11 +131,11 @@ public class Cartelera extends JFrame {
 		JLabel lblP1= new JLabel();
 
 		lblP1.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
-		lblP1.setIcon(p1.getPoster());
+		lblP1.setIcon(peliculas.get(0).getPoster());
 		lblP1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPelicula vp= new VentanaPelicula(p1);
+				VentanaPelicula vp= new VentanaPelicula(peliculas.get(0));
 				vp.setVisible(true);
 
 
@@ -220,7 +221,6 @@ public class Cartelera extends JFrame {
 		lblP6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				 peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(5));
 				vp.setVisible(true);
 
@@ -240,7 +240,6 @@ public class Cartelera extends JFrame {
 		lblP7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				List<Pelicula> peliculas = controller.getPeliculas();
 				VentanaPelicula vp= new VentanaPelicula(peliculas.get(6));
 				vp.setVisible(true);
 
@@ -415,8 +414,9 @@ public class Cartelera extends JFrame {
 
 				Cartelera.this.dispose();
 				MenuPrincipal menu= new MenuPrincipal(controller);
-				menu.setVisible(true);
 				peliculas.clear();
+				menu.setVisible(true);
+			
 
 			}
 		});

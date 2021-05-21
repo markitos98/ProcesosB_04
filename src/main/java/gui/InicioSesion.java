@@ -23,6 +23,7 @@ import javax.swing.SwingUtilities;
 import database.Database;
 
 import cine.controller.Controller;
+import clases.Sesion;
 
 
 /**
@@ -87,6 +88,10 @@ public class InicioSesion extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		
+		
 		getContentPane().setBackground(Color.GRAY);
 		setResizable(false);
 		setForeground(Color.DARK_GRAY);
@@ -212,7 +217,7 @@ public class InicioSesion extends JFrame {
 		btnNewButton_2.setBounds(254, 242, 138, 29);
 		getContentPane().add(btnNewButton_2);
 	}
-
+		
 
 	public void ejecutarVentana() {
 		try {

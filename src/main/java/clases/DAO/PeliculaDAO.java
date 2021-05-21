@@ -31,26 +31,32 @@ public class PeliculaDAO implements IPeliculaDAO {
 	@Override
 	public List<Pelicula> getPeliculas() {
 		PersistenceManager pm = pmf.getPersistenceManager();
+
+
 		Transaction tx = pm.currentTransaction();
-	
-		List<Pelicula> copia = null;
 		
-
+		List<Pelicula> pelicula = new ArrayList<Pelicula>();
+		
 		try {
-			System.out.println("  * Querying Usuarios");
-			tx.begin();
-			
-			Query<?> query = pm.newQuery("SELECT *FROM " + Pelicula.class);
-			query.setUnique(true);
-		
-			@SuppressWarnings("unchecked")
 
-			List<Pelicula>  peliculas = (List<Pelicula>) query.execute();
-				System.out.println(peliculas);
-				 copia = peliculas;
+			logger.info("  * Mostrando catalogo de libros...");
+
+			Pelicula pe = null;
+			tx.begin();
+			Query<Pelicula> query = pm.newQuery(Pelicula.class);
+			@SuppressWarnings("unchecked")
+			List<Pelicula> pelis = (List<Pelicula>) query.execute();
+			
+			for (Pelicula p : pelis) {
+				pe = p;
+				pelicula.add(pe);
+			}
 			tx.commit();
+  			
 		} catch (Exception ex) {
-			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
+			
+			logger.error("   $ Error recuperando todos los libros: " + ex.getMessage());
+		
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -58,8 +64,10 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 			pm.close();
 		}
-
-		return copia;
+		
+		
+		
+		return pelicula;
 
 	}
 

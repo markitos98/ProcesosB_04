@@ -1,5 +1,6 @@
 package clasesUsuario;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,9 +22,13 @@ import clases.Pelicula;
 @PersistenceCapable(detachable="true")
 @Inheritance(strategy=InheritanceStrategy.SUPERCLASS_TABLE)
 @Discriminator(value="Cliente")
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String email;
 	public String nombre;
 	public String apellido_1;

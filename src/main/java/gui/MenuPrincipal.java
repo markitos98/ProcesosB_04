@@ -26,6 +26,8 @@ import javax.swing.border.EmptyBorder;
 
 import cine.controller.Controller;
 import clases.Pelicula;
+import clases.Sesion;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 
@@ -83,10 +85,13 @@ public class MenuPrincipal extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 
 				MenuPrincipal.this.dispose();
+			
+				
+					Cartelera cartelera = new Cartelera(controller);
+					cartelera.setVisible(true);
 
-				Cartelera cartelera = new Cartelera(controller);
-				cartelera.setVisible(true);
-			}
+				}
+						
 		});
 		btnCartelera.setBackground(Color.ORANGE);
 		btnCartelera.setForeground(Color.GRAY);

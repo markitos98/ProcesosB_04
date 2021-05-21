@@ -21,6 +21,8 @@ public class Controller {
 		cl = new MainClient();
 		cl.setService(args);
 		is = new InicioSesion(this);
+		
+		
 
 	}
 
@@ -44,6 +46,7 @@ public class Controller {
 
 	public static void main(String[] args) throws Exception {
 		Controller c = new Controller(args);
+		
 	}
 
 	public void anyadirUsuario(String username, String password, String email, String nombre, String apellido_1,
@@ -107,4 +110,13 @@ public class Controller {
 		return peli;
 	}
 	
+	
+	public void anyadirPelicula(String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer,
+			String rutaFoto, String rutaFotoMenu, int sala) {
+		try {
+			cl.getService().anyadirPelicula(titulo, genero, anyo, sinopsis, duracion, trailer, rutaFoto, rutaFotoMenu, sala);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

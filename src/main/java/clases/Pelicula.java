@@ -18,7 +18,6 @@ import clasesUsuario.Cliente;
  */
 
 @PersistenceCapable(detachable="true")
-
 public class Pelicula implements Serializable 
 {
 	
@@ -26,7 +25,7 @@ public class Pelicula implements Serializable
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@PrimaryKey
+	
 	private String titulo;
 	private String genero; 
 	private int anyo;
