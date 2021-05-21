@@ -151,7 +151,7 @@ public class Pelicula implements Serializable
 	//Asocia las imagenes a las peliculas si estas tienen el mismo nombre del título
 	public static ImageIcon posterPelicula(String titulo) {
 
-		ImageIcon imageIcon = new ImageIcon("./resources/Imagenes" + titulo + ".jpg");
+		ImageIcon imageIcon = new ImageIcon(".src/main/resources/Imagenes/" + titulo + ".jpg");
 		Image image = imageIcon.getImage();
 		Image newimg = image.getScaledInstance(200, 277, java.awt.Image.SCALE_SMOOTH);
 		imageIcon = new ImageIcon(newimg);
