@@ -29,6 +29,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import cine.controller.Controller;
 import clases.Pelicula;
 
 public class VentanaEntrada extends JDialog {
@@ -48,6 +49,7 @@ public class VentanaEntrada extends JDialog {
 	public List<Integer> almacenar;
 	public List<Integer> guardar;
 	public int spinnerValue = -1;
+	private Controller controller;
 
 	/**
 	 * Launch the application.
@@ -318,7 +320,7 @@ public class VentanaEntrada extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 
-						Pago pago= new Pago();
+						Pago pago= new Pago(controller, p);
 					}
 				});
 				okButton.setForeground(Color.ORANGE);

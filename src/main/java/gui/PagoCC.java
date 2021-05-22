@@ -15,13 +15,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+
+import cine.controller.Controller;
+import clases.Pelicula;
 /**
  * 
  * @author alex
  *
  */
 
-public class PagoCC {
+public class PagoCC extends JFrame{
 
 	private JFrame frame3;
 	private JTextField textTarjeta;
@@ -32,24 +35,19 @@ public class PagoCC {
 	static int entraInicial=0;
 	public int cantidad;
 	public int preciot;
+	private Controller controller;
+	private Pelicula peli;
 	/**
 	 * Launch the application.
 	 */
 
-	public static void main(String[] args) {
-
-		SwingUtilities.invokeLater(new Runnable() {
-				public void run() {
-					try {
-						PagoCC window = new PagoCC();
-						window.frame3.setVisible(true);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
-		}
-	
+	public PagoCC(Controller controller, Pelicula p) {
+		this.controller = controller;
+		initialize();
+		this.peli = p;
+		this.setVisible(true);
+		
+	}
 
 	/**
 	 * Create the application.
@@ -62,31 +60,31 @@ public class PagoCC {
 	 */
 	private void initialize() {
 		frame3 = new JFrame();
-		frame3.getContentPane().setBackground(Color.GRAY);
-		frame3.setBounds(600, 300, 491, 356);
-		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame3.getContentPane().setLayout(null);
+		getContentPane().setBackground(Color.GRAY);
+		setBounds(600, 300, 491, 356);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 
 
 		JLabel lblNumeroTarjeta = new JLabel("Número tarjeta");
 		lblNumeroTarjeta.setForeground(Color.ORANGE);
 		lblNumeroTarjeta.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblNumeroTarjeta.setBounds(55, 124, 157, 20);
-		frame3.getContentPane().add(lblNumeroTarjeta);
+		getContentPane().add(lblNumeroTarjeta);
 
 
 		JLabel lblCcv = new JLabel("CCV");
 		lblCcv.setForeground(Color.ORANGE);
 		lblCcv.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblCcv.setBounds(55, 184, 69, 20);
-		frame3.getContentPane().add(lblCcv);
+		getContentPane().add(lblCcv);
 
 
 		JLabel lblDniCliente = new JLabel("Nombre");
 		lblDniCliente.setForeground(Color.ORANGE);
 		lblDniCliente.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblDniCliente.setBounds(55, 92, 126, 20);
-		frame3.getContentPane().add(lblDniCliente);
+		getContentPane().add(lblDniCliente);
 
 
 		JLabel lblIntroduceLosDatos = new JLabel("PAGO TARJETA DE CRÉDITO");
@@ -95,11 +93,11 @@ public class PagoCC {
 		lblIntroduceLosDatos.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 28));
 		lblIntroduceLosDatos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntroduceLosDatos.setBounds(-23, 23, 534, 49);
-		frame3.getContentPane().add(lblIntroduceLosDatos);
+		getContentPane().add(lblIntroduceLosDatos);
 
 		textTarjeta= new JTextField();
 		textTarjeta.setBounds(263, 122, 152, 26);
-		frame3.getContentPane().add(textTarjeta);
+		getContentPane().add(textTarjeta);
 		textTarjeta.setColumns(10);
 		textTarjeta.addKeyListener(new KeyListener(){
 
@@ -120,7 +118,7 @@ public class PagoCC {
 
 		textCCV = new JTextField();
 		textCCV.setBounds(263, 182, 62, 26);
-		frame3.getContentPane().add(textCCV);
+		getContentPane().add(textCCV);
 		textCCV.setColumns(10);
 		textCCV.addKeyListener(new KeyListener(){
 
@@ -149,8 +147,7 @@ public class PagoCC {
 		btnPagar.setBorderPainted(false);
 		btnPagar.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 		btnPagar.setBounds(80, 247, 138, 29);
-		frame3.getContentPane().add(btnPagar);
-
+		getContentPane().add(btnPagar);
 
 
 
@@ -168,13 +165,13 @@ public class PagoCC {
 
 				if(cmd20.equals("Open20"))
 				{
-					frame3.dispose();
+					dispose();
 
 				}
 			}});
 
 		btnCancel.setBounds(263, 247, 152, 29);
-		frame3.getContentPane().add(btnCancel);
+		getContentPane().add(btnCancel);
 
 
 
@@ -182,31 +179,31 @@ public class PagoCC {
 		MescomboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		MescomboBox.setMaximumRowCount(12);
 		MescomboBox.setBounds(263, 153, 72, 27);
-		frame3.getContentPane().add(MescomboBox);
+		getContentPane().add(MescomboBox);
 
 		JComboBox AnyocomboBox_1 = new JComboBox();
 		AnyocomboBox_1.setBackground(Color.GRAY);
 		AnyocomboBox_1.setMaximumRowCount(40);
 		AnyocomboBox_1.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"}));
 		AnyocomboBox_1.setBounds(351, 153, 72, 27);
-		frame3.getContentPane().add(AnyocomboBox_1);
+		getContentPane().add(AnyocomboBox_1);
 
 		JLabel lblFecha = new JLabel("Fecha cad.");
 		lblFecha.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblFecha.setForeground(Color.ORANGE);
 		lblFecha.setBounds(55, 156, 126, 16);
-		frame3.getContentPane().add(lblFecha);
+		getContentPane().add(lblFecha);
 
 		textNombre = new JTextField();
 		textNombre.setBounds(263, 90, 152, 22);
-		frame3.getContentPane().add(textNombre);
+		getContentPane().add(textNombre);
 		textNombre.setColumns(10);
 
 		JLabel lblB = new JLabel("/");
 		lblB.setForeground(Color.ORANGE);
 		lblB.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblB.setBounds(338, 156, 18, 16);
-		frame3.getContentPane().add(lblB);
+		getContentPane().add(lblB);
 
 	}
 

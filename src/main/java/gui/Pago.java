@@ -45,6 +45,7 @@ public class Pago extends JFrame {
 	public Controller controller;
 	private Image foto;
 	private Image foto2;
+	private Pelicula peli;
 	public int preciot;
 	public static final String EMAIL_PATTER = 
 			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -57,9 +58,10 @@ public class Pago extends JFrame {
 	/**
 	 * Create the application.
 	 */
-	public Pago(Controller controller) {
+	public Pago(Controller controller, Pelicula p) {
 		this.controller = controller;
 		initialize();
+		this.peli = p;
 		this.setVisible(true);
 	}
 	public Pago(String persona, int cantidad) {
@@ -134,7 +136,7 @@ public class Pago extends JFrame {
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				PagoCC cc= new PagoCC();
+				PagoCC cc= new PagoCC(controller, peli);
 			
 				Usuario user = Database.getUsuario(persona);
 				
@@ -162,18 +164,6 @@ public class Pago extends JFrame {
 
 	}	
 	
-	
-	public void ejecutarVentana() {
-		try {
-			final Pago Ventana = new Pago(controller);
-			SwingUtilities.invokeAndWait(new Runnable() {
-				public void run() {
-					Ventana.setVisible(true);
-				}
-			});
-		} catch (Exception e) {
-			System.exit(1);  
-		}
-}
+
 
 }
