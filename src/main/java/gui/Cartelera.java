@@ -182,7 +182,7 @@ public class Cartelera extends JFrame {
 
 		lblP3.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		foto2= getToolkit().getImage(peliculas.get(2).getRutaFoto());
-        foto2= foto2.getScaledInstance(240, 420, Image.SCALE_DEFAULT);
+        foto2= foto2.getScaledInstance(200, 320, Image.SCALE_DEFAULT);
         lblP3.setIcon(new ImageIcon(foto2));
 		lblP3.addMouseListener(new MouseAdapter() {
 			@Override

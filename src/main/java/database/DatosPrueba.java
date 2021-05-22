@@ -48,7 +48,7 @@ public class DatosPrueba {
 			Pelicula p5=  new Pelicula("Escuadron suicida","ACCION",2020,"Película de marvel",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Escuadron suicida.jpeg","posters/Malasaña.jpg",2);
 			pm.makePersistent(p5);
 			
-			Pelicula p6=  new Pelicula("Mortal Kombat","ACCION",2020,"Manolo y Candela se instalan en el madrileño barrio de Malasaña, junto a sus tres hijos",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/imagenes/Mortal kombat.jpg","posters/Malasaña.jpg",2);
+			Pelicula p6=  new Pelicula("Mortal Kombat","ACCION",2020,"Manolo y Candela se instalan en el madrileño barrio de Malasaña, junto a sus tres hijos",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/imagenes/Mortal kombat.jpeg","posters/Malasaña.jpg",2);
 			pm.makePersistent(p6);
 			
 			Pelicula p7=  new Pelicula("Soul","INFANTIL",2020,"Manolo y Candela se instalan en el madrileño barrio de Malasaña, junto a sus tres hijos y el abuelo Fe.",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Soul.jpeg","posters/Malasaña.jpg",2);
