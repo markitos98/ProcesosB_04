@@ -12,6 +12,7 @@ import categories.IntegrationTest;
 import clases.Entrada;
 import clases.Pelicula;
 import clases.Sesion;
+import clases.DAO.EntradaDAO;
 import junit.framework.JUnit4TestAdapter;
 
 @Category(IntegrationTest.class)
@@ -41,7 +42,7 @@ public class EntradaPerfTest {
 	
 		
 		@Test
-		@PerfTest(invocations = 40)
+		@PerfTest(invocations = 20)
 		public void testanyadirEntrada() throws Exception {
 		 
 			Entrada entrada=new Entrada();
@@ -59,8 +60,17 @@ public class EntradaPerfTest {
 		   entrada.setPrecioTotal(27);
 		   
 		}
+		@Test
+		@PerfTest(invocations = 20)
 	
-	
-	
+		public void testdeleteEntrada() throws Exception {
+
+			EntradaDAO entrada=new EntradaDAO();
+			entrada.deleteEntrada(e);
+			
+
+			
+		}
+		
 	
 }
