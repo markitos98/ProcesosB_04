@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
 
+import cine.controller.Controller;
 import clases.Pelicula;
 import clasesUsuario.Usuario;
 import database.Database;
@@ -35,12 +36,13 @@ import java.util.logging.Logger;
  * @author alex
  *
  */
-public class Pago {
+public class Pago extends JFrame {
 
 	private JFrame frame3;
 	static int entraInicial=0;
 	public int cantidad;
 	public String persona;
+	public Controller controller;
 	private Image foto;
 	private Image foto2;
 	public int preciot;
@@ -55,10 +57,10 @@ public class Pago {
 	/**
 	 * Create the application.
 	 */
-	public Pago() {
-		super();
+	public Pago(Controller controller) {
+		this.controller = controller;
 		initialize();
-		frame3.setVisible(true);
+		this.setVisible(true);
 	}
 	public Pago(String persona, int cantidad) {
 		this.persona=persona;
@@ -71,10 +73,10 @@ public class Pago {
 	 */
 	private void initialize() {
 		frame3 = new JFrame();
-		frame3.getContentPane().setBackground(Color.GRAY);
-		frame3.setBounds(600, 300, 491, 356);
-		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame3.getContentPane().setLayout(null);
+		getContentPane().setBackground(Color.GRAY);
+		setBounds(600, 300, 491, 356);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
 
 
 		JLabel lblIntroduceLosDatos = new JLabel("PAGO PAYPAL");
@@ -83,7 +85,7 @@ public class Pago {
 		lblIntroduceLosDatos.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 28));
 		lblIntroduceLosDatos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIntroduceLosDatos.setBounds(-23, 16, 534, 49);
-		frame3.getContentPane().add(lblIntroduceLosDatos);
+		getContentPane().add(lblIntroduceLosDatos);
 
 
 
@@ -102,13 +104,13 @@ public class Pago {
 
 				if(cmd20.equals("Open20"))
 				{
-					frame3.dispose();
+					dispose();
 
 				}
 			}});
 
 		btnCancel.setBounds(171, 264, 152, 29);
-		frame3.getContentPane().add(btnCancel);
+		getContentPane().add(btnCancel);
 		
 		JLabel lblNewLabel = new JLabel("",SwingConstants.CENTER);
 		lblNewLabel.addMouseListener(new MouseAdapter() {
@@ -126,7 +128,7 @@ public class Pago {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon("./src/main/resources/Imagenes/paypal.png"));
 		lblNewLabel.setBounds(40, 40, 130, 153);
-		frame3.getContentPane().add(lblNewLabel);
+		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
@@ -155,8 +157,23 @@ public class Pago {
 		lblNewLabel_1.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel_1.setIcon(new ImageIcon("./src/main/resources/Imagenes/tarjeta.png"));
 		lblNewLabel_1.setBounds(240, 76, 231, 186);
-		frame3.getContentPane().add(lblNewLabel_1);
+		getContentPane().add(lblNewLabel_1);
 
 
 	}	
+	
+	
+	public void ejecutarVentana() {
+		try {
+			final Pago Ventana = new Pago(controller);
+			SwingUtilities.invokeAndWait(new Runnable() {
+				public void run() {
+					Ventana.setVisible(true);
+				}
+			});
+		} catch (Exception e) {
+			System.exit(1);  
+		}
+}
+
 }
