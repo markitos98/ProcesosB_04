@@ -30,6 +30,7 @@ public class GetUsuarioTest {
 		
 		Cliente cl = new Cliente();
 		when(textField1.getText()).thenReturn("Leire");
+		cl.setUsername(textField1.getText());
 		
 		assertEquals(cl.getUsername(), c.getUsername());
 		
