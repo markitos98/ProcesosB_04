@@ -144,6 +144,7 @@ public class PagoCC extends JFrame{
 		btnPagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				controller.anyadirEntrada((int)Math.random(), peli, null, preciot, cantidad, preciot, getName());
 				
 			}
 		});

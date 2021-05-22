@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import clases.Pelicula;
+import clases.Sesion;
 import client.MainClient;
 import gui.InicioSesion;
 
@@ -110,4 +111,13 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
+	
+	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
+		try {
+			cl.getService().anyadirEntrada(id, infoPelicula, infoSesion, precio, cantidad, precioTotal, nombre);;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
