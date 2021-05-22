@@ -109,7 +109,7 @@ public class VentanaEntrada extends JDialog {
 		lblPel.setBorder(BorderFactory.createLineBorder(Color.ORANGE,2));
 		lblPel.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 
-		txtPel = new JTextField();
+		txtPel = new JTextField(p.getTitulo());
 		txtPel.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 		txtPel.setEditable(false);
 		txtPel.setColumns(10);
