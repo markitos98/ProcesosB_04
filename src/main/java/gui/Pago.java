@@ -1,7 +1,9 @@
 package gui;
 
 import java.awt.Color;
+
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -39,6 +41,8 @@ public class Pago {
 	static int entraInicial=0;
 	public int cantidad;
 	public String persona;
+	private Image foto;
+	private Image foto2;
 	public int preciot;
 	public static final String EMAIL_PATTER = 
 			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -116,10 +120,12 @@ public class Pago {
 			}
 		});
 		
+	
+
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("./Imagenes/paypal.png"));
-		lblNewLabel.setBounds(60, 75, 130, 153);
+		lblNewLabel.setIcon(new ImageIcon("./src/main/resources/Imagenes/paypal.png"));
+		lblNewLabel.setBounds(40, 40, 130, 153);
 		frame3.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -147,7 +153,7 @@ public class Pago {
 			}
 		});
 		lblNewLabel_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon("./Imagenes/tarjeta.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("./src/main/resources/Imagenes/tarjeta.png"));
 		lblNewLabel_1.setBounds(240, 76, 231, 186);
 		frame3.getContentPane().add(lblNewLabel_1);
 
