@@ -22,7 +22,8 @@ public class EntradaPerfTest {
 	
 	private Pelicula p = new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 	private Sesion s = new Sesion(22.00);
-	private Entrada e = new Entrada(3, p, s, 9, 2, 18, "Marcos");
+	private Entrada c= new Entrada(1,p,s,9,2,18,"gorka" );
+
 	
 	
 	
@@ -66,10 +67,52 @@ public class EntradaPerfTest {
 		public void testdeleteEntrada() throws Exception {
 
 			EntradaDAO entrada=new EntradaDAO();
-			entrada.deleteEntrada(e);
+			entrada.deleteEntrada(c);
 			
 
 			
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void getEntradaTest() throws Exception {
+		    Entrada e = new Entrada();
+		   e.setId(Integer.parseInt("id"));
+		   e.setPrecio(Integer.parseInt("precio"));
+		   e.setCantidad(Integer.parseInt("cantidad"));
+		   e.setPrecioTotal(Integer.parseInt("precioTotal"));
+		  e.setNombre("nombre");
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void getentrada() throws Exception {
+			EntradaDAO udao= new EntradaDAO();
+			   udao.getEntrada(c.getId());
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void testComprobarCantidad() throws Exception {
+			EntradaDAO udao= new EntradaDAO();
+			   udao.getEntrada(c.getCantidad());
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void testComprobarPrecio() throws Exception {
+			EntradaDAO udao= new EntradaDAO();
+			   udao.getEntrada(c.getPrecio());
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void testComprobarPRecioTotal() throws Exception {
+			EntradaDAO udao= new EntradaDAO();
+			   udao.getEntrada(c.getPrecioTotal());
+		   
+		}
+		@Test
+		@PerfTest(invocations = 120)
+		public void testComprobarNombre() throws Exception {
+			EntradaDAO udao= new EntradaDAO();
+			   udao.getEntrada(Integer.parseInt(c.getNombre()));
+		   
 		}
 		
 	
