@@ -20,7 +20,7 @@ public class CambiarImagen {
 	static int contador=0;
 	public static Controller controller;
 	
-	public static void main () {
+	public static void main (Controller controller) {
 
 
 
@@ -31,7 +31,7 @@ public class CambiarImagen {
 
 		int velmil= velocidad*1000;
 
-		final MenuPrincipal cartelera= new MenuPrincipal(controller);
+		MenuPrincipal cartelera = new MenuPrincipal(controller);
 		cartelera.setVisible(true);
 
 		//tarea para ir cambiando las imágenes del menú principal cada x segundos

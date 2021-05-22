@@ -1,5 +1,6 @@
 package gui;
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -20,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import gui.CambiarImagen;
 import database.Database;
 
 import cine.controller.Controller;
@@ -149,8 +151,8 @@ public class InicioSesion extends JFrame {
 				try {
 					if(controller.comprobarUsurio(textField.getText(), passText)) {
 						
-						MenuPrincipal menuprincipal = new MenuPrincipal(controller);
-						menuprincipal.setVisible(true);
+						CambiarImagen cam= new CambiarImagen();
+						CambiarImagen.main(controller);
 						InicioSesion.this.dispose();
 
 					
