@@ -3,5 +3,5 @@
 .project
 .settings/
 /bin/
-
+datanucleus.properties
 datanucleus.log
