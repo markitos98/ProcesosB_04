@@ -13,20 +13,20 @@ import clasesUsuario.Cliente;
 import junit.framework.JUnit4TestAdapter;
 
 @Category(IntegrationTest.class)
-public class ClientePerfTest {
+public class ComprobarUsuarioPerfTest {
 
 	private Cliente c= new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
 ;
 	
 	
 	
-	static Logger logger = Logger.getLogger(ClientePerfTest.class.getName());
+	static Logger logger = Logger.getLogger(ComprobarUsuarioPerfTest.class.getName());
 
 	// If you use the EmptyReportModule, the report is not generated
 	//@Rule public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());
 	
 	public static junit.framework.Test suite() {
-		 return new JUnit4TestAdapter(ClientePerfTest.class);
+		 return new JUnit4TestAdapter(ComprobarUsuarioPerfTest.class);
 	}
 	
 	@Rule
