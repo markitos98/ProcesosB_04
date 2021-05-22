@@ -1,7 +1,7 @@
 /target/
 .classpath
-.settings/
 .project
+.settings/
 /bin/
 datanucleus.properties
 datanucleus.log
