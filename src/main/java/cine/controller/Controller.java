@@ -26,20 +26,11 @@ public class Controller {
 
 	}
 
-	/**
-	 * Obtiene el servicio del cliente.
-	 * 
-	 * @return cl
-	 */
 	public MainClient getCl() {
 		return cl;
 	}
 
-	/**
-	 * Proporciona el sevicio al cliente.
-	 * 
-	 * @param cl
-	 */
+	
 	public void setCl(MainClient cl) {
 		this.cl = cl;
 	}
