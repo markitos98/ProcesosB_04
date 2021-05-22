@@ -118,7 +118,7 @@ public class Pago {
 		
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("./Imagenes/888870.png"));
+		lblNewLabel.setIcon(new ImageIcon("./Imagenes/paypal.png"));
 		lblNewLabel.setBounds(60, 75, 130, 153);
 		frame3.getContentPane().add(lblNewLabel);
 		
@@ -147,7 +147,7 @@ public class Pago {
 			}
 		});
 		lblNewLabel_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon("./Imagenes/db972633301187368f9e36e722375b33-icono-de-tarjeta-de-credito.png"));
+		lblNewLabel_1.setIcon(new ImageIcon("./Imagenes/tarjeta.png"));
 		lblNewLabel_1.setBounds(240, 76, 231, 186);
 		frame3.getContentPane().add(lblNewLabel_1);
 
