@@ -141,6 +141,12 @@ public class PagoCC extends JFrame{
 
 		//Al clickar genera la entrada en un pdf (Contenido del fichero no terminado)
 		JButton btnPagar = new JButton("Aceptar");
+		btnPagar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+		});
 		btnPagar.setBackground(UIManager.getColor("Button.select"));
 		btnPagar.setForeground(Color.ORANGE);
 		btnPagar.setOpaque(true);

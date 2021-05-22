@@ -37,6 +37,7 @@ public class PagoPaypal {
 
 
 	private JPasswordField passwordField;
+	private JTextField textField;
 	/**
 	 * Launch the application.
 	 */
@@ -146,6 +147,18 @@ public class PagoPaypal {
 		passwordField = new JPasswordField();
 		passwordField.setBounds(263, 152, 152, 26);
 		frame3.getContentPane().add(passwordField);
+		
+		textField = new JTextField();
+		textField.setBounds(263, 90, 152, 26);
+		frame3.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
+		lblNewLabel.setForeground(Color.ORANGE);
+		lblNewLabel.setBounds(55, 92, 70, 20);
+		frame3.getContentPane().add(lblNewLabel);
 
 
-	}}
+	}	
+}
