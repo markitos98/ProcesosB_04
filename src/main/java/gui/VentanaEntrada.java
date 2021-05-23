@@ -28,7 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
-
+import gui.Asientos;
 import cine.controller.Controller;
 import clasesPelicula.Pelicula;
 

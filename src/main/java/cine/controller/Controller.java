@@ -21,7 +21,8 @@ public class Controller {
 	public Controller(String[] args) throws RemoteException {
 		cl = new MainClient();
 		cl.setService(args);
-		is = new InicioSesion(this);
+		is = new InicioSesion(this, null);
+		
 		
 		
 

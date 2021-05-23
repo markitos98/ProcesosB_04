@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Image;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -47,10 +48,12 @@ public class MenuPrincipal extends JDialog {
 	public JLabel lblNewLabel_1= new JLabel();
 	public JLabel lblPosM;
 	private Controller controller;
+	private List<Pelicula> peliculas;
 
 
-	public MenuPrincipal(Controller controller) {
+	public MenuPrincipal(Controller controller, List<Pelicula> p) {
 		this.controller = controller;
+		this.peliculas = p;
 		ventana();
 		this.setVisible(true);
 	}
@@ -88,7 +91,7 @@ public class MenuPrincipal extends JDialog {
 				MenuPrincipal.this.dispose();
 			
 				
-					Cartelera cartelera = new Cartelera(controller);
+					Cartelera cartelera = new Cartelera(controller, peliculas);
 					cartelera.setVisible(true);
 
 				}
@@ -154,7 +157,8 @@ public class MenuPrincipal extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 						MenuPrincipal.this.dispose();
 
-						InicioSesion sesion =new  InicioSesion(controller);
+						InicioSesion sesion =new  InicioSesion(controller, peliculas);
+						
 						sesion.setVisible(true);
 					}
 				});
@@ -170,18 +174,7 @@ public class MenuPrincipal extends JDialog {
 		
 	}
 
-	public void ejecutarVentana() {
-		try {
-			final MenuPrincipal Ventana = new MenuPrincipal(controller);
-			SwingUtilities.invokeAndWait(new Runnable() {
-				public void run() {
-					Ventana.setVisible(true);
-				}
-			});
-		} catch (Exception e) {
-			System.exit(1);  
-		}
-}
+
 
 
 }

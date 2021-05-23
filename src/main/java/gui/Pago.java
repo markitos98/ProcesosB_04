@@ -23,7 +23,6 @@ import javax.swing.border.MatteBorder;
 import cine.controller.Controller;
 import clasesPelicula.Pelicula;
 import clasesUsuario.Usuario;
-import database.Database;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -138,7 +137,7 @@ public class Pago extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				PagoCC cc= new PagoCC(controller, peli);
 			
-				Usuario user = Database.getUsuario(persona);
+//				Usuario user = Database.getUsuario(persona);
 				
 //				PaymentEnum paymentType = user.getPaymentType();
 //				try{

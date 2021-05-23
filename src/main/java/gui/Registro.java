@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import cine.controller.Controller;
-import database.*;
 
 
 /**
@@ -203,7 +202,7 @@ public class Registro extends JFrame {
 				if(cmd1.equals("Open1"))
 				{
 					 Registro.this.dispose();
-					new InicioSesion(controller);
+				
 				}
 			}
 		});

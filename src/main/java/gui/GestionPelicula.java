@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -37,6 +38,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import cine.controller.Controller;
 import clasesPelicula.Genero;
+import clasesPelicula.Pelicula;
 
 
 public class GestionPelicula extends JDialog {
@@ -56,7 +58,8 @@ public class GestionPelicula extends JDialog {
 	File file;
 	File file2;
 	private Controller controller;
-
+	private List<Pelicula> peliculas;
+	
 	DefaultListModel<String> listmodel = new DefaultListModel<String>();
 
 
@@ -65,8 +68,9 @@ public class GestionPelicula extends JDialog {
 	 * Launch the application.
 	 */
 	
-	public GestionPelicula(Controller controller) {
+	public GestionPelicula(Controller controller, List<Pelicula> p) {
 		this.controller = controller;
+		this.peliculas = p;
 		ventana();
 		this.setVisible(true);
 	}
@@ -385,7 +389,7 @@ public class GestionPelicula extends JDialog {
 							controller.anyadirPelicula(titulo, genero, anyo, sinopsis, duracion, url, fotoPoster, fotoPosterMenu, sala);
 
 							GestionPelicula.this.dispose();
-							VentanaGestion vg = new VentanaGestion(controller);
+							VentanaGestion vg = new VentanaGestion(controller, peliculas);
 							vg.setVisible(true);
 							
 							
@@ -414,7 +418,7 @@ public class GestionPelicula extends JDialog {
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						GestionPelicula.this.dispose();
-						VentanaGestion vg = new VentanaGestion(controller);
+						VentanaGestion vg = new VentanaGestion(controller, peliculas);
 						vg.setVisible(true);
 					}
 				});

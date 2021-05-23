@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -27,7 +28,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import database.Database;
 import gui.VentanaPelicula;
 
 import javax.swing.SwingConstants;
@@ -53,7 +53,7 @@ public class Cartelera extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
-	List<Pelicula> peliculas=new ArrayList<Pelicula>();
+	List<Pelicula> peliculas;
 	private Image foto;
 	private Image foto1;
 	private Image foto2;
@@ -68,8 +68,9 @@ public class Cartelera extends JFrame {
 	private Image foto11;
 	
 	
-	public Cartelera(Controller controller) {
+	public Cartelera(Controller controller, List<Pelicula> p) {
 		this.controller = controller;
+		this.peliculas = p;
 		ventana();
 		this.setVisible(true);
 	}
@@ -87,12 +88,8 @@ public class Cartelera extends JFrame {
 
 		setContentPane(contentPane);
 		
-		try {
-			peliculas = controller.getCl().getService().getPeliculas();
-		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
+
 		 
 //		if(peliculas.isEmpty() ) {
 //		
@@ -439,10 +436,9 @@ public class Cartelera extends JFrame {
 		JButton btnNewButton = new JButton("Volver");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				peliculas.clear();
 				
 				Cartelera.this.dispose();
-				MenuPrincipal menu= new MenuPrincipal(controller);
+				MenuPrincipal menu= new MenuPrincipal(controller, peliculas);
 				
 				
 				menu.setVisible(true);
@@ -477,16 +473,5 @@ public class Cartelera extends JFrame {
 	}
 
 	
-	public void ejecutarVentana() {
-		try {
-			final Cartelera Ventana = new Cartelera(controller);
-			SwingUtilities.invokeAndWait(new Runnable() {
-				public void run() {
-					Ventana.setVisible(true);
-				}
-			});
-		} catch (Exception e) {
-			System.exit(1);  
-		}
-}
+	
 }

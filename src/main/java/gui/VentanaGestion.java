@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -20,6 +21,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import cine.controller.Controller;
+import clasesPelicula.Pelicula;
 /**
  * Ventana donde se podrán acceder a las distintas gestiones de la aplicación
  * @author Marcos
@@ -34,13 +36,15 @@ public class VentanaGestion extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JLabel lblAd;
 	private Controller controller;
+	private List<Pelicula> peliculas;
 
 	/**
 	 * Launch the application.
 	 */
 
-	public VentanaGestion(Controller controller) {
+	public VentanaGestion(Controller controller, List<Pelicula> p) {
 		this.controller = controller;
+		this.peliculas = p;
 		ventana();
 		this.setVisible(true);
 	}
@@ -78,7 +82,7 @@ public class VentanaGestion extends JDialog {
 			public void mouseClicked(MouseEvent e) {
 				
 				VentanaGestion.this.dispose();			
-				GestionPelicula gp = new GestionPelicula(controller);	
+				GestionPelicula gp = new GestionPelicula(controller, peliculas);	
 				gp.setVisible(true);
 				
 
@@ -157,7 +161,7 @@ public class VentanaGestion extends JDialog {
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						VentanaGestion.this.dispose();
-						InicioSesion is = new InicioSesion(controller);
+						InicioSesion is = new InicioSesion(controller, peliculas);
 						is.setVisible(true);
 						
 

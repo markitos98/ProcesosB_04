@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -22,9 +23,9 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import gui.CambiarImagen;
-import database.Database;
 
 import cine.controller.Controller;
+import clasesPelicula.Pelicula;
 import clasesPelicula.Sesion;
 
 
@@ -40,6 +41,7 @@ public class InicioSesion extends JFrame {
 	public JPasswordField passwordField;
 	public static Logger log;
 	private Controller controller;
+	private List<Pelicula> peliculas;
 
 	/**
 	 * Launch the application.
@@ -47,8 +49,9 @@ public class InicioSesion extends JFrame {
 	
 	
 	
-	public InicioSesion(Controller controller) {
+	public InicioSesion(Controller controller, List<Pelicula> p) {
 		this.controller = controller;
+		this.peliculas = p;
 		initialize();
 		this.setVisible(true);
 	}
@@ -56,6 +59,10 @@ public class InicioSesion extends JFrame {
 	
 	public void ventana(){
 
+		
+		
+		
+		
 		//Creacion del Logger
 		try {
 			log = Logger.getLogger("logger");
@@ -72,7 +79,7 @@ public class InicioSesion extends JFrame {
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						InicioSesion window = new InicioSesion(controller);
+						InicioSesion window = new InicioSesion(controller, peliculas);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -91,6 +98,25 @@ public class InicioSesion extends JFrame {
 	 */
 	private void initialize() {
 		
+		try {
+			peliculas = controller.getCl().getService().getPeliculas();
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		System.out.println(peliculas.get(0));
+	 	System.out.println(peliculas.get(1));
+	 	System.out.println(peliculas.get(2));
+	 	System.out.println(peliculas.get(3));
+	 	System.out.println(peliculas.get(4));
+	 	System.out.println(peliculas.get(5));
+	 	System.out.println(peliculas.get(6));
+	 	System.out.println(peliculas.get(7));
+	 	System.out.println(peliculas.get(8));
+	 	System.out.println(peliculas.get(9));
+	 	System.out.println(peliculas.get(10));
+	 	System.out.println(peliculas.get(11));
 		
 	
 		getContentPane().setBackground(Color.GRAY);
@@ -152,7 +178,7 @@ public class InicioSesion extends JFrame {
 					
 					if(textField.getText().equals("Admin") && passText.equals("Admin")) {
 						
-						VentanaGestion ven = new VentanaGestion(controller);
+						VentanaGestion ven = new VentanaGestion(controller, peliculas);
 						ven.setVisible(true);
 						InicioSesion.this.dispose();
 					}
@@ -160,7 +186,7 @@ public class InicioSesion extends JFrame {
 					if(controller.comprobarUsurio(textField.getText(), passText) && !textField.getText().equals("Admin")) {
 						
 						CambiarImagen cam= new CambiarImagen();
-						CambiarImagen.main(controller);
+						CambiarImagen.main(controller, peliculas);
 						InicioSesion.this.dispose();
 
 					
@@ -228,18 +254,7 @@ public class InicioSesion extends JFrame {
 	}
 		
 
-	public void ejecutarVentana() {
-		try {
-			final InicioSesion Ventana = new InicioSesion(controller);
-			SwingUtilities.invokeAndWait(new Runnable() {
-				public void run() {
-					Ventana.setVisible(true);
-				}
-			});
-		} catch (Exception e) {
-			System.exit(1);  
-		}
+
 }
 
 
-}

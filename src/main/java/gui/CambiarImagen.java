@@ -1,7 +1,9 @@
 package gui;
 
 import java.awt.Image;
-
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import cine.controller.Controller;
+import clasesPelicula.Pelicula;
 
 /**
  * Clase que permite mediante una tarea que las imagenes vayan cambiando en base a un Timer
@@ -20,7 +23,10 @@ public class CambiarImagen {
 	static int contador=0;
 	public static Controller controller;
 	
-	public static void main (Controller controller) {
+
+
+	
+	public static void main (Controller controller,List<Pelicula>	p) {
 
 
 
@@ -31,7 +37,10 @@ public class CambiarImagen {
 
 		int velmil= velocidad*1000;
 
-		MenuPrincipal cartelera = new MenuPrincipal(controller);
+		
+		
+		
+		MenuPrincipal cartelera = new MenuPrincipal(controller, p);
 		cartelera.setVisible(true);
 
 		//tarea para ir cambiando las imágenes del menú principal cada x segundos
