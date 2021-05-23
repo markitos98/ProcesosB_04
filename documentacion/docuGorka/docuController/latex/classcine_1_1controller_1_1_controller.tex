@@ -1,0 +1,140 @@
+\hypertarget{classcine_1_1controller_1_1_controller}{}\doxysection{cine.\+controller.\+Controller Class Reference}
+\label{classcine_1_1controller_1_1_controller}\index{cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcine_1_1controller_1_1_controller_ac42724d686aac92558c486127ff5d7cf}{Controller}} (String\mbox{[}$\,$\mbox{]} args)  throws Remote\+Exception 
+\item 
+Main\+Client \mbox{\hyperlink{classcine_1_1controller_1_1_controller_ad3243528879856fb0927b7410d2161f6}{get\+Cl}} ()
+\item 
+void \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a2b56a41fe7ba9b79f132897caabeeaf9}{set\+Cl}} (Main\+Client \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a99b77fa348ec5144a5ac66d3c8c16163}{cl}})
+\item 
+void \mbox{\hyperlink{classcine_1_1controller_1_1_controller_aa5aaa3896babdffb449f030527a6e630}{anyadir\+Usuario}} (String username, String password, String email, String nombre, String apellido\+\_\+1, String apellido\+\_\+2, String fech\+\_\+nac)
+\item 
+boolean \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a3c939c3ae914fe07fc942230ff0cac6c}{comprobar\+Email}} (String username)  throws Remote\+Exception 
+\item 
+boolean \mbox{\hyperlink{classcine_1_1controller_1_1_controller_ad408f4ba292800d85f2f8718e2316b35}{comprobar\+Usurio}} (String username, String contraseña)  throws Remote\+Exception 
+\item 
+List$<$ Pelicula $>$ \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a1a9f662abadffc5aa474946ff4cbb53f}{get\+Peliculas}} ()
+\item 
+Pelicula \mbox{\hyperlink{classcine_1_1controller_1_1_controller_ac6b79096dd01223c00f29b842e8af99f}{get\+Pelicula}} (String titulo)
+\item 
+void \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a1402131fe31f5aad4e61a2f8068b0392}{anyadir\+Pelicula}} (String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer, String ruta\+Foto, String ruta\+Foto\+Menu, int sala)
+\item 
+void \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a8a93ad609d2d01e3737adbbeee9f02fd}{anyadir\+Entrada}} (int id, Pelicula info\+Pelicula, Sesion info\+Sesion, int precio, int cantidad, int precio\+Total, String nombre)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classcine_1_1controller_1_1_controller_ad9770fbc01fe889e5e0c7eabf615d8db}{main}} (String\mbox{[}$\,$\mbox{]} args)  throws Exception 
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Main\+Client \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a99b77fa348ec5144a5ac66d3c8c16163}{cl}}
+\item 
+Inicio\+Sesion \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a64f64db07d06d262c39b538704526176}{is}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \mbox{\hyperlink{classcine_1_1controller_1_1_controller_a83f66ae7ef21c3053da1c412089649f8}{logger}} = Logger.\+get\+Logger(Controller.\+class)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_ac42724d686aac92558c486127ff5d7cf}\label{classcine_1_1controller_1_1_controller_ac42724d686aac92558c486127ff5d7cf}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily cine.\+controller.\+Controller.\+Controller (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a8a93ad609d2d01e3737adbbeee9f02fd}\label{classcine_1_1controller_1_1_controller_a8a93ad609d2d01e3737adbbeee9f02fd}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!anyadirEntrada@{anyadirEntrada}}
+\index{anyadirEntrada@{anyadirEntrada}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{anyadirEntrada()}{anyadirEntrada()}}
+{\footnotesize\ttfamily void cine.\+controller.\+Controller.\+anyadir\+Entrada (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Pelicula}]{info\+Pelicula,  }\item[{Sesion}]{info\+Sesion,  }\item[{int}]{precio,  }\item[{int}]{cantidad,  }\item[{int}]{precio\+Total,  }\item[{String}]{nombre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a1402131fe31f5aad4e61a2f8068b0392}\label{classcine_1_1controller_1_1_controller_a1402131fe31f5aad4e61a2f8068b0392}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!anyadirPelicula@{anyadirPelicula}}
+\index{anyadirPelicula@{anyadirPelicula}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{anyadirPelicula()}{anyadirPelicula()}}
+{\footnotesize\ttfamily void cine.\+controller.\+Controller.\+anyadir\+Pelicula (\begin{DoxyParamCaption}\item[{String}]{titulo,  }\item[{String}]{genero,  }\item[{int}]{anyo,  }\item[{String}]{sinopsis,  }\item[{int}]{duracion,  }\item[{String}]{trailer,  }\item[{String}]{ruta\+Foto,  }\item[{String}]{ruta\+Foto\+Menu,  }\item[{int}]{sala }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_aa5aaa3896babdffb449f030527a6e630}\label{classcine_1_1controller_1_1_controller_aa5aaa3896babdffb449f030527a6e630}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!anyadirUsuario@{anyadirUsuario}}
+\index{anyadirUsuario@{anyadirUsuario}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{anyadirUsuario()}{anyadirUsuario()}}
+{\footnotesize\ttfamily void cine.\+controller.\+Controller.\+anyadir\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password,  }\item[{String}]{email,  }\item[{String}]{nombre,  }\item[{String}]{apellido\+\_\+1,  }\item[{String}]{apellido\+\_\+2,  }\item[{String}]{fech\+\_\+nac }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a3c939c3ae914fe07fc942230ff0cac6c}\label{classcine_1_1controller_1_1_controller_a3c939c3ae914fe07fc942230ff0cac6c}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!comprobarEmail@{comprobarEmail}}
+\index{comprobarEmail@{comprobarEmail}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{comprobarEmail()}{comprobarEmail()}}
+{\footnotesize\ttfamily boolean cine.\+controller.\+Controller.\+comprobar\+Email (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_ad408f4ba292800d85f2f8718e2316b35}\label{classcine_1_1controller_1_1_controller_ad408f4ba292800d85f2f8718e2316b35}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!comprobarUsurio@{comprobarUsurio}}
+\index{comprobarUsurio@{comprobarUsurio}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{comprobarUsurio()}{comprobarUsurio()}}
+{\footnotesize\ttfamily boolean cine.\+controller.\+Controller.\+comprobar\+Usurio (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{contraseña }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_ad3243528879856fb0927b7410d2161f6}\label{classcine_1_1controller_1_1_controller_ad3243528879856fb0927b7410d2161f6}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!getCl@{getCl}}
+\index{getCl@{getCl}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getCl()}{getCl()}}
+{\footnotesize\ttfamily Main\+Client cine.\+controller.\+Controller.\+get\+Cl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_ac6b79096dd01223c00f29b842e8af99f}\label{classcine_1_1controller_1_1_controller_ac6b79096dd01223c00f29b842e8af99f}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!getPelicula@{getPelicula}}
+\index{getPelicula@{getPelicula}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getPelicula()}{getPelicula()}}
+{\footnotesize\ttfamily Pelicula cine.\+controller.\+Controller.\+get\+Pelicula (\begin{DoxyParamCaption}\item[{String}]{titulo }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a1a9f662abadffc5aa474946ff4cbb53f}\label{classcine_1_1controller_1_1_controller_a1a9f662abadffc5aa474946ff4cbb53f}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!getPeliculas@{getPeliculas}}
+\index{getPeliculas@{getPeliculas}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{getPeliculas()}{getPeliculas()}}
+{\footnotesize\ttfamily List$<$Pelicula$>$ cine.\+controller.\+Controller.\+get\+Peliculas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_ad9770fbc01fe889e5e0c7eabf615d8db}\label{classcine_1_1controller_1_1_controller_ad9770fbc01fe889e5e0c7eabf615d8db}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!main@{main}}
+\index{main@{main}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void cine.\+controller.\+Controller.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a2b56a41fe7ba9b79f132897caabeeaf9}\label{classcine_1_1controller_1_1_controller_a2b56a41fe7ba9b79f132897caabeeaf9}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!setCl@{setCl}}
+\index{setCl@{setCl}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{setCl()}{setCl()}}
+{\footnotesize\ttfamily void cine.\+controller.\+Controller.\+set\+Cl (\begin{DoxyParamCaption}\item[{Main\+Client}]{cl }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a99b77fa348ec5144a5ac66d3c8c16163}\label{classcine_1_1controller_1_1_controller_a99b77fa348ec5144a5ac66d3c8c16163}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!cl@{cl}}
+\index{cl@{cl}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{cl}{cl}}
+{\footnotesize\ttfamily Main\+Client cine.\+controller.\+Controller.\+cl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a64f64db07d06d262c39b538704526176}\label{classcine_1_1controller_1_1_controller_a64f64db07d06d262c39b538704526176}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!is@{is}}
+\index{is@{is}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{is}{is}}
+{\footnotesize\ttfamily Inicio\+Sesion cine.\+controller.\+Controller.\+is\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcine_1_1controller_1_1_controller_a83f66ae7ef21c3053da1c412089649f8}\label{classcine_1_1controller_1_1_controller_a83f66ae7ef21c3053da1c412089649f8}} 
+\index{cine.controller.Controller@{cine.controller.Controller}!logger@{logger}}
+\index{logger@{logger}!cine.controller.Controller@{cine.controller.Controller}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily final Logger cine.\+controller.\+Controller.\+logger = Logger.\+get\+Logger(Controller.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/cine/controller/\mbox{\hyperlink{_controller_8java}{Controller.\+java}}\end{DoxyCompactItemize}
