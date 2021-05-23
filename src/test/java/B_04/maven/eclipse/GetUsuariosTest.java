@@ -25,7 +25,7 @@ import clasesUsuario.Cliente;
 
 
 
-@Ignore
+
 @RunWith(MockitoJUnitRunner.class)
 public class GetUsuariosTest {
 	

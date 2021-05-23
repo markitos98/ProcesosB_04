@@ -16,10 +16,11 @@ import org.mockito.runners.MockitoJUnitRunner;
 import cine.remote.Cine;
 import clasesPelicula.DAO.IUsuarioDAO;
 import clasesUsuario.Cliente;
+import junit.framework.JUnit4TestAdapter;
 
 
 
-@Ignore
+
 @RunWith(MockitoJUnitRunner.class)
 
 public class deleteUsuarioTest {
@@ -29,6 +30,10 @@ public class deleteUsuarioTest {
 	
 	@Mock
 	IUsuarioDAO dao;
+	
+	public static junit.framework.Test suite() {
+		return new JUnit4TestAdapter(UsuarioDAOTest.class);
+	}
 	
 	
 	@Before
