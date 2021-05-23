@@ -22,8 +22,8 @@ public class EntradaPerfTest {
 	
 	
 	private Pelicula p = new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
-	private Sesion s = new Sesion(22.00);
-	private Entrada c= new Entrada(1,p,s,9,2,18,"gorka" );
+	private Sesion s = new Sesion("22.00");
+	private Entrada c= new Entrada(1,p,s.getHora(),9,2,18,"gorka" );
 
 	
 	
@@ -51,12 +51,12 @@ public class EntradaPerfTest {
 		   entrada.setCantidad(3);
 		   entrada.setId(2);
 		   
-		    Sesion s2 = new Sesion(22.00);
+		    Sesion s2 = new Sesion("22.00");
 		   
 		   Pelicula p2 = new Pelicula("Isla calavera","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 
 		   entrada.setInfoPelicula(p2);
-		   entrada.setInfoSesion(s2);
+		   entrada.setInfoSesion(s2.getHora());
 		   entrada.setNombre("entrada");
 		   entrada.setPrecio(9);
 		   entrada.setPrecioTotal(27);

@@ -114,9 +114,9 @@ public class Controller {
 		}
 	}
 	
-	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
+	public void anyadirEntrada(int id, Pelicula infoPelicula, String horario, int precio, int cantidad, int precioT, String nombre) {
 		try {
-			cl.getService().anyadirEntrada(id, infoPelicula, infoSesion, precio, cantidad, precioTotal, nombre);;
+			cl.getService().anyadirEntrada(id, infoPelicula, horario, precio, cantidad, precioT, nombre);;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

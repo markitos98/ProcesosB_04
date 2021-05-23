@@ -114,7 +114,7 @@ public class Cine extends UnicastRemoteObject implements ICine {
 	}
 
 	@Override
-	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) throws RemoteException {
+	public void anyadirEntrada(int id, Pelicula infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) throws RemoteException {
 		
 		Entrada entrada = new Entrada(id, infoPelicula, infoSesion , precio, cantidad,precioTotal,nombre);
 		

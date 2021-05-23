@@ -21,8 +21,8 @@ public class EntradaTest {
 	@Before
 	public void setUp() {
 		p=  new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
-		s=  new Sesion(22.00);
-		e=  new Entrada(40,p,s,12,2,24,"Mario");
+		s=  new Sesion("22.00");
+		e=  new Entrada(40,p,s.getHora(),12,2,24,"Mario");
 		prueba=  new Entrada(e);
 		empty= new Entrada();
 		

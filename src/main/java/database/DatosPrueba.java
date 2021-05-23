@@ -22,7 +22,7 @@ public class DatosPrueba {
 			Cliente c=  new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
 			pm.makePersistent(c);
 			Pelicula p=  new Pelicula("Escape Room","TERROR",2019,"Seis desconocidos se encuentran en una habitación mortal en la que deberán usar su ingenio para sobrevivir.",198,"https://www.youtube.com/watch?v=qATdnx_x0bs&ab_channel=TrailersInSpanish","./src/main/resources/Imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
-			 Sesion s= new Sesion(22.00);
+			 Sesion s= new Sesion("22.00");
 			pm.makePersistent(p);
 		
 			Pelicula p1=  new Pelicula("Malasaña 32","TERROR",2020,"Manolo y Candela se instalan en el madrileño barri",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Malasaña 32.jpg","posters/Malasaña.jpg",2);
