@@ -42,6 +42,7 @@ public class InicioSesion extends JFrame {
 	public static Logger log;
 	private Controller controller;
 	private List<Pelicula> peliculas;
+	private List<Pelicula> pelis;
 
 	/**
 	 * Launch the application.
@@ -93,17 +94,17 @@ public class InicioSesion extends JFrame {
 
 	}
 
+	
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		
-		try {
-			peliculas = controller.getCl().getService().getPeliculas();
-		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+	
+	
+		
 		
 		System.out.println(peliculas.get(0));
 	 	System.out.println(peliculas.get(1));
