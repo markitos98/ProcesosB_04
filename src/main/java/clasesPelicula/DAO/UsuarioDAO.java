@@ -12,6 +12,7 @@ import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 
+import clasesPelicula.Pelicula;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 
@@ -122,25 +123,32 @@ public class UsuarioDAO implements IUsuarioDAO {
 	@Override
 	public List<Cliente> getUsuarios() {
 		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
-		List<Cliente> usuarios= new ArrayList<Cliente>();
-		usuarios.clear();
 
+
+		Transaction tx = pm.currentTransaction();
+		
+		List<Cliente> cliente = new ArrayList<Cliente>();
+		
 		try {
-			System.out.println("  * Querying Usuarios");
+
+			logger.info("  * Guardando Cliente");
+
+			Cliente cli = null;
 			tx.begin();
-			
-			Query<?> query = pm.newQuery("SELECT* FROM " + Cliente.class);
-			query.setUnique(true);
+			Query<Cliente> query = pm.newQuery(Cliente.class);
 			@SuppressWarnings("unchecked")
 			List<Cliente> clientes = (List<Cliente>) query.execute();
-			for(Cliente c: clientes) {
-				usuarios.add(c);
-			}
 			
+			for (Cliente p : clientes) {
+				cli = p;
+				cliente.add(cli);
+			}
 			tx.commit();
+  			
 		} catch (Exception ex) {
-			System.out.println("  $ Error querying Usuarios: " + ex.getMessage());
+			
+			logger.error("   $ Error guardando usuarios  " + ex.getMessage());
+		
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -148,8 +156,10 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 			pm.close();
 		}
-
-		return usuarios;
+		
+		
+		
+		return cliente;
 	}
 
 
