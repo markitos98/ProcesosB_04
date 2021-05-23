@@ -130,7 +130,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 			System.out.println("  * Querying Usuarios");
 			tx.begin();
 			
-			Query<?> query = pm.newQuery("SELECT* FROM " + Cliente.class+"'");
+			Query<?> query = pm.newQuery("SELECT* FROM " + Cliente.class);
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			List<Cliente> clientes = (List<Cliente>) query.execute();
