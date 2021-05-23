@@ -23,7 +23,7 @@ import junit.framework.JUnit4TestAdapter;
 
 @RunWith(MockitoJUnitRunner.class)
 
-public class deleteUsuarioTest {
+public class DeleteUsuarioTest {
 
 	
 	Cine cine;
