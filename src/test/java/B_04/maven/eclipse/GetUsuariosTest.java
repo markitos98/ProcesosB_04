@@ -58,7 +58,7 @@ public class GetUsuariosTest {
 		Cliente cliente = new Cliente("marcos","1234","marcos@gmail.com","Marcos","Llorente","Lopez","01/08/1998");
 		c.getUsuarios();
 		ArgumentCaptor<Cliente> clienteCap = ArgumentCaptor.forClass(Cliente.class);
-		System.out.println("Mostrando el libro...");
+		System.out.println("Mostrando el usuario...");
 		verify(dao).getUsuarios();
 		
 		
