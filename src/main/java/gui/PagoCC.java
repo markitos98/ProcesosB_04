@@ -263,7 +263,8 @@ public class PagoCC extends JFrame{
 				PDDocument.load(carpetaEntrada);
 				f.delete();
 				
-			//	controller.anyadirEntrada((int)Math.random(), peli, horario , 9, cantidad, (int)precioT, textNombre.getText());
+		
+				controller.anyadirEntrada((int)Math.random(), peli, horario , 9, cantidad, (int)precioT, textNombre.getText());
 
 				} catch (IOException | COSVisitorException e) {
 					// TODO Auto-generated catch block
