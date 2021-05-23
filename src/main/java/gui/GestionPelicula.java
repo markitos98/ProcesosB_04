@@ -346,9 +346,7 @@ public class GestionPelicula extends JDialog {
 
 						String titulo;
 						String genero;
-						String anyo;
 						String sinopsis;
-						String duracion;
 						String url;
 						String fotoPoster;
 						String fotoPosterMenu;
@@ -358,18 +356,20 @@ public class GestionPelicula extends JDialog {
 
 						titulo = textTitulo.getText();
 						genero = comboBox.getSelectedItem().toString();
-						anyo = 	textAnyo.getText();
+					int	anyo = 	Integer.parseInt(textAnyo.getText());
 						sinopsis = textSinopsis.getText();
-						duracion = textDuracion.getText();
+						int duracion = Integer.parseInt(textDuracion.getText());
 						url = textTrailer.getText();
 						fotoPoster= textNomPoster.getText();
 						poster= foto;
 						fotoPosterMenu= txtPosMenu.getText();
 						posterMenu= fotomenu;
-
+						
 						FileInputStream fi= null;
 						FileInputStream fi2= null;
 						int sala=12;
+						
+						
 
 
 						//Añadimos una pelicula nueva
@@ -380,8 +380,14 @@ public class GestionPelicula extends JDialog {
 
 
 						if(!textTitulo.getText().isEmpty() && !textAnyo.getText().isEmpty() && !textSinopsis.getText().isEmpty() && !textDuracion.getText().isEmpty() && !textTrailer.getText().isEmpty() && !textNomPoster.getText().isEmpty() && !txtPosMenu.getText().isEmpty()) {
-							listmodel.addElement("Titulo:"+textTitulo.getText()+","+"Género:"+comboBox.getSelectedItem().toString()+" ,"+"Año:"+textAnyo.getText()+" ,"+"Sinopsis:"+textSinopsis.getText()+" ,"+"Duración:"+textDuracion.getText()+" ,"+"Tráiler:"+textTrailer.getText());
+							
+							controller.anyadirPelicula(titulo, genero, anyo, sinopsis, duracion, url, fotoPoster, fotoPosterMenu, sala);
 
+							GestionPelicula.this.dispose();
+							VentanaGestion vg = new VentanaGestion(controller);
+							vg.setVisible(true);
+							
+							
 						}
 
 					}
@@ -406,7 +412,9 @@ public class GestionPelicula extends JDialog {
 				JButton cancelButton = new JButton("Cancelar");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						GestionPelicula.this.dispose();
+						VentanaGestion vg = new VentanaGestion(controller);
+						vg.setVisible(true);
 					}
 				});
 				cancelButton.setForeground(Color.ORANGE);
