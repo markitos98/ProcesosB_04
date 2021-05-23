@@ -87,32 +87,32 @@ public class EntradaPerfTest {
 		@PerfTest(invocations = 120)
 		public void getentrada() throws Exception {
 			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntrada(c.getId());
+			   udao.getEntradaId(c.getId());
 		}
 		@Test
 		@PerfTest(invocations = 120)
 		public void testComprobarCantidad() throws Exception {
 			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntrada(c.getCantidad());
+			   udao.getEntradaId(c.getCantidad());
 		}
 		@Test
 		@PerfTest(invocations = 120)
 		public void testComprobarPrecio() throws Exception {
 			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntrada(c.getPrecio());
+			   udao.getEntradaId(c.getPrecio());
 		}
 		@Test
 		@PerfTest(invocations = 120)
 		public void testComprobarPRecioTotal() throws Exception {
 			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntrada(c.getPrecioTotal());
+			   udao.getEntradaId(c.getPrecioTotal());
 		   
 		}
 		@Test
 		@PerfTest(invocations = 120)
 		public void testComprobarNombre() throws Exception {
 			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntrada(Integer.parseInt(c.getNombre()));
+			   udao.getEntradaId(Integer.parseInt(c.getNombre()));
 		   
 		}
 		
