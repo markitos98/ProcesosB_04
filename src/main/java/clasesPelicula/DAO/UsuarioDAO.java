@@ -98,7 +98,6 @@ public class UsuarioDAO implements IUsuarioDAO {
 	@Override
 	public void deleteUsuario(Usuario usuario) {
 		PersistenceManager pm = pmf.getPersistenceManager();
-		pm.getFetchPlan().setMaxFetchDepth(4);
 		Transaction tx = pm.currentTransaction();
 
 		try {
