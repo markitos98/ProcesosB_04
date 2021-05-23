@@ -13,7 +13,7 @@ import clasesPelicula.Entrada;
 import clasesPelicula.Pelicula;
 import clasesPelicula.Sesion;
 
-public class DeleteEntrada {
+public class DeleteEntradaTest {
 	
 	private Entrada c;
 	/*
