@@ -11,8 +11,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import cine.remote.Cine;
-import clases.DAO.IUsuarioDAO;
-import clases.DAO.UsuarioDAO;
+import clasesPelicula.DAO.IUsuarioDAO;
+import clasesPelicula.DAO.UsuarioDAO;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

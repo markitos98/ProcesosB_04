@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 
 
 

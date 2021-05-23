@@ -1,4 +1,4 @@
-package clases.DAO;
+package clasesPelicula.DAO;
 
 import java.util.List;
 

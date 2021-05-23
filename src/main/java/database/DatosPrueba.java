@@ -5,9 +5,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 import clasesUsuario.*;
 
 public class DatosPrueba {

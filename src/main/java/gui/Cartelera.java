@@ -28,14 +28,13 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import database.Database;
-
-import clases.Pelicula;
 import gui.VentanaPelicula;
 
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import cine.controller.Controller;
+import clasesPelicula.Pelicula;
 
 
 

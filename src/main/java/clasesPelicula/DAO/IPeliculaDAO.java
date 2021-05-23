@@ -1,8 +1,8 @@
-package clases.DAO;
+package clasesPelicula.DAO;
 
 import java.util.List;
 
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 
 public interface IPeliculaDAO {
 

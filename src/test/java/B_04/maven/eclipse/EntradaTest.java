@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 
 
 public class EntradaTest {

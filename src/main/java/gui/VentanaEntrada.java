@@ -30,7 +30,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
 import cine.controller.Controller;
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 
 public class VentanaEntrada extends JDialog {
 

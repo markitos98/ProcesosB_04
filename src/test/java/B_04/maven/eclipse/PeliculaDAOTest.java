@@ -14,8 +14,8 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import cine.remote.Cine;
-import clases.Pelicula;
-import clases.DAO.IPeliculaDAO;
+import clasesPelicula.Pelicula;
+import clasesPelicula.DAO.IPeliculaDAO;
 import clasesUsuario.Cliente;
 import junit.framework.JUnit4TestAdapter;
 

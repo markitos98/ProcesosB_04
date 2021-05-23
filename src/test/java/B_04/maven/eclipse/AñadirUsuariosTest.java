@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import clases.DAO.UsuarioDAO;
+import clasesPelicula.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
 
 public class AñadirUsuariosTest {

@@ -13,7 +13,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import cine.remote.Cine;
-import clases.DAO.IUsuarioDAO;
+import clasesPelicula.DAO.IUsuarioDAO;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 import junit.framework.JUnit4TestAdapter;

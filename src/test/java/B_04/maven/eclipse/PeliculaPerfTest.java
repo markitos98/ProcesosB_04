@@ -12,9 +12,9 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import categories.IntegrationTest;
-import clases.Pelicula;
-import clases.DAO.PeliculaDAO;
-import clases.DAO.UsuarioDAO;
+import clasesPelicula.Pelicula;
+import clasesPelicula.DAO.PeliculaDAO;
+import clasesPelicula.DAO.UsuarioDAO;
 import junit.framework.JUnit4TestAdapter;
 @Category(IntegrationTest.class)
 public class PeliculaPerfTest {

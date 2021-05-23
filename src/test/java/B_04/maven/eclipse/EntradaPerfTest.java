@@ -10,10 +10,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import categories.IntegrationTest;
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
-import clases.DAO.EntradaDAO;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
+import clasesPelicula.DAO.EntradaDAO;
 import junit.framework.JUnit4TestAdapter;
 
 @Category(IntegrationTest.class)

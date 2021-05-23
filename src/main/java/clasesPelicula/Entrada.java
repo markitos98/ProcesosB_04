@@ -1,4 +1,4 @@
-package clases;
+package clasesPelicula;
 
 import javax.jdo.annotations.PersistenceCapable;
 

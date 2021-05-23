@@ -1,6 +1,6 @@
-package clases.DAO;
+package clasesPelicula.DAO;
 
-import clases.Entrada;
+import clasesPelicula.Entrada;
 
 public interface IEntradaDAO {
 

@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import clases.Genero;
-import clases.Pelicula;
+import clasesPelicula.Genero;
+import clasesPelicula.Pelicula;
 
 
 public class AnyadirPeliculaTest {

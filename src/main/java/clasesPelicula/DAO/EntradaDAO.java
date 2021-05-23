@@ -1,4 +1,4 @@
-package clases.DAO;
+package clasesPelicula.DAO;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -8,7 +8,7 @@ import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 
-import clases.Entrada;
+import clasesPelicula.Entrada;
 import clasesUsuario.Usuario;
 
 /**

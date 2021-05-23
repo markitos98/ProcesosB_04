@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import cine.controller.Controller;
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 /**
  * 
  * @author alex

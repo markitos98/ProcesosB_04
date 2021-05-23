@@ -4,15 +4,15 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
-import clases.DAO.EntradaDAO;
-import clases.DAO.IEntradaDAO;
-import clases.DAO.IPeliculaDAO;
-import clases.DAO.IUsuarioDAO;
-import clases.DAO.PeliculaDAO;
-import clases.DAO.UsuarioDAO;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
+import clasesPelicula.DAO.EntradaDAO;
+import clasesPelicula.DAO.IEntradaDAO;
+import clasesPelicula.DAO.IPeliculaDAO;
+import clasesPelicula.DAO.IUsuarioDAO;
+import clasesPelicula.DAO.PeliculaDAO;
+import clasesPelicula.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 

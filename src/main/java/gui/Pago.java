@@ -21,7 +21,7 @@ import java.awt.Cursor;
 import javax.swing.border.MatteBorder;
 
 import cine.controller.Controller;
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 import clasesUsuario.Usuario;
 import database.Database;
 

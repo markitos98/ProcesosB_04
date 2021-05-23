@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 import client.MainClient;
 import gui.InicioSesion;
 

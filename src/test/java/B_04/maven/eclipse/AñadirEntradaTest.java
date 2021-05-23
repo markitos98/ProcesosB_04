@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 
 import static org.mockito.Mockito.when;
 import clasesUsuario.Cliente;

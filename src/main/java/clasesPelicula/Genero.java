@@ -1,4 +1,4 @@
-package clases;
+package clasesPelicula;
 
 public enum Genero {
 

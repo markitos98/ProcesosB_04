@@ -25,7 +25,7 @@ import gui.CambiarImagen;
 import database.Database;
 
 import cine.controller.Controller;
-import clases.Sesion;
+import clasesPelicula.Sesion;
 
 
 /**

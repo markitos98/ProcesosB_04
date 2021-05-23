@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import clases.Sesion;
+import clasesPelicula.Sesion;
 
 public class SesionTest {
 

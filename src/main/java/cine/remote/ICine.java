@@ -4,9 +4,9 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 import clasesUsuario.Usuario;
 
 public interface ICine extends Remote {

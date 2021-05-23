@@ -10,7 +10,7 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 
 /**
  * Clase Cliente que hereda de Usuario

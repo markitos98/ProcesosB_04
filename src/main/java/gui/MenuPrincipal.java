@@ -26,8 +26,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import cine.controller.Controller;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 

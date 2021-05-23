@@ -11,7 +11,7 @@ import javax.jdo.Transaction;
 
 import org.datanucleus.store.Extent;
 
-import clases.Pelicula;
+import clasesPelicula.Pelicula;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
 

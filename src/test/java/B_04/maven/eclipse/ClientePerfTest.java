@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import categories.IntegrationTest;
-import clases.DAO.UsuarioDAO;
+import clasesPelicula.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
 import junit.framework.JUnit4TestAdapter;
 

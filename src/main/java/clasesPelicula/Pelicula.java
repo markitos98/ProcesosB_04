@@ -1,4 +1,4 @@
-package clases;
+package clasesPelicula;
 
 import java.awt.Image;
 import java.io.Serializable;

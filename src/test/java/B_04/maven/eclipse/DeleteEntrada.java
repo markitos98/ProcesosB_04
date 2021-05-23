@@ -9,9 +9,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import clases.Entrada;
-import clases.Pelicula;
-import clases.Sesion;
+import clasesPelicula.Entrada;
+import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 
 public class DeleteEntrada {
 	
