@@ -260,6 +260,7 @@ public class PagoCC extends JFrame{
 				File carpetaEntrada = new File("./Entradas/"+nombre);
 				Copiar(entradapdf,carpetaEntrada);
 				File f= new File(nombre);
+				PDDocument.load(carpetaEntrada);
 				f.delete();
 				
 			//	controller.anyadirEntrada((int)Math.random(), peli, horario , 9, cantidad, (int)precioT, textNombre.getText());
