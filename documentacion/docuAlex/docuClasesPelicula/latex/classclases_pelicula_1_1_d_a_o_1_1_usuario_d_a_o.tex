@@ -1,0 +1,139 @@
+\hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o}{}\doxysection{clases\+Pelicula.\+DAO.\+Usuario\+DAO Class Reference}
+\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o}\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+Inheritance diagram for clases\+Pelicula.\+DAO.\+Usuario\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1207306c02dc222fe136c73ef635ca2c}{Usuario\+DAO}} ()
+\item 
+void \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a15b0f2cd5e5f5c9e6ecccdd3eeb1f6d0}{anyadir\+Usuario}} (Usuario u)
+\item 
+void \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab94b47b719655bc8097f47a4864187a2}{update\+Usuario}} (String username, String password, String email, String nombre, String apellido\+\_\+1, String apellido\+\_\+2, String fecha\+\_\+nac)
+\item 
+Usuario \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab20d56b4dc5f9cbc2f1060c2a9a7aecf}{get\+Usuario}} (String username)
+\item 
+void \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a7b492eeeb313eea51111866d3c604b0a}{delete\+Usuario}} (Usuario usuario)
+\item 
+List$<$ Cliente $>$ \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_aadbc79eb7bdbc35406cfdc25413f8fbe}{get\+Usuarios}} ()
+\item 
+boolean \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a4a7c3abd3bddc4c2c0fcd5207f465797}{comprobar\+Usuario}} (String usuario, String contrasenya)
+\item 
+boolean \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a6823e57ea78141047ba7309b9b9a7088}{comprobar\+Email}} (String email\+Text)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Persistence\+Manager\+Factory \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1783ac37b64431a4e2b299e392af0449}{pmf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \mbox{\hyperlink{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a029541f3f233fea408b1968de98e5430}{logger}} = Logger.\+get\+Logger(Usuario\+DAO.\+class)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1207306c02dc222fe136c73ef635ca2c}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1207306c02dc222fe136c73ef635ca2c}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!UsuarioDAO@{UsuarioDAO}}
+\index{UsuarioDAO@{UsuarioDAO}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{UsuarioDAO()}{UsuarioDAO()}}
+{\footnotesize\ttfamily clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+Usuario\+DAO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a15b0f2cd5e5f5c9e6ecccdd3eeb1f6d0}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a15b0f2cd5e5f5c9e6ecccdd3eeb1f6d0}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!anyadirUsuario@{anyadirUsuario}}
+\index{anyadirUsuario@{anyadirUsuario}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{anyadirUsuario()}{anyadirUsuario()}}
+{\footnotesize\ttfamily void clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+anyadir\+Usuario (\begin{DoxyParamCaption}\item[{Usuario}]{u }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_a778e1150182fa97cf75d86c4e0fda80d}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a6823e57ea78141047ba7309b9b9a7088}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a6823e57ea78141047ba7309b9b9a7088}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!comprobarEmail@{comprobarEmail}}
+\index{comprobarEmail@{comprobarEmail}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{comprobarEmail()}{comprobarEmail()}}
+{\footnotesize\ttfamily boolean clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+comprobar\+Email (\begin{DoxyParamCaption}\item[{String}]{email\+Text }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_a859ee55fd417514d8d991908935acf44}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a4a7c3abd3bddc4c2c0fcd5207f465797}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a4a7c3abd3bddc4c2c0fcd5207f465797}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!comprobarUsuario@{comprobarUsuario}}
+\index{comprobarUsuario@{comprobarUsuario}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{comprobarUsuario()}{comprobarUsuario()}}
+{\footnotesize\ttfamily boolean clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+comprobar\+Usuario (\begin{DoxyParamCaption}\item[{String}]{usuario,  }\item[{String}]{contrasenya }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_a0caa80d4627fe15c47828d39c391ac10}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a7b492eeeb313eea51111866d3c604b0a}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a7b492eeeb313eea51111866d3c604b0a}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!deleteUsuario@{deleteUsuario}}
+\index{deleteUsuario@{deleteUsuario}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{deleteUsuario()}{deleteUsuario()}}
+{\footnotesize\ttfamily void clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+delete\+Usuario (\begin{DoxyParamCaption}\item[{Usuario}]{usuario }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_aaa9bfc60a1744af1740c5db015dae56e}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab20d56b4dc5f9cbc2f1060c2a9a7aecf}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab20d56b4dc5f9cbc2f1060c2a9a7aecf}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!getUsuario@{getUsuario}}
+\index{getUsuario@{getUsuario}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{getUsuario()}{getUsuario()}}
+{\footnotesize\ttfamily Usuario clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+get\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_a9b3065e7b379766a18cbeb981878f0cd}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_aadbc79eb7bdbc35406cfdc25413f8fbe}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_aadbc79eb7bdbc35406cfdc25413f8fbe}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!getUsuarios@{getUsuarios}}
+\index{getUsuarios@{getUsuarios}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{getUsuarios()}{getUsuarios()}}
+{\footnotesize\ttfamily List$<$Cliente$>$ clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+get\+Usuarios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_a13a70a843c7b7ae720e09e2d1c7a89a3}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab94b47b719655bc8097f47a4864187a2}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_ab94b47b719655bc8097f47a4864187a2}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!updateUsuario@{updateUsuario}}
+\index{updateUsuario@{updateUsuario}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{updateUsuario()}{updateUsuario()}}
+{\footnotesize\ttfamily void clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+update\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password,  }\item[{String}]{email,  }\item[{String}]{nombre,  }\item[{String}]{apellido\+\_\+1,  }\item[{String}]{apellido\+\_\+2,  }\item[{String}]{fecha\+\_\+nac }\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfaceclases_pelicula_1_1_d_a_o_1_1_i_usuario_d_a_o_aa5bccb1fa8a182eb20677b481199f386}{clases\+Pelicula.\+DAO.\+IUsuario\+DAO}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a029541f3f233fea408b1968de98e5430}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a029541f3f233fea408b1968de98e5430}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!logger@{logger}}
+\index{logger@{logger}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{logger}{logger}}
+{\footnotesize\ttfamily final Logger clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+logger = Logger.\+get\+Logger(Usuario\+DAO.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1783ac37b64431a4e2b299e392af0449}\label{classclases_pelicula_1_1_d_a_o_1_1_usuario_d_a_o_a1783ac37b64431a4e2b299e392af0449}} 
+\index{clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}!pmf@{pmf}}
+\index{pmf@{pmf}!clasesPelicula.DAO.UsuarioDAO@{clasesPelicula.DAO.UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{pmf}{pmf}}
+{\footnotesize\ttfamily Persistence\+Manager\+Factory clases\+Pelicula.\+DAO.\+Usuario\+DAO.\+pmf\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/clases\+Pelicula/\+DAO/\mbox{\hyperlink{_usuario_d_a_o_8java}{Usuario\+DAO.\+java}}\end{DoxyCompactItemize}
