@@ -10,4 +10,6 @@ public interface IEntradaDAO {
 	public void deleteEntrada(Entrada entrada);
 	
 	public Entrada getEntrada(String nombre);
+	
+	public Entrada getEntradaId(int id);
 }

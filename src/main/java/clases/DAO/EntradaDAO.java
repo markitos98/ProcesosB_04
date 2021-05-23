@@ -124,4 +124,32 @@ public class EntradaDAO implements IEntradaDAO{
 		return entrada;
 	}
 
+	public Entrada getEntradaId(int id) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		pm.getFetchPlan().setMaxFetchDepth(4);
+		Transaction tx = pm.currentTransaction();
+		Entrada entrada = null; 
+
+		try {
+			System.out.println("  * Querying a Entrada by entrada: " + id);
+			tx.begin();
+			
+			Query<?> query = pm.newQuery("SELECT FROM " + Entrada.class.getName() + " WHERE id == '" + id + "'");
+			query.setUnique(true);
+			entrada = (Entrada) query.execute();
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println("  $ Error querying a Usuario: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+
+		return entrada;
+	}
+	
 }
