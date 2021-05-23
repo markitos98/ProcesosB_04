@@ -77,6 +77,9 @@ public class VentanaGestion extends JDialog {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				VentanaGestion.this.dispose();			
+				GestionPelicula gp = new GestionPelicula(controller);	
+				gp.setVisible(true);
 				
 
 

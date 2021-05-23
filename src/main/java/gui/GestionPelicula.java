@@ -35,6 +35,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import cine.controller.Controller;
+
 
 public class GestionPelicula extends JDialog {
 
@@ -52,7 +54,7 @@ public class GestionPelicula extends JDialog {
 	private Image fotomenu;
 	File file;
 	File file2;
-
+	private Controller controller;
 
 	DefaultListModel<String> listmodel = new DefaultListModel<String>();
 
@@ -61,20 +63,17 @@ public class GestionPelicula extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		try {
-			GestionPelicula dialog = new GestionPelicula();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	
+	public GestionPelicula(Controller controller) {
+		this.controller = controller;
+		ventana();
+		this.setVisible(true);
 	}
-
+	
 	/**
 	 * Create the dialog.
 	 */
-	public  GestionPelicula() {
+	public  void ventana() {
 		setResizable(false);
 		setForeground(Color.ORANGE);
 		setBackground(Color.GRAY);
