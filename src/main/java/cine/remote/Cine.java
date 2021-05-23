@@ -138,5 +138,13 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		return p;
 	}
 
+	@Override
+	public List<Cliente> getUsuarios() throws RemoteException {
+		
+		List<Cliente> usuarios = usuarioDAO.getUsuarios();
+		
+		
+		return usuarios;
+	}
 	
 }

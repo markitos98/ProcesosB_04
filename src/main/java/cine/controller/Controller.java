@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import clasesPelicula.Pelicula;
 import clasesPelicula.Sesion;
+import clasesUsuario.Cliente;
 import client.MainClient;
 import gui.InicioSesion;
 
@@ -119,6 +120,17 @@ public class Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public List<Cliente> getUsuarios() {
+		List<Cliente> usuarios = null;
+		try {
+
+			usuarios = cl.getService().getUsuarios();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return usuarios;
 	}
 	
 }
