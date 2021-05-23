@@ -45,8 +45,12 @@ public class AnyadirPeliculaTest {
 		textField9 = Mockito.mock(JTextField.class);
 	}
 	
+	/**
+	 * Metodo que comprueba la creacion de la pelicula 
+	 */
+	
 	@Test
-	public void testAnyadirCliente() {
+	public void testAnyadirPelicula() {
 		
 	
 		Pelicula cl = new Pelicula();
