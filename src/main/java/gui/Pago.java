@@ -119,6 +119,7 @@ public class Pago extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				PagoPaypal paypal= new PagoPaypal();
+			
 				
 			}
 		});

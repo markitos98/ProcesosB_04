@@ -1,11 +1,17 @@
 package gui;
 
 import java.awt.Color;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -16,8 +22,14 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+
 import cine.controller.Controller;
 import clasesPelicula.Pelicula;
+import gui.VentanaEntrada;
 /**
  * 
  * @author alex
@@ -143,6 +155,110 @@ public class PagoCC extends JFrame{
 		JButton btnPagar = new JButton("Aceptar");
 		btnPagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+			
+				VentanaEntrada ve= new VentanaEntrada(peli);
+				ArrayList<Integer> numeros= new ArrayList<Integer>();
+				numeros.clear();
+				numeros.add(ve.numAleatorio);
+				
+				PDDocument entrada = new PDDocument();
+				PDPage pagina= new PDPage();
+				entrada.addPage(pagina);
+				String nombre="entrada"+ String.valueOf(numeros.get(0))+".pdf";
+
+				InputStream in = new FileInputStream(new File(peli.getRutaFoto()));
+				PDJpeg img = new PDJpeg(entrada, in);
+				img.setHeight(400);
+				img.setWidth(200);
+
+				
+				PDPageContentStream contenido= new PDPageContentStream(entrada,pagina);
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,18);
+				contenido.moveTextPositionByAmount(100,650);
+				contenido.drawString("CINE DEUSTO");
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,18);
+				contenido.moveTextPositionByAmount(100,650);		
+				contenido.drawString("___________");		 		 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,580);		
+				contenido.drawString("Numero de compra: "+ numeros.get(0));	 		 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,560);		
+				contenido.drawString("Nombre: " +textNombre.getText());	 		 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,540);		
+				contenido.drawString("Pelicula: "+ peli.getTitulo());		 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,520);		
+				contenido.drawString("Sesion: "+ horario);		 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,500);		
+				contenido.drawString("Sala: "+ peli.getSala());	 		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,480);		
+				contenido.drawString("Numero de entradas: "+ cant);		
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,460);		
+				contenido.drawString("Precio por entrada: "+ ve.txtPrecU.getText());
+				contenido.endText();
+
+				contenido.beginText();
+				contenido.setFont(PDType1Font.COURIER,16);
+				contenido.moveTextPositionByAmount(100,440);		
+				contenido.drawString("Precio total: "+ prect);
+				contenido.endText();
+
+
+
+
+				contenido.beginText();
+				contenido.drawImage(img, 380, 250);
+				contenido.endText();
+
+
+
+				contenido.close();
+				entrada.save(nombre);
+
+				int EntraInicial=0;
+				File entradapdf= new File(nombre);
+				File carpetaEntrada = new File("./Entradas/"+nombre);
+				Copiar(entradapdf,carpetaEntrada);
+				File f= new File(nombre);
+				f.delete();
+				
+				
+				
+				
+				
+				
+				
 				
 				controller.anyadirEntrada((int)Math.random(), peli, null, preciot, cantidad, preciot, getName());
 				

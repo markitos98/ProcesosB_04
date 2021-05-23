@@ -58,6 +58,7 @@ public class VentanaEntrada extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	
 	public VentanaEntrada(Pelicula p) {
 		setResizable(false);
 		setForeground(Color.ORANGE);
