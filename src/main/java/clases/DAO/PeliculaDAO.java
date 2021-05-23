@@ -15,7 +15,10 @@ import org.apache.log4j.Logger;
 import clases.Pelicula;
 
 
-
+/**
+ * @author Marcos
+ * 
+ */
 
 public class PeliculaDAO implements IPeliculaDAO {
 
@@ -27,6 +30,12 @@ public class PeliculaDAO implements IPeliculaDAO {
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 
+	
+	/**
+	 * Metodo para devolver las peliculas de la BBDD
+	 * 
+	 */
+	
 	@Override
 	public List<Pelicula> getPeliculas() {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -70,6 +79,11 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 	}
 
+	/**
+	 * Metodo para añadir peliculas a la BBDD
+	 * @param pelicula 
+	 * 
+	 */
 	@Override
 	public void anyadirPelicula(Pelicula p) {
 
@@ -91,6 +105,13 @@ public class PeliculaDAO implements IPeliculaDAO {
 
 		}
 	}
+	
+	
+	/**
+	 * Metodo para devolver pelicula 
+	 * @param titulo de la pelicula 
+	 * 
+	 */
 	
 	public Pelicula getPelicula(String titulo) {
 		PersistenceManager pm = pmf.getPersistenceManager();
