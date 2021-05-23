@@ -73,16 +73,7 @@ public class EntradaPerfTest {
 
 			
 		}
-		@Test
-		@PerfTest(invocations = 20)
-		public void getEntradaTest() throws Exception {
-		    Entrada e = new Entrada();
-		   e.setId(Integer.parseInt("id"));
-		   e.setPrecio(Integer.parseInt("precio"));
-		   e.setCantidad(Integer.parseInt("cantidad"));
-		   e.setPrecioTotal(Integer.parseInt("precioTotal"));
-		  e.setNombre("nombre");
-		}
+		
 		@Test
 		@PerfTest(invocations = 20)
 		public void getentrada() throws Exception {
@@ -108,13 +99,7 @@ public class EntradaPerfTest {
 			   udao.getEntradaId(c.getPrecioTotal());
 		   
 		}
-		@Test
-		@PerfTest(invocations = 20)
-		public void testComprobarNombre() throws Exception {
-			EntradaDAO udao= new EntradaDAO();
-			   udao.getEntradaId(Integer.parseInt(c.getNombre()));
-		   
-		}
+		
 		
 	
 }
