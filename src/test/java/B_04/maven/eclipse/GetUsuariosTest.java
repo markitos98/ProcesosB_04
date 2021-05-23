@@ -14,6 +14,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -22,10 +23,11 @@ import cine.remote.Cine;
 import clasesPelicula.DAO.IUsuarioDAO;
 import clasesPelicula.DAO.UsuarioDAO;
 import clasesUsuario.Cliente;
+import junit.framework.JUnit4TestAdapter;
 
 
 
-
+@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class GetUsuariosTest {
 	
@@ -42,7 +44,11 @@ public class GetUsuariosTest {
 	@Mock
 	IUsuarioDAO dao;
 	
+
 	
+	public static junit.framework.Test suite() {
+		return new JUnit4TestAdapter(UsuarioDAOTest.class);
+	}
 	
 		@Before
 		public void setUp() throws Exception {
@@ -59,7 +65,7 @@ public class GetUsuariosTest {
 		c.getUsuarios();
 		ArgumentCaptor<Cliente> clienteCap = ArgumentCaptor.forClass(Cliente.class);
 		System.out.println("Mostrando el usuario...");
-		verify(dao).getUsuarios();
+		 verify(dao).getUsuarios();
 		
 //		a;
 		Cliente cli = clienteCap.getValue();

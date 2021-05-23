@@ -51,10 +51,10 @@ public class DeleteUsuarioTest {
 		verify(dao).anyadirUsuario(clienteCap.capture());
 		Cliente cl=clienteCap.getValue();
 		if(c.getUsername()!=cl.getUsername()) {
-			assertTrue(true);
+			assertTrue(false);
 		}
 		else {
-			assertTrue(false);
+			assertTrue(true);
 		}
 	}
 	
