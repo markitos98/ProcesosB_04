@@ -5,76 +5,67 @@ import static org.junit.Assert.assertEquals;
 import javax.swing.JTextField;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import cine.remote.Cine;
+import clasesPelicula.DAO.IUsuarioDAO;
+
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import java.rmi.RemoteException;
+
 import clasesUsuario.Cliente;
 
+@Ignore
+@RunWith(MockitoJUnitRunner.class)
 public class AnyadirUsuarioTest {
+	
 
-	private Cliente c;
-	private static JTextField textField1;
-	private static JTextField textField2;
-	private static JTextField textField3;
-	private static JTextField textField4;
-	private static JTextField textField5;
-	private static JTextField textField6;
-	private static JTextField textField7;
 
+	Cine c;
+	@Mock
+	IUsuarioDAO dao;
 	
 	
-	@Before
-	public void setUp() throws Exception {
 	
-		c=  new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
+		@Before
+		public void setUp() throws Exception {
+			c = new Cine(dao);
+
+		}
 		
-		textField1 = Mockito.mock(JTextField.class);
-		textField2 = Mockito.mock(JTextField.class);
-		textField3 = Mockito.mock(JTextField.class);
-		textField4 = Mockito.mock(JTextField.class);
-		textField5 = Mockito.mock(JTextField.class);
-		textField6 = Mockito.mock(JTextField.class);
-		textField7 = Mockito.mock(JTextField.class);
-	}
+	
 	
 	@Test
-	public void testAnyadirCliente() {
+public void testAnyadirUsuario() throws RemoteException {
 		
-		Cliente cl = new Cliente();
-		when(textField1.getText()).thenReturn("alex");
+		Cliente cli = new Cliente("Alex", "1234", "alex@gmail.com","alex", "anton","mota","27/09/199");
+		c.anyadirUsuario("Alex", "1234", "alex@gmail.com","alex", "anton","mota","27/09/199");
+		ArgumentCaptor<Cliente> usuCaptor = ArgumentCaptor.forClass(Cliente.class);
+		verify(dao).anyadirUsuario(usuCaptor.capture());
 		
-		cl.setUsername(textField1.getText());
-
-		when(textField2.getText()).thenReturn("1234");
-		cl.setPassword(textField2.getText());
-
-		when(textField3.getText()).thenReturn("alex@gmail.com");
-		cl.setEmail(textField3.getText());
 		
-		when(textField4.getText()).thenReturn("Alex");
-		cl.setNombre(textField4.getText());
-
-		when(textField5.getText()).thenReturn("Anton");
-		cl.setApellido_1(textField5.getText());
+		Cliente cliente = usuCaptor.getValue();
+		assertEquals(cliente.getPassword() , cli.getPassword());
+		assertEquals(cliente.getUsername() , cli.getUsername());
+		assertEquals(cliente.getApellido_2() , cli.getApellido_2());
+		assertEquals(cliente.getApellido_1(), cli.getApellido_1());
+		assertEquals(cliente.getEmail() , cli.getEmail());
+		assertEquals(cliente.getFecha_nac() , cli.getFecha_nac());
+		assertEquals(cliente.getNombre() , cli.getNombre());
 		
-		when(textField6.getText()).thenReturn("Mota");
-		cl.setApellido_2(textField6.getText());
 		
-		when(textField7.getText()).thenReturn("27/09/1999");
-		cl.setFecha_nac(textField7.getText());
-		
-
-
-		assertEquals(cl.getUsername(), c.getUsername());
-		assertEquals(cl.getPassword(), c.getPassword());
-		assertEquals(cl.getEmail(), c.getEmail());
-		assertEquals(cl.getNombre(), c.getNombre());
-		assertEquals(cl.getApellido_1(), c.getApellido_1());
-		assertEquals(cl.getApellido_2(), c.getApellido_2());
-		assertEquals(cl.getFecha_nac(), c.getFecha_nac());
 	
 	
+	
+		
 	}
 	
-
 }
