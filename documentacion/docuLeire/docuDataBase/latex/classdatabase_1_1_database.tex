@@ -1,0 +1,105 @@
+\hypertarget{classdatabase_1_1_database}{}\doxysection{database.\+Database Class Reference}
+\label{classdatabase_1_1_database}\index{database.Database@{database.Database}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdatabase_1_1_database_a8fa29674cc3deb4fb85c3397039aa4c3}{Database}} ()
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_database_ac4e63c9a54d5418843039d7f339462e1}{anyadir\+Usuario}} (String username, String password, String email, String nombre, String apellido\+\_\+1, String apellido\+\_\+2, String fecha\+\_\+nac)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_database_a80000ee3c3806ea1f758099bf00e5bd3}{update\+Usuario}} (String username, String password, String email, String nombre, String apellido\+\_\+1, String apellido\+\_\+2, String fecha\+\_\+nac)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_database_ab0fed670b2b6aabd3f1fccaa7694c363}{delete\+Usuario}} (Usuario usuario)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_database_a6fa704ced06cd4a9d128b8511350d590}{comprobar\+Email}} (String email\+Text)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_database_af20515a5ed173c928a0809444c03b1a4}{comprobrar\+Usuario}} (String usuario, String contrasenya)
+\item 
+List$<$ Cliente $>$ \mbox{\hyperlink{classdatabase_1_1_database_ab6c65b7623c16405f66fc7f162aec10d}{get\+Usuarios}} ()
+\item 
+List$<$ Pelicula $>$ \mbox{\hyperlink{classdatabase_1_1_database_afb33f8eb5711b7a1fec2628fc5d8caca}{get\+Peliculas}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Usuario \mbox{\hyperlink{classdatabase_1_1_database_ac41662c51a0e9e85ae10015b61a4706f}{get\+Usuario}} (String username)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Persistence\+Manager\+Factory \mbox{\hyperlink{classdatabase_1_1_database_a5d288420e0453778eb7446017f06ea4f}{pmf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdatabase_1_1_database_a8fa29674cc3deb4fb85c3397039aa4c3}\label{classdatabase_1_1_database_a8fa29674cc3deb4fb85c3397039aa4c3}} 
+\index{database.Database@{database.Database}!Database@{Database}}
+\index{Database@{Database}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{Database()}{Database()}}
+{\footnotesize\ttfamily database.\+Database.\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1_database_ac4e63c9a54d5418843039d7f339462e1}\label{classdatabase_1_1_database_ac4e63c9a54d5418843039d7f339462e1}} 
+\index{database.Database@{database.Database}!anyadirUsuario@{anyadirUsuario}}
+\index{anyadirUsuario@{anyadirUsuario}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{anyadirUsuario()}{anyadirUsuario()}}
+{\footnotesize\ttfamily void database.\+Database.\+anyadir\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password,  }\item[{String}]{email,  }\item[{String}]{nombre,  }\item[{String}]{apellido\+\_\+1,  }\item[{String}]{apellido\+\_\+2,  }\item[{String}]{fecha\+\_\+nac }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_a6fa704ced06cd4a9d128b8511350d590}\label{classdatabase_1_1_database_a6fa704ced06cd4a9d128b8511350d590}} 
+\index{database.Database@{database.Database}!comprobarEmail@{comprobarEmail}}
+\index{comprobarEmail@{comprobarEmail}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{comprobarEmail()}{comprobarEmail()}}
+{\footnotesize\ttfamily boolean database.\+Database.\+comprobar\+Email (\begin{DoxyParamCaption}\item[{String}]{email\+Text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_af20515a5ed173c928a0809444c03b1a4}\label{classdatabase_1_1_database_af20515a5ed173c928a0809444c03b1a4}} 
+\index{database.Database@{database.Database}!comprobrarUsuario@{comprobrarUsuario}}
+\index{comprobrarUsuario@{comprobrarUsuario}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{comprobrarUsuario()}{comprobrarUsuario()}}
+{\footnotesize\ttfamily boolean database.\+Database.\+comprobrar\+Usuario (\begin{DoxyParamCaption}\item[{String}]{usuario,  }\item[{String}]{contrasenya }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_ab0fed670b2b6aabd3f1fccaa7694c363}\label{classdatabase_1_1_database_ab0fed670b2b6aabd3f1fccaa7694c363}} 
+\index{database.Database@{database.Database}!deleteUsuario@{deleteUsuario}}
+\index{deleteUsuario@{deleteUsuario}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{deleteUsuario()}{deleteUsuario()}}
+{\footnotesize\ttfamily void database.\+Database.\+delete\+Usuario (\begin{DoxyParamCaption}\item[{Usuario}]{usuario }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_afb33f8eb5711b7a1fec2628fc5d8caca}\label{classdatabase_1_1_database_afb33f8eb5711b7a1fec2628fc5d8caca}} 
+\index{database.Database@{database.Database}!getPeliculas@{getPeliculas}}
+\index{getPeliculas@{getPeliculas}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{getPeliculas()}{getPeliculas()}}
+{\footnotesize\ttfamily List$<$Pelicula$>$ database.\+Database.\+get\+Peliculas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_ac41662c51a0e9e85ae10015b61a4706f}\label{classdatabase_1_1_database_ac41662c51a0e9e85ae10015b61a4706f}} 
+\index{database.Database@{database.Database}!getUsuario@{getUsuario}}
+\index{getUsuario@{getUsuario}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{getUsuario()}{getUsuario()}}
+{\footnotesize\ttfamily static Usuario database.\+Database.\+get\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_ab6c65b7623c16405f66fc7f162aec10d}\label{classdatabase_1_1_database_ab6c65b7623c16405f66fc7f162aec10d}} 
+\index{database.Database@{database.Database}!getUsuarios@{getUsuarios}}
+\index{getUsuarios@{getUsuarios}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{getUsuarios()}{getUsuarios()}}
+{\footnotesize\ttfamily List$<$Cliente$>$ database.\+Database.\+get\+Usuarios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdatabase_1_1_database_a80000ee3c3806ea1f758099bf00e5bd3}\label{classdatabase_1_1_database_a80000ee3c3806ea1f758099bf00e5bd3}} 
+\index{database.Database@{database.Database}!updateUsuario@{updateUsuario}}
+\index{updateUsuario@{updateUsuario}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{updateUsuario()}{updateUsuario()}}
+{\footnotesize\ttfamily void database.\+Database.\+update\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password,  }\item[{String}]{email,  }\item[{String}]{nombre,  }\item[{String}]{apellido\+\_\+1,  }\item[{String}]{apellido\+\_\+2,  }\item[{String}]{fecha\+\_\+nac }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdatabase_1_1_database_a5d288420e0453778eb7446017f06ea4f}\label{classdatabase_1_1_database_a5d288420e0453778eb7446017f06ea4f}} 
+\index{database.Database@{database.Database}!pmf@{pmf}}
+\index{pmf@{pmf}!database.Database@{database.Database}}
+\doxysubsubsection{\texorpdfstring{pmf}{pmf}}
+{\footnotesize\ttfamily Persistence\+Manager\+Factory database.\+Database.\+pmf\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/database/\mbox{\hyperlink{_database_8java}{Database.\+java}}\end{DoxyCompactItemize}
