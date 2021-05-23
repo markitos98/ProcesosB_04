@@ -61,7 +61,7 @@ public class GetUsuariosTest {
 		System.out.println("Mostrando el usuario...");
 		verify(dao).getUsuarios();
 		
-		
+//		a;
 		Cliente cli = clienteCap.getValue();
 	
 		assertEquals(cliente.getApellido_2() , cli.getApellido_2());
