@@ -149,7 +149,15 @@ public class InicioSesion extends JFrame {
 				
 				
 				try {
-					if(controller.comprobarUsurio(textField.getText(), passText)) {
+					
+					if(textField.getText().equals("Admin") && passText.equals("Admin")) {
+						
+						VentanaGestion ven = new VentanaGestion(controller);
+						ven.setVisible(true);
+						InicioSesion.this.dispose();
+					}
+					
+					if(controller.comprobarUsurio(textField.getText(), passText) && !textField.getText().equals("Admin")) {
 						
 						CambiarImagen cam= new CambiarImagen();
 						CambiarImagen.main(controller);

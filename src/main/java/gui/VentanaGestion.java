@@ -153,8 +153,10 @@ public class VentanaGestion extends JDialog {
 				cancelButton.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
-						new InicioSesionAdmin();
+						VentanaGestion.this.dispose();
+						InicioSesion is = new InicioSesion(controller);
+						is.setVisible(true);
+						
 
 					}
 				});
