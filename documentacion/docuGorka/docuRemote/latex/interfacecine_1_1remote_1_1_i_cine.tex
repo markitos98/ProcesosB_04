@@ -1,0 +1,139 @@
+\hypertarget{interfacecine_1_1remote_1_1_i_cine}{}\doxysection{cine.\+remote.\+ICine Interface Reference}
+\label{interfacecine_1_1remote_1_1_i_cine}\index{cine.remote.ICine@{cine.remote.ICine}}
+Inheritance diagram for cine.\+remote.\+ICine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interfacecine_1_1remote_1_1_i_cine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_a65e037e5c9ce022dd731b820c740e235}{anyadir\+Usuario}} (String username, String password, String email, String nombre, String apellido\+\_\+1, String apellido\+\_\+2, String fecha\+\_\+nac)  throws Remote\+Exception
+\item 
+Usuario \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_af671daaa94f9b6527eb2788a464834be}{get\+Usuario}} (String nombre)  throws Remote\+Exception
+\item 
+void \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_adcc0c2bb6cd47f8bb9ca9d1f945f8736}{delete\+Usuario}} (String nombre)  throws Remote\+Exception
+\item 
+List$<$ Pelicula $>$ \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_accd6289616d95a97d6939a63d27ad70d}{get\+Peliculas}} ()  throws Remote\+Exception
+\item 
+Pelicula \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_aec01579c2864b7f212a959f80529cd82}{get\+Pelicula}} (String titulo)  throws Remote\+Exception
+\item 
+void \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_af0963915f57f5ab399f9033c117c85b8}{anyadir\+Pelicula}} (String titulo, String genero, int anyo, String sinopsis, int duracion, String trailer, String ruta\+Foto, String ruta\+Foto\+Menu, int sala)  throws Remote\+Exception
+\item 
+boolean \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_a799c6e83457a7f2c9bc5796ba10418ae}{comprobar\+Usuario}} (String usuario, String contrasenya)  throws Remote\+Exception
+\item 
+boolean \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_a91636566d2814810fd39d1a85b18548c}{comprobar\+Email}} (String email\+Text)  throws Remote\+Exception
+\item 
+void \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_a5cf1389f9c4a1358cf16f6c3b232fc42}{anyadir\+Entrada}} (int id, Pelicula info\+Pelicula, Sesion info\+Sesion, int precio, int cantidad, int precio\+Total, String nombre)  throws Remote\+Exception
+\item 
+void \mbox{\hyperlink{interfacecine_1_1remote_1_1_i_cine_a449ea41b609897df4595649881df08eb}{delete\+Entrada}} (String nombre)  throws Remote\+Exception
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_a5cf1389f9c4a1358cf16f6c3b232fc42}\label{interfacecine_1_1remote_1_1_i_cine_a5cf1389f9c4a1358cf16f6c3b232fc42}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!anyadirEntrada@{anyadirEntrada}}
+\index{anyadirEntrada@{anyadirEntrada}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{anyadirEntrada()}{anyadirEntrada()}}
+{\footnotesize\ttfamily void cine.\+remote.\+ICine.\+anyadir\+Entrada (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{Pelicula}]{info\+Pelicula,  }\item[{Sesion}]{info\+Sesion,  }\item[{int}]{precio,  }\item[{int}]{cantidad,  }\item[{int}]{precio\+Total,  }\item[{String}]{nombre }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a6d678b420d05fc2a55ea995f3957f36a}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_af0963915f57f5ab399f9033c117c85b8}\label{interfacecine_1_1remote_1_1_i_cine_af0963915f57f5ab399f9033c117c85b8}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!anyadirPelicula@{anyadirPelicula}}
+\index{anyadirPelicula@{anyadirPelicula}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{anyadirPelicula()}{anyadirPelicula()}}
+{\footnotesize\ttfamily void cine.\+remote.\+ICine.\+anyadir\+Pelicula (\begin{DoxyParamCaption}\item[{String}]{titulo,  }\item[{String}]{genero,  }\item[{int}]{anyo,  }\item[{String}]{sinopsis,  }\item[{int}]{duracion,  }\item[{String}]{trailer,  }\item[{String}]{ruta\+Foto,  }\item[{String}]{ruta\+Foto\+Menu,  }\item[{int}]{sala }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a5c5f87cc7df7f848c5692fa7cdaae98b}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_a65e037e5c9ce022dd731b820c740e235}\label{interfacecine_1_1remote_1_1_i_cine_a65e037e5c9ce022dd731b820c740e235}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!anyadirUsuario@{anyadirUsuario}}
+\index{anyadirUsuario@{anyadirUsuario}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{anyadirUsuario()}{anyadirUsuario()}}
+{\footnotesize\ttfamily void cine.\+remote.\+ICine.\+anyadir\+Usuario (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password,  }\item[{String}]{email,  }\item[{String}]{nombre,  }\item[{String}]{apellido\+\_\+1,  }\item[{String}]{apellido\+\_\+2,  }\item[{String}]{fecha\+\_\+nac }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a73c0047c60b8b9463be6f7822eb10bc6}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_a91636566d2814810fd39d1a85b18548c}\label{interfacecine_1_1remote_1_1_i_cine_a91636566d2814810fd39d1a85b18548c}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!comprobarEmail@{comprobarEmail}}
+\index{comprobarEmail@{comprobarEmail}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{comprobarEmail()}{comprobarEmail()}}
+{\footnotesize\ttfamily boolean cine.\+remote.\+ICine.\+comprobar\+Email (\begin{DoxyParamCaption}\item[{String}]{email\+Text }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_afc95cf7a55390d53db22d05fcabe3ddb}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_a799c6e83457a7f2c9bc5796ba10418ae}\label{interfacecine_1_1remote_1_1_i_cine_a799c6e83457a7f2c9bc5796ba10418ae}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!comprobarUsuario@{comprobarUsuario}}
+\index{comprobarUsuario@{comprobarUsuario}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{comprobarUsuario()}{comprobarUsuario()}}
+{\footnotesize\ttfamily boolean cine.\+remote.\+ICine.\+comprobar\+Usuario (\begin{DoxyParamCaption}\item[{String}]{usuario,  }\item[{String}]{contrasenya }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a24ee9940f16ff7fe47f036336996ffe7}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_a449ea41b609897df4595649881df08eb}\label{interfacecine_1_1remote_1_1_i_cine_a449ea41b609897df4595649881df08eb}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!deleteEntrada@{deleteEntrada}}
+\index{deleteEntrada@{deleteEntrada}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{deleteEntrada()}{deleteEntrada()}}
+{\footnotesize\ttfamily void cine.\+remote.\+ICine.\+delete\+Entrada (\begin{DoxyParamCaption}\item[{String}]{nombre }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_aacb78072c2821bb3d3810283506b4101}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_adcc0c2bb6cd47f8bb9ca9d1f945f8736}\label{interfacecine_1_1remote_1_1_i_cine_adcc0c2bb6cd47f8bb9ca9d1f945f8736}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!deleteUsuario@{deleteUsuario}}
+\index{deleteUsuario@{deleteUsuario}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{deleteUsuario()}{deleteUsuario()}}
+{\footnotesize\ttfamily void cine.\+remote.\+ICine.\+delete\+Usuario (\begin{DoxyParamCaption}\item[{String}]{nombre }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_af6d5d58ef9e637e41e620a66543397aa}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_aec01579c2864b7f212a959f80529cd82}\label{interfacecine_1_1remote_1_1_i_cine_aec01579c2864b7f212a959f80529cd82}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!getPelicula@{getPelicula}}
+\index{getPelicula@{getPelicula}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{getPelicula()}{getPelicula()}}
+{\footnotesize\ttfamily Pelicula cine.\+remote.\+ICine.\+get\+Pelicula (\begin{DoxyParamCaption}\item[{String}]{titulo }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a223f9ddc597246e8332bb9ba61622a1c}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_accd6289616d95a97d6939a63d27ad70d}\label{interfacecine_1_1remote_1_1_i_cine_accd6289616d95a97d6939a63d27ad70d}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!getPeliculas@{getPeliculas}}
+\index{getPeliculas@{getPeliculas}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{getPeliculas()}{getPeliculas()}}
+{\footnotesize\ttfamily List$<$Pelicula$>$ cine.\+remote.\+ICine.\+get\+Peliculas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_ac6a96639833ef934ea5c2fe388ed4c5e}{cine.\+remote.\+Cine}}.
+
+\mbox{\Hypertarget{interfacecine_1_1remote_1_1_i_cine_af671daaa94f9b6527eb2788a464834be}\label{interfacecine_1_1remote_1_1_i_cine_af671daaa94f9b6527eb2788a464834be}} 
+\index{cine.remote.ICine@{cine.remote.ICine}!getUsuario@{getUsuario}}
+\index{getUsuario@{getUsuario}!cine.remote.ICine@{cine.remote.ICine}}
+\doxysubsubsection{\texorpdfstring{getUsuario()}{getUsuario()}}
+{\footnotesize\ttfamily Usuario cine.\+remote.\+ICine.\+get\+Usuario (\begin{DoxyParamCaption}\item[{String}]{nombre }\end{DoxyParamCaption}) throws Remote\+Exception}
+
+
+
+Implemented in \mbox{\hyperlink{classcine_1_1remote_1_1_cine_a74475d11b844ac616064e83448d557b3}{cine.\+remote.\+Cine}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/cine/remote/\mbox{\hyperlink{_i_cine_8java}{ICine.\+java}}\end{DoxyCompactItemize}
