@@ -23,7 +23,7 @@ import java.rmi.RemoteException;
 
 import clasesUsuario.Cliente;
 
-@Ignore
+
 @RunWith(MockitoJUnitRunner.class)
 public class AnyadirUsuarioTest {
 	
