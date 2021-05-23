@@ -7,14 +7,14 @@ package clasesPelicula;
  */
 public class Sesion {
 
-	private double hora;
+	private String hora;
 
-	public Sesion(double hora) {
+	public Sesion(String hora) {
 		super();
 		this.hora = hora;
 	}
 	public Sesion() {
-		this.hora=18.00;
+		this.hora="18.00";
 	}
 
 	public Sesion(Sesion s) {
@@ -22,14 +22,14 @@ public class Sesion {
 		this.hora= s.hora;
 
 	}
-	public double getHora() {
+	public String getHora() {
 		return hora;
 	}
 
 	//Establece esas horas
-	public void setHora(double hora) {
+	public void setHora(String hora) {
 
-		if(hora==16.00||hora==18.00||hora==20.00||hora==22.00) {
+		if(hora=="16.00"||hora=="18.00"||hora=="20.00"||hora=="22.00") {
 			this.hora = hora;
 		}else {
 			System.out.println("Selecciona un horario disponible");

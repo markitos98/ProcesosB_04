@@ -202,6 +202,7 @@ public class VentanaEntrada extends JDialog {
 
 				valor = (Integer)spinnerCant.getValue();
 				double total= precio*valor;
+				
 				String horario=comboHor.getSelectedItem().toString();
 
 				//Falta método para actualizar el valor del spinner
@@ -320,8 +321,19 @@ public class VentanaEntrada extends JDialog {
 				JButton okButton = new JButton("Pagar");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						
+						valor = (Integer)spinnerCant.getValue();
+						double total= precio*valor;
+						
+						String horario=comboHor.getSelectedItem().toString();
 
-						Pago pago= new Pago(controller, p);
+						//Falta método para actualizar el valor del spinner
+
+
+						totalstring= String.valueOf(total);
+						txtPrecT.setText(totalstring);
+						
+						Pago pago= new Pago(controller, p, total, horario);
 					}
 				});
 				okButton.setForeground(Color.ORANGE);

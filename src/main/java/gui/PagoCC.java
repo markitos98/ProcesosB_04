@@ -7,9 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -22,13 +27,16 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.pdfbox.exceptions.COSVisitorException;
+import org.pdfbox.pdmodel.PDDocument;
+import org.pdfbox.pdmodel.PDPage;
+import org.pdfbox.pdmodel.edit.PDPageContentStream;
+import org.pdfbox.pdmodel.font.PDType1Font;
+import org.pdfbox.pdmodel.graphics.xobject.PDJpeg;
 
 import cine.controller.Controller;
 import clasesPelicula.Pelicula;
+import clasesPelicula.Sesion;
 import gui.VentanaEntrada;
 /**
  * 
@@ -46,17 +54,21 @@ public class PagoCC extends JFrame{
 	private JTextField textNombre;
 	static int entraInicial=0;
 	public int cantidad;
-	public int preciot;
+	public double precioT;
+	private String horario;
 	private Controller controller;
 	private Pelicula peli;
+
 	/**
 	 * Launch the application.
 	 */
 
-	public PagoCC(Controller controller, Pelicula p) {
+	public PagoCC(Controller controller, Pelicula p, double precioT, String horario) {
 		this.controller = controller;
-		initialize();
 		this.peli = p;
+		this.precioT = precioT;
+		this.horario = horario;
+		initialize(); 
 		this.setVisible(true);
 		
 	}
@@ -160,8 +172,10 @@ public class PagoCC extends JFrame{
 				ArrayList<Integer> numeros= new ArrayList<Integer>();
 				numeros.clear();
 				numeros.add(ve.numAleatorio);
+				try {
+				PDDocument entrada;
 				
-				PDDocument entrada = new PDDocument();
+				entrada = new PDDocument();
 				PDPage pagina= new PDPage();
 				entrada.addPage(pagina);
 				String nombre="entrada"+ String.valueOf(numeros.get(0))+".pdf";
@@ -216,12 +230,7 @@ public class PagoCC extends JFrame{
 				contenido.drawString("Sala: "+ peli.getSala());	 		
 				contenido.endText();
 
-				contenido.beginText();
-				contenido.setFont(PDType1Font.COURIER,16);
-				contenido.moveTextPositionByAmount(100,480);		
-				contenido.drawString("Numero de entradas: "+ cant);		
-				contenido.endText();
-
+	
 				contenido.beginText();
 				contenido.setFont(PDType1Font.COURIER,16);
 				contenido.moveTextPositionByAmount(100,460);		
@@ -231,7 +240,7 @@ public class PagoCC extends JFrame{
 				contenido.beginText();
 				contenido.setFont(PDType1Font.COURIER,16);
 				contenido.moveTextPositionByAmount(100,440);		
-				contenido.drawString("Precio total: "+ prect);
+				contenido.drawString("Precio total: "+ precioT);
 				contenido.endText();
 
 
@@ -253,14 +262,18 @@ public class PagoCC extends JFrame{
 				File f= new File(nombre);
 				f.delete();
 				
+			//	controller.anyadirEntrada((int)Math.random(), peli, horario , 9, cantidad, (int)precioT, textNombre.getText());
+
+				} catch (IOException | COSVisitorException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				
 				
+				Sesion s = new Sesion(horario);
 				
 				
-				
-				
-				controller.anyadirEntrada((int)Math.random(), peli, null, preciot, cantidad, preciot, getName());
 				
 			}
 		});
@@ -331,7 +344,84 @@ public class PagoCC extends JFrame{
 	}
 
 
-	
+	//Método recursivo para copiar fichero de una carpeta a otra
+	public static void Copiar(File FOrigen,File FDestino){
+		//si el origen no es una carpeta
+		if(!FOrigen.isDirectory()){
+			//Llamo la funcion que lo copia
+			CopiarFichero(FOrigen,FDestino);
+		}else{
+
+			entraInicial++; 
+
+			if(entraInicial==1){
+
+				FDestino=new File(FDestino.getAbsolutePath()+"/"+FOrigen.getName()); 
+
+				if(!FDestino.exists()){
+					FDestino.mkdir();
+				}
+			} 
+
+			String []Rutas=FOrigen.list();
+
+			for(int i=0;i<Rutas.length;i++){
+
+				File FnueOri=new File(FOrigen.getAbsolutePath()+"/"+Rutas[i]);
+
+				File FnueDest= new File(FDestino.getAbsolutePath()+"/"+Rutas[i]);
+
+				if(FnueOri.isDirectory() && !FnueDest.exists()){
+					FnueDest.mkdir();                        
+				}
+
+				Copiar(FnueOri,FnueDest); 
+			}
+		}
+
+	}    
+	public static void CopiarFichero(File FOrigen,File FDestino){
+		try {
+			//Si el archivo a copiar existe
+			if(FOrigen.exists()){
+				String copiar="S";
+				//si el fichero destino ya existe
+				if(FDestino.exists()){
+					System.out.println("El fichero ya existe, Desea Sobre Escribir:S/N ");
+					copiar = ( new BufferedReader(new InputStreamReader(System.in))).readLine();
+				}
+				//si puedo copiar
+				if(copiar.toUpperCase().equals("S")){
+
+					FileInputStream LeeOrigen= new FileInputStream(FOrigen);
+
+					OutputStream Salida = new FileOutputStream(FDestino);
+					//separo un buffer de 1MB de lectura
+					byte[] buffer = new byte[1024];
+					int tamaño;
+					//leo el fichero a copiar cada 1MB
+					while ((tamaño = LeeOrigen.read(buffer)) > 0) {
+						//Escribe el MB en el fichero destino
+						Salida.write(buffer, 0, tamaño);
+					}
+					System.out.println(FOrigen.getName()+" Copiado con Exito!!");
+					//cierra los flujos de lectura y escritura
+					Salida.close();
+					LeeOrigen.close();
+				}
+
+			}else{//l fichero a copiar no existe                
+				System.out.println("El fichero a copiar no existe..."+FOrigen.getAbsolutePath());
+			}
+
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+
+		}
+
+
+	}
+}
 
 	
-}
+
