@@ -11,6 +11,11 @@ import org.apache.log4j.Logger;
 import clases.Entrada;
 import clasesUsuario.Usuario;
 
+/**
+ * @author Marcos
+ */
+
+
 public class EntradaDAO implements IEntradaDAO{
 
 	
@@ -18,12 +23,18 @@ public class EntradaDAO implements IEntradaDAO{
 	private PersistenceManagerFactory pmf;
 	private static final Logger logger = Logger.getLogger(UsuarioDAO.class);
 
+	
+	
 	public EntradaDAO() {
 
 		pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	}
 	
-	
+	/**
+	 * Metodo para añadir entrada a la BBDD
+	 * @param entrada para añadir
+	 * 
+	 */
 	
 	
 	@Override
@@ -47,6 +58,13 @@ public class EntradaDAO implements IEntradaDAO{
 		
 	}
 
+	
+	/**
+	 * Metodo para borrar entrada a la BBDD
+	 * @param entrada 
+	 * 
+	 */
+	
 	@Override
 	public void deleteEntrada(Entrada entrada) {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -72,18 +90,23 @@ public class EntradaDAO implements IEntradaDAO{
 	}
 
 	
+	/**
+	 * Metodo para devolver entrada por el nombre
+	 * @param nombre del registro de la entrada 
+	 * 
+	 */
 	
-	public Entrada getEntrada(int id) {
+	public Entrada getEntrada(String nombre) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		pm.getFetchPlan().setMaxFetchDepth(4);
 		Transaction tx = pm.currentTransaction();
 		Entrada entrada = null; 
 
 		try {
-			System.out.println("  * Querying a Usuario by entrada: " + id);
+			System.out.println("  * Querying a Entrada by entrada: " + nombre);
 			tx.begin();
 			
-			Query<?> query = pm.newQuery("SELECT FROM " + Entrada.class.getName() + " WHERE id == '" + id + "'");
+			Query<?> query = pm.newQuery("SELECT FROM " + Entrada.class.getName() + " WHERE id == '" + nombre + "'");
 			query.setUnique(true);
 			entrada = (Entrada) query.execute();
 			

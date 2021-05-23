@@ -9,5 +9,5 @@ public interface IEntradaDAO {
 	
 	public void deleteEntrada(Entrada entrada);
 	
-	public Entrada getEntrada(int id);
+	public Entrada getEntrada(String nombre);
 }

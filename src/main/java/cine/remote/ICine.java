@@ -34,6 +34,6 @@ public interface ICine extends Remote {
 	
 	public void anyadirEntrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) throws RemoteException;
 	
-	public void deleteEntrada(int id) throws RemoteException;
+	public void deleteEntrada(String nombre) throws RemoteException;
 }
 

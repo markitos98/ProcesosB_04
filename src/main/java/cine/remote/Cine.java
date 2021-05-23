@@ -123,8 +123,8 @@ public class Cine extends UnicastRemoteObject implements ICine {
 	}
 
 	@Override
-	public void deleteEntrada(int id) throws RemoteException {
-		Entrada entrada =  entradaDAO.getEntrada(id);
+	public void deleteEntrada(String nombre) throws RemoteException {
+		Entrada entrada =  entradaDAO.getEntrada(nombre);
 		
 		entradaDAO.deleteEntrada(entrada);
 		
