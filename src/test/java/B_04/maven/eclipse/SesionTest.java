@@ -27,16 +27,16 @@ public class SesionTest {
     @Test
 
     public void testGetHora() {
-        assertEquals("22.00", s.getHora(),20.00);
-        assertEquals("20.00", prueba.getHora(),20.00);
-        assertEquals("18.00", empty.getHora(),20.00);
+        assertEquals("22.00", s.getHora());
+        assertEquals("22.00", prueba.getHora());
+        assertEquals("18.00", empty.getHora());
       
     }
 
     @Test
     public void testSetHora() {
         s.setHora("18.00");
-        assertEquals("18.00", s.getHora(),20.00);
+        assertEquals("18.00", s.getHora());
        assertNull(e);
         
 
