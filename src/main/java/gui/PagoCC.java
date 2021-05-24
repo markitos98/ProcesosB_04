@@ -182,7 +182,7 @@ public class PagoCC extends JFrame{
 				System.out.println((int)precioT);
 				System.out.println(textNombre.getText());
 				
-				controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
+			//	controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
 				
 			
 				try {
@@ -275,7 +275,6 @@ public class PagoCC extends JFrame{
 				Copiar(entradapdf,carpetaEntrada);
 				File f= new File(nombre);
 				
-				PDDocument.load(carpetaEntrada);
 				f.delete();
 				
 		
