@@ -17,6 +17,7 @@ public class Entrada{
 	private Pelicula infoPelicula;
 	private String infoPeliculaString;
 	private String infoSesion;
+	private Sesion sesion;
 	private int precio;
 	private int cantidad;
 	private int precioTotal;
@@ -24,11 +25,11 @@ public class Entrada{
 
 
 
-	public Entrada(int id, Pelicula infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
+	public Entrada(int id, Pelicula infoPelicula, Sesion infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
 		super();
 		this.id= id;
 		this.infoPelicula = infoPelicula;
-		this.infoSesion = infoSesion;
+		this.sesion = infoSesion;
 		this.precio = precio;
 		this.cantidad = cantidad;
 		this.precioTotal = precioTotal;
@@ -39,7 +40,7 @@ public class Entrada{
 	public Entrada(int id, String infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
 		super();
 		this.id= id;
-		this.infoPeliculaString = infoPelicula;
+		this.setInfoPeliculaString(infoPelicula);
 		this.infoSesion = infoSesion;
 		this.precio = precio;
 		this.cantidad = cantidad;
@@ -122,5 +123,21 @@ public class Entrada{
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getInfoPeliculaString() {
+		return infoPeliculaString;
+	}
+
+	public void setInfoPeliculaString(String infoPeliculaString) {
+		this.infoPeliculaString = infoPeliculaString;
+	}
+
+	public Sesion getSesion() {
+		return sesion;
+	}
+
+	public void setSesion(Sesion sesion) {
+		this.sesion = sesion;
 	}}
 

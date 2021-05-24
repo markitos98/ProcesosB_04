@@ -23,7 +23,7 @@ public class EntradaPerfTest {
 	
 	private Pelicula p = new Pelicula("Escape Room","TERROR",2015,"hola",198,"youtube.com","/imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);
 	private Sesion s = new Sesion("22.00");
-	private Entrada c= new Entrada(1,p,s.getHora(),9,2,18,"gorka" );
+	private Entrada c= new Entrada(1,p,s,9,2,18,"gorka" );
 
 	
 	

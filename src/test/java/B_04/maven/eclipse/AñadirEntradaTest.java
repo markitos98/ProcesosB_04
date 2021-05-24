@@ -34,7 +34,7 @@ public class AñadirEntradaTest{
 	public void setUp() throws Exception {
 		s= new Sesion("16.40");
 		p= new Pelicula("Superman", "accion", 2000, null, 240, null, null, null, 3);
-		c= new Entrada(1,p,s.getHora(),9,2,18,"Gorka");
+		c= new Entrada(1,p,s,9,2,18,"Gorka");
 		
 		textField1 = Mockito.mock(JTextField.class);
 		textField2 = Mockito.mock(JTextField.class);
