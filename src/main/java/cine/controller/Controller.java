@@ -1,5 +1,6 @@
 package cine.controller;
 
+
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
@@ -114,9 +115,9 @@ public class Controller {
 		}
 	}
 	
-	public void anyadirEntrada(int id, Pelicula infoPelicula, String horario, int precio, int cantidad, int precioT, String nombre) {
+	public void anyadirEntrada(int id, String titulo, String horario, int precio, int cantidad, int precioT, String nombre) {
 		try {
-			cl.getService().anyadirEntrada(id, infoPelicula, horario, precio, cantidad, precioT, nombre);;
+			cl.getService().anyadirEntrada(id, titulo, horario, precio, cantidad, precioT, nombre);;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

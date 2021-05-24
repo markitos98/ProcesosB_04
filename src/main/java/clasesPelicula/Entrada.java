@@ -14,7 +14,8 @@ public class Entrada{
 
 	
 	private int id;
-	private Pelicula infoPelicula;
+//	private Pelicula infoPelicula;
+	private String infoPeliculaString;
 	private String infoSesion;
 	private int precio;
 	private int cantidad;
@@ -23,10 +24,22 @@ public class Entrada{
 
 
 
-	public Entrada(int id, Pelicula infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
+//	public Entrada(int id, Pelicula infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
+//		super();
+//		this.id= id;
+//		this.infoPelicula = infoPelicula;
+//		this.infoSesion = infoSesion;
+//		this.precio = precio;
+//		this.cantidad = cantidad;
+//		this.precioTotal = precioTotal;
+//		this.nombre = nombre;
+//		
+//	}
+	
+	public Entrada(int id, String infoPelicula, String infoSesion, int precio, int cantidad, int precioTotal, String nombre) {
 		super();
 		this.id= id;
-		this.infoPelicula = infoPelicula;
+		this.infoPeliculaString = infoPelicula;
 		this.infoSesion = infoSesion;
 		this.precio = precio;
 		this.cantidad = cantidad;
@@ -34,27 +47,27 @@ public class Entrada{
 		this.nombre = nombre;
 		
 	}
-	public Entrada(Entrada e) {
-		super();
-		this.id= e.id;
-		this.infoPelicula = e.infoPelicula;
-		this.infoSesion = e.infoSesion;
-		this.precio = e.precio;
-		this.cantidad = e.cantidad;
-		this.precioTotal = e.precioTotal;
-		this.nombre = e.nombre;
-	}
+//	public Entrada(Entrada e) {
+//		super();
+//		this.id= e.id;
+//		this.infoPelicula = e.infoPelicula;
+//		this.infoSesion = e.infoSesion;
+//		this.precio = e.precio;
+//		this.cantidad = e.cantidad;
+//		this.precioTotal = e.precioTotal;
+//		this.nombre = e.nombre;
+//	}
 
 	public Entrada() {
 		super();
 	}
-	public Pelicula getInfoPelicula() {
-		return infoPelicula;
-	}
-
-	public void setInfoPelicula(Pelicula infoPelicula) {
-		this.infoPelicula = infoPelicula;
-	}
+//	public Pelicula getInfoPelicula() {
+//		return infoPelicula;
+//	}
+//
+//	public void setInfoPelicula(Pelicula infoPelicula) {
+//		this.infoPelicula = infoPelicula;
+//	}
 
 	public String getInfoSesion() {
 		return infoSesion;
@@ -95,7 +108,7 @@ public class Entrada{
 
 	public void mostrarInfoEntrada() {
 		System.out.println();               
-		System.out.println("Película:" + "<" + infoPelicula.getTitulo() + ">");
+//		System.out.println("Película:" + "<" + infoPelicula.getTitulo() + ">");
 		System.out.println("Sesion:" + "<" + infoSesion + ">");
 		System.out.println("Cantidad:" + "<" + cantidad + ">");
 		System.out.println("Precio:" + "<" + precio + ">");

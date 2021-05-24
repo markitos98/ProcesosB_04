@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -172,6 +173,20 @@ public class PagoCC extends JFrame{
 				ArrayList<Integer> numeros= new ArrayList<Integer>();
 				numeros.clear();
 				numeros.add(ve.numAleatorio);
+				
+				System.out.println((int)Math.random());
+				System.out.println(peli.getTitulo());
+				System.out.println(horario);
+				System.out.println(((int)precioT/9));
+				System.out.println((int)precioT);
+				System.out.println(textNombre.getText());
+				try {
+					controller.getCl().getService().anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}  
+		
 				try {
 				PDDocument entrada;
 				
@@ -260,11 +275,12 @@ public class PagoCC extends JFrame{
 				File carpetaEntrada = new File("./Entradas/"+nombre);
 				Copiar(entradapdf,carpetaEntrada);
 				File f= new File(nombre);
+				
 				PDDocument.load(carpetaEntrada);
 				f.delete();
 				
 		
-				controller.anyadirEntrada((int)Math.random(), peli, horario , 9, cantidad, (int)precioT, textNombre.getText());
+			
 
 				} catch (IOException | COSVisitorException e) {
 					// TODO Auto-generated catch block
