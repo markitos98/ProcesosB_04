@@ -1,6 +1,7 @@
 package clasesPelicula;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 /**
  * Clase Entrada con sus atributos
@@ -12,7 +13,7 @@ import javax.jdo.annotations.PersistenceCapable;
 
 public class Entrada{
 
-	
+	@PrimaryKey
 	private int id;
 //	private Pelicula infoPelicula;
 	private String infoPeliculaString;

@@ -19,6 +19,10 @@ public class DatosPrueba {
 		Transaction tx = pm.currentTransaction();
 		try {
 			tx.begin();
+			
+			Entrada e = new Entrada(3, "sduudiadsaiui", "iadundnii", 3, 213, 12, "ajfudnjfanjafdkj");
+			pm.makePersistent(e);
+			
 			Cliente c=  new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
 			pm.makePersistent(c);
 			Pelicula p=  new Pelicula("Escape Room","TERROR",2019,"Seis desconocidos se encuentran en una habitación mortal en la que deberán usar su ingenio para sobrevivir.",198,"https://www.youtube.com/watch?v=qATdnx_x0bs&ab_channel=TrailersInSpanish","./src/main/resources/Imagenes/Escape room.jpg","posters/Escaperoom.jpg",2);

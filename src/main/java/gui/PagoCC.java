@@ -181,13 +181,10 @@ public class PagoCC extends JFrame{
 				System.out.println(((int)precioT/9));
 				System.out.println((int)precioT);
 				System.out.println(textNombre.getText());
-				try {
-					controller.getCl().getService().anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
-				} catch (RemoteException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}  
-		
+				
+				controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
+				
+			
 				try {
 				PDDocument entrada;
 				
