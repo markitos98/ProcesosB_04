@@ -27,6 +27,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import cine.controller.Controller;
 import clasesPelicula.Pelicula;
 
 
@@ -41,16 +42,25 @@ public class VentanaPelicula extends JDialog {
 	public JTextField textDur;
 	public JTextField txtGenero;
 	public JLabel lblNewLabel;
-
+	private Controller controller;
+	private Pelicula peli;
 	/**
 	 * Launch the application.
 	 */
-
+	
+	public VentanaPelicula(Controller controller, Pelicula p) {
+		this.controller = controller;
+		this.peli = p;
+		ventana();
+		this.setVisible(true);
+	}
 
 	/**
 	 * Create the dialog.
 	 */
-	public VentanaPelicula(Pelicula p) {
+	public void ventana(){
+		
+		
 		setResizable(false);
 		setForeground(Color.ORANGE);
 		setBackground(Color.GRAY);
@@ -67,7 +77,7 @@ public class VentanaPelicula extends JDialog {
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		Image fotomenu;
-		fotomenu= getToolkit().getImage(p.getRutaFoto());
+		fotomenu= getToolkit().getImage(peli.getRutaFoto());
 		fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
 
 
@@ -108,7 +118,7 @@ public class VentanaPelicula extends JDialog {
 		public void actionPerformed(ActionEvent arg0) {
 			
 			try {
-				verTrailer(p.getTrailer());
+				verTrailer(peli.getTrailer());
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -124,19 +134,19 @@ public class VentanaPelicula extends JDialog {
 		btnTrailer.setOpaque(true);
 		btnTrailer.setBorderPainted(false);
 
-		txtTit = new JTextField(p.getTitulo());
+		txtTit = new JTextField(peli.getTitulo());
 		txtTit.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtTit.setEditable(false);
 		txtTit.setColumns(10);
 		txtTit.setVisible(true);
 		
 
-		txtAnyo = new JTextField(String.valueOf(p.getAnyo()));
+		txtAnyo = new JTextField(String.valueOf(peli.getAnyo()));
 		txtAnyo.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtAnyo.setEditable(false);
 		txtAnyo.setColumns(10);
 
-		textDur = new JTextField(String.valueOf(p.getDuracion()));
+		textDur = new JTextField(String.valueOf(peli.getDuracion()));
 		textDur.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		textDur.setEditable(false);
 		textDur.setColumns(10);
@@ -146,11 +156,11 @@ public class VentanaPelicula extends JDialog {
 		lblGenero.setBorder(BorderFactory.createLineBorder(Color.ORANGE,2));
 		lblGenero.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 
-		txtGenero = new JTextField(p.getGenero());
+		txtGenero = new JTextField(peli.getGenero());
 		txtGenero.setEditable(false);
 		txtGenero.setColumns(10);
 
-		JTextArea textArea = new JTextArea(p.getSinopsis());
+		JTextArea textArea = new JTextArea(peli.getSinopsis());
 		textArea.setEditable(false);
 		textArea.setLineWrap(true);
 
@@ -224,9 +234,8 @@ public class VentanaPelicula extends JDialog {
 				JButton okButton = new JButton("Comprar");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
-						VentanaEntrada entrada= new VentanaEntrada(p);
-
+						VentanaPelicula.this.dispose();
+						VentanaEntrada entrada= new VentanaEntrada(controller, peli);
 						entrada.setVisible(true);
 					}
 				});
@@ -243,7 +252,7 @@ public class VentanaPelicula extends JDialog {
 				JButton cancelButton = new JButton("Cancelar");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						VentanaPelicula.this.dispose();
 					}
 				});
 				cancelButton.setForeground(Color.ORANGE);

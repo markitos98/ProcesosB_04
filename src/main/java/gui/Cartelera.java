@@ -79,6 +79,9 @@ public class Cartelera extends JFrame {
 	 * Create the frame.
 	 */
 	private void ventana() {
+		
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(60, 10, 1700, 1000);
 		contentPane = new JPanel();
@@ -148,7 +151,7 @@ public class Cartelera extends JFrame {
 		lblP1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(0));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(0));
 				vp.setVisible(true);
 
 
@@ -167,7 +170,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(1));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(1));
 				vp.setVisible(true);
 
 
@@ -185,7 +188,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(2));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(2));
 				vp.setVisible(true);
 
 
@@ -204,7 +207,7 @@ public class Cartelera extends JFrame {
 		lblP4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(3));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(3));
 				vp.setVisible(true);
 
 
@@ -223,7 +226,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				 
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(4));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(4));
 				vp.setVisible(true);
 
 
@@ -240,7 +243,7 @@ public class Cartelera extends JFrame {
 		lblP6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(5));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(5));
 				vp.setVisible(true);
 
 
@@ -260,7 +263,7 @@ public class Cartelera extends JFrame {
 		lblP7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(6));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(6));
 				vp.setVisible(true);
 
 
@@ -278,7 +281,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(7));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(7));
 				vp.setVisible(true);
 
 
@@ -298,7 +301,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 		
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(8));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(8));
 				vp.setVisible(true);
 
 
@@ -317,7 +320,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(9));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(9));
 				vp.setVisible(true);
 
 
@@ -335,7 +338,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(10));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(10));
 				vp.setVisible(true);
 
 
@@ -355,7 +358,7 @@ public class Cartelera extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			
-				VentanaPelicula vp= new VentanaPelicula(peliculas.get(11));
+				VentanaPelicula vp= new VentanaPelicula(controller, peliculas.get(11));
 				vp.setVisible(true);
 
 

@@ -77,6 +77,9 @@ public class Pago extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		System.out.println(controller.getCl().getService());
+		
+		
 		frame3 = new JFrame();
 		getContentPane().setBackground(Color.GRAY);
 		setBounds(600, 300, 491, 356);
@@ -109,7 +112,7 @@ public class Pago extends JFrame {
 
 				if(cmd20.equals("Open20"))
 				{
-					dispose();
+					Pago.this.dispose();
 
 				}
 			}});
@@ -140,8 +143,10 @@ public class Pago extends JFrame {
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				
+				Pago.this.dispose();
 				PagoCC cc= new PagoCC(controller, peli, precioT, horario);
-			
+				cc.setVisible(true);
 //				Usuario user = Database.getUsuario(persona);
 				
 //				PaymentEnum paymentType = user.getPaymentType();

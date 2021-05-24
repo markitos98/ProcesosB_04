@@ -104,7 +104,7 @@ public class InicioSesion extends JFrame {
 		
 	
 	
-		
+		System.out.println(controller.getCl().getService());
 		
 		System.out.println(peliculas.get(0));
 	 	System.out.println(peliculas.get(1));

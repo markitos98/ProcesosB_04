@@ -21,7 +21,7 @@ import clasesPelicula.Pelicula;
 public class CambiarImagen {
 
 	static int contador=0;
-	public static Controller controller;
+	
 	
 
 

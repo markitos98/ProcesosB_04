@@ -50,16 +50,27 @@ public class VentanaEntrada extends JDialog {
 	public List<Integer> guardar;
 	public int spinnerValue = -1;
 	private Controller controller;
+	private Pelicula peli;
 
 	/**
 	 * Launch the application.
 	 */
 
+	public VentanaEntrada(Controller controller, Pelicula p) {
+		this.controller = controller;
+		this.peli = p;
+		ventana();
+		this.setVisible(true);
+		
+	}
 	/**
 	 * Create the dialog.
 	 */
 	
-	public VentanaEntrada(Pelicula p) {
+	public void ventana() {
+	
+		
+		
 		setResizable(false);
 		setForeground(Color.ORANGE);
 		setBackground(Color.GRAY);
@@ -73,7 +84,7 @@ public class VentanaEntrada extends JDialog {
 		JLabel lblPos = new JLabel("");
 		lblPos.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
 		Image fotomenu;
-		fotomenu= getToolkit().getImage(p.getRutaFoto());
+		fotomenu= getToolkit().getImage(peli.getRutaFoto());
 		fotomenu= fotomenu.getScaledInstance(300, 600, Image.SCALE_DEFAULT);
 
 
@@ -112,7 +123,7 @@ public class VentanaEntrada extends JDialog {
 		lblPel.setBorder(BorderFactory.createLineBorder(Color.ORANGE,2));
 		lblPel.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 
-		txtPel = new JTextField(p.getTitulo());
+		txtPel = new JTextField(peli.getTitulo());
 		txtPel.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 15));
 		txtPel.setEditable(false);
 		txtPel.setColumns(10);
@@ -142,7 +153,7 @@ public class VentanaEntrada extends JDialog {
 		lblSala.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 15));
 		lblSala.setBorder(BorderFactory.createLineBorder(Color.ORANGE,2));
 
-		txtSala = new JTextField(String.valueOf(p.getSala()));
+		txtSala = new JTextField(String.valueOf(peli.getSala()));
 		txtSala.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 13));
 		txtSala.setColumns(10);
 
@@ -333,7 +344,9 @@ public class VentanaEntrada extends JDialog {
 						totalstring= String.valueOf(total);
 						txtPrecT.setText(totalstring);
 						
-						Pago pago= new Pago(controller, p, total, horario);
+						VentanaEntrada.this.dispose();
+						Pago pago= new Pago(controller, peli, total, horario);
+						pago.setVisible(true);
 					}
 				});
 				okButton.setForeground(Color.ORANGE);
@@ -349,7 +362,7 @@ public class VentanaEntrada extends JDialog {
 				JButton cancelButton = new JButton("Cancelar");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						VentanaEntrada.this.dispose();
 					}
 				});
 				cancelButton.setForeground(Color.ORANGE);

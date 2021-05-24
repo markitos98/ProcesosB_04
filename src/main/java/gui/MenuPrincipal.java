@@ -67,6 +67,8 @@ public class MenuPrincipal extends JDialog {
 	 */
 
 	private void ventana() {
+		
+		
 		setBounds(60, 10, 1700, 1000);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.GRAY);

@@ -85,7 +85,9 @@ public class PagoCC extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame3 = new JFrame();
+		
+		
+		
 		getContentPane().setBackground(Color.GRAY);
 		setBounds(600, 300, 491, 356);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -170,7 +172,8 @@ public class PagoCC extends JFrame{
 		btnPagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
-				VentanaEntrada ve= new VentanaEntrada(peli);
+				VentanaEntrada ve= new VentanaEntrada(controller, peli);
+				ve.setVisible(false);
 				ArrayList<Integer> numeros= new ArrayList<Integer>();
 				numeros.clear();
 				numeros.add(ve.numAleatorio);
@@ -183,12 +186,10 @@ public class PagoCC extends JFrame{
 				System.out.println(textNombre.getText());
 				
 
-				try {
-					controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
+				
+					controller.anyadirEntrada(ve.numAleatorio, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
 
-					} catch (Exception e) {
-						// TODO: handle exception
-					}
+					PagoCC.this.dispose();
 					
 			
 				try {
@@ -323,7 +324,7 @@ public class PagoCC extends JFrame{
 
 				if(cmd20.equals("Open20"))
 				{
-					dispose();
+					PagoCC.this.dispose();
 
 				}
 			}});
