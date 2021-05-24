@@ -1,7 +1,7 @@
 package gui;
 
 import java.awt.Color;
-
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +23,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -272,6 +273,7 @@ public class PagoCC extends JFrame{
 
 				int EntraInicial=0;
 				File entradapdf= new File(nombre);
+				abrirFichero(entradapdf);
 				File carpetaEntrada = new File("./Entradas/"+nombre);
 				Copiar(entradapdf,carpetaEntrada);
 				File f= new File(nombre);
@@ -439,6 +441,17 @@ public class PagoCC extends JFrame{
 
 
 	}
+	public static void abrirFichero(File fichero) {
+	    Desktop ficheroAEjecutar = Desktop.getDesktop();
+	    try {
+	         ficheroAEjecutar.open(fichero);
+	    } catch (IOException e) {
+	         JOptionPane.showMessageDialog(null,
+	                    e.getMessage(),
+	                    "Error",
+	                    JOptionPane.ERROR_MESSAGE);
+	    }
+	    }
 }
 
 	
