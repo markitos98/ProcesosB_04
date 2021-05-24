@@ -135,7 +135,7 @@ public class Controller {
 	}
 	
 	
-	public void eliminarPelicula(Pelicula p) throws RemoteException{
+	public void eliminarPelicula(String p) throws RemoteException{
 		try {
 		cl.getService().deletePelicula(p);
 		}catch(Exception e){

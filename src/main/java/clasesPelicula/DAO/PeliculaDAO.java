@@ -11,9 +11,11 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
+import org.datanucleus.enhancer.methods.GetObjectId;
 
 import clasesPelicula.Pelicula;
 import clasesUsuario.Usuario;
+
 
 
 /**
@@ -121,7 +123,7 @@ public class PeliculaDAO implements IPeliculaDAO {
 		Pelicula pelicula = null; 
 
 		try {
-			System.out.println("  * Querying a Usuario by username: " + titulo);
+			System.out.println("  * Querying a Pelicula by titulo: " + titulo);
 			tx.begin();
 			
 			Query<?> query = pm.newQuery("SELECT FROM " + Pelicula.class.getName() + " WHERE titulo == '" + titulo + "'");
@@ -144,25 +146,29 @@ public class PeliculaDAO implements IPeliculaDAO {
 	
 	
 	@Override
-	public void deletePelicula(Pelicula p) {
+	public void deletePelicula(String titulo) {
+		System.out.println("- Cleaning the DB...");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-
 		try {
 			tx.begin();
-			System.out.println(" * Delete an pelicula: " + p);
+
+			// Deleting All Products - Copies in Books will be deleted due to 'delete on
+			// cascade'
+			Pelicula p = getPelicula(titulo);
 			
 			pm.deletePersistent(p);
-			
-			tx.commit();
 		} catch (Exception ex) {
-			System.out.println(" $ Error deleting an usuario: " + ex.getMessage());
+			System.err.println(" $ Error cleaning the DB: " + ex.getMessage());
+			ex.printStackTrace();
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
 			}
 
-			pm.close();
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
 		}
 		
 	}

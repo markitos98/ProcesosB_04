@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.rmi.RemoteException;
 import java.util.List;
 
 import javax.swing.GroupLayout;
@@ -110,6 +111,14 @@ public class VentanaGestion extends JDialog {
 		lblPe_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				try {
+					controller.eliminarPelicula(peliculas.get(0).getTitulo());
+				} catch (RemoteException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		lblPe_1.setOpaque(true);

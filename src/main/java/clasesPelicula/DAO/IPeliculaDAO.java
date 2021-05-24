@@ -13,6 +13,6 @@ public interface IPeliculaDAO {
 	
 	public Pelicula getPelicula(String titulo);
 
-	void deletePelicula(Pelicula p);
+	void deletePelicula(String titulo);
 	
 }
