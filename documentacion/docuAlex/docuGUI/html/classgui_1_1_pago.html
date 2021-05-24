@@ -62,8 +62,8 @@ Inheritance diagram for gui.Pago:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab76a84f900c3c0c50d26804667a27cfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#ab76a84f900c3c0c50d26804667a27cfa">Pago</a> (Controller <a class="el" href="classgui_1_1_pago.html#a23f29019fa83a9c19b73e0b9644158b8">controller</a>, Pelicula p)</td></tr>
-<tr class="separator:ab76a84f900c3c0c50d26804667a27cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360e858cafe061a04310926f91b86bee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#a360e858cafe061a04310926f91b86bee">Pago</a> (Controller <a class="el" href="classgui_1_1_pago.html#a23f29019fa83a9c19b73e0b9644158b8">controller</a>, Pelicula p, double <a class="el" href="classgui_1_1_pago.html#a629ae74786e551f9bb8ceb3c3e94e355">precioT</a>, String <a class="el" href="classgui_1_1_pago.html#a5b9d39f9b28b33486528d7f6f069b971">horario</a>)</td></tr>
+<tr class="separator:a360e858cafe061a04310926f91b86bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9fa64319c959891fda583bf6fa20f08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#aa9fa64319c959891fda583bf6fa20f08">Pago</a> (String <a class="el" href="classgui_1_1_pago.html#a7a168d15688f780959be4e58451ff0dc">persona</a>, int <a class="el" href="classgui_1_1_pago.html#af1e9a3cc11fc5765a64a8326eb203f10">cantidad</a>)</td></tr>
 <tr class="separator:aa9fa64319c959891fda583bf6fa20f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -98,12 +98,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a30957fbcdaee1096bec6c9fde54cd48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704c59a707c3e7546dee0ebf2d5eaaa4"><td class="memItemLeft" align="right" valign="top">Pelicula&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#a704c59a707c3e7546dee0ebf2d5eaaa4">peli</a></td></tr>
 <tr class="separator:a704c59a707c3e7546dee0ebf2d5eaaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a629ae74786e551f9bb8ceb3c3e94e355"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#a629ae74786e551f9bb8ceb3c3e94e355">precioT</a></td></tr>
+<tr class="separator:a629ae74786e551f9bb8ceb3c3e94e355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9d39f9b28b33486528d7f6f069b971"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_pago.html#a5b9d39f9b28b33486528d7f6f069b971">horario</a></td></tr>
+<tr class="separator:a5b9d39f9b28b33486528d7f6f069b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ventana de pago que genera un pdf al realizar una compra y añade una entrada a la base de datos </p><dl class="section author"><dt>Author</dt><dd>alex </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab76a84f900c3c0c50d26804667a27cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab76a84f900c3c0c50d26804667a27cfa">&#9670;&nbsp;</a></span>Pago() <span class="overload">[1/2]</span></h2>
+<a id="a360e858cafe061a04310926f91b86bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360e858cafe061a04310926f91b86bee">&#9670;&nbsp;</a></span>Pago() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +122,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Pelicula&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>precioT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>horario</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -306,6 +322,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5b9d39f9b28b33486528d7f6f069b971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9d39f9b28b33486528d7f6f069b971">&#9670;&nbsp;</a></span>horario</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String gui.Pago.horario</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a704c59a707c3e7546dee0ebf2d5eaaa4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a704c59a707c3e7546dee0ebf2d5eaaa4">&#9670;&nbsp;</a></span>peli</h2>
 
@@ -338,6 +376,28 @@ Private Attributes</h2></td></tr>
           <td class="memname">String gui.Pago.persona</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a629ae74786e551f9bb8ceb3c3e94e355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a629ae74786e551f9bb8ceb3c3e94e355">&#9670;&nbsp;</a></span>precioT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gui.Pago.precioT</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

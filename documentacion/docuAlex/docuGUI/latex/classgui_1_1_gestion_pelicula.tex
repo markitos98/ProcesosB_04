@@ -9,12 +9,9 @@ Inheritance diagram for gui.\+Gestion\+Pelicula\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classgui_1_1_gestion_pelicula_a2aa8c5aafc869705a1e9206de13339b4}{Gestion\+Pelicula}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
+\mbox{\hyperlink{classgui_1_1_gestion_pelicula_af17dbbc46ca914a2318f35e4eebdbb3f}{Gestion\+Pelicula}} (Controller \mbox{\hyperlink{classgui_1_1_gestion_pelicula_afcfbe8c4ccbdfd19d2ebe757a991f4e6}{controller}}, List$<$ Pelicula $>$ p)
 \item 
-static void \mbox{\hyperlink{classgui_1_1_gestion_pelicula_ac3c5a345901a18cffb94b3807e62f32c}{main}} (String\mbox{[}$\,$\mbox{]} args)
+void \mbox{\hyperlink{classgui_1_1_gestion_pelicula_a5d50c6d18681061f6e5c71d92d0d71a0}{ventana}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -39,6 +36,10 @@ JText\+Field \mbox{\hyperlink{classgui_1_1_gestion_pelicula_af3a6d61f93f1856702d
 Image \mbox{\hyperlink{classgui_1_1_gestion_pelicula_ad8acf881140dd405a181627ff6526da9}{foto}}
 \item 
 Image \mbox{\hyperlink{classgui_1_1_gestion_pelicula_a00267d89db7040b6df8db036938bead2}{fotomenu}}
+\item 
+Controller \mbox{\hyperlink{classgui_1_1_gestion_pelicula_afcfbe8c4ccbdfd19d2ebe757a991f4e6}{controller}}
+\item 
+List$<$ Pelicula $>$ \mbox{\hyperlink{classgui_1_1_gestion_pelicula_a2721189135460a8dee94d18236b31ca9}{peliculas}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -48,24 +49,24 @@ static final long \mbox{\hyperlink{classgui_1_1_gestion_pelicula_ac242ba095eed8a
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_a2aa8c5aafc869705a1e9206de13339b4}\label{classgui_1_1_gestion_pelicula_a2aa8c5aafc869705a1e9206de13339b4}} 
+\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_af17dbbc46ca914a2318f35e4eebdbb3f}\label{classgui_1_1_gestion_pelicula_af17dbbc46ca914a2318f35e4eebdbb3f}} 
 \index{gui.GestionPelicula@{gui.GestionPelicula}!GestionPelicula@{GestionPelicula}}
 \index{GestionPelicula@{GestionPelicula}!gui.GestionPelicula@{gui.GestionPelicula}}
 \doxysubsubsection{\texorpdfstring{GestionPelicula()}{GestionPelicula()}}
-{\footnotesize\ttfamily gui.\+Gestion\+Pelicula.\+Gestion\+Pelicula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily gui.\+Gestion\+Pelicula.\+Gestion\+Pelicula (\begin{DoxyParamCaption}\item[{Controller}]{controller,  }\item[{List$<$ Pelicula $>$}]{p }\end{DoxyParamCaption})}
+
+Launch the application. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_a5d50c6d18681061f6e5c71d92d0d71a0}\label{classgui_1_1_gestion_pelicula_a5d50c6d18681061f6e5c71d92d0d71a0}} 
+\index{gui.GestionPelicula@{gui.GestionPelicula}!ventana@{ventana}}
+\index{ventana@{ventana}!gui.GestionPelicula@{gui.GestionPelicula}}
+\doxysubsubsection{\texorpdfstring{ventana()}{ventana()}}
+{\footnotesize\ttfamily void gui.\+Gestion\+Pelicula.\+ventana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Create the dialog. Seleccion de Imagen con filtro de archivois
 
 Seleccion de Imagen con filtro de archivois
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_ac3c5a345901a18cffb94b3807e62f32c}\label{classgui_1_1_gestion_pelicula_ac3c5a345901a18cffb94b3807e62f32c}} 
-\index{gui.GestionPelicula@{gui.GestionPelicula}!main@{main}}
-\index{main@{main}!gui.GestionPelicula@{gui.GestionPelicula}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily static void gui.\+Gestion\+Pelicula.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Launch the application. 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classgui_1_1_gestion_pelicula_ae898dbe3edde6463ec4f54aafc04bf33}\label{classgui_1_1_gestion_pelicula_ae898dbe3edde6463ec4f54aafc04bf33}} 
@@ -73,6 +74,12 @@ Launch the application.
 \index{contentPanel@{contentPanel}!gui.GestionPelicula@{gui.GestionPelicula}}
 \doxysubsubsection{\texorpdfstring{contentPanel}{contentPanel}}
 {\footnotesize\ttfamily final JPanel gui.\+Gestion\+Pelicula.\+content\+Panel = new JPanel()\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_afcfbe8c4ccbdfd19d2ebe757a991f4e6}\label{classgui_1_1_gestion_pelicula_afcfbe8c4ccbdfd19d2ebe757a991f4e6}} 
+\index{gui.GestionPelicula@{gui.GestionPelicula}!controller@{controller}}
+\index{controller@{controller}!gui.GestionPelicula@{gui.GestionPelicula}}
+\doxysubsubsection{\texorpdfstring{controller}{controller}}
+{\footnotesize\ttfamily Controller gui.\+Gestion\+Pelicula.\+controller\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classgui_1_1_gestion_pelicula_ad8acf881140dd405a181627ff6526da9}\label{classgui_1_1_gestion_pelicula_ad8acf881140dd405a181627ff6526da9}} 
 \index{gui.GestionPelicula@{gui.GestionPelicula}!foto@{foto}}
@@ -85,6 +92,12 @@ Launch the application.
 \index{fotomenu@{fotomenu}!gui.GestionPelicula@{gui.GestionPelicula}}
 \doxysubsubsection{\texorpdfstring{fotomenu}{fotomenu}}
 {\footnotesize\ttfamily Image gui.\+Gestion\+Pelicula.\+fotomenu\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classgui_1_1_gestion_pelicula_a2721189135460a8dee94d18236b31ca9}\label{classgui_1_1_gestion_pelicula_a2721189135460a8dee94d18236b31ca9}} 
+\index{gui.GestionPelicula@{gui.GestionPelicula}!peliculas@{peliculas}}
+\index{peliculas@{peliculas}!gui.GestionPelicula@{gui.GestionPelicula}}
+\doxysubsubsection{\texorpdfstring{peliculas}{peliculas}}
+{\footnotesize\ttfamily List$<$Pelicula$>$ gui.\+Gestion\+Pelicula.\+peliculas\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classgui_1_1_gestion_pelicula_ac242ba095eed8afacec76ebb3f0dfba3}\label{classgui_1_1_gestion_pelicula_ac242ba095eed8afacec76ebb3f0dfba3}} 
 \index{gui.GestionPelicula@{gui.GestionPelicula}!serialVersionUID@{serialVersionUID}}

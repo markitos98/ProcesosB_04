@@ -9,14 +9,23 @@ Inheritance diagram for gui.\+Pago\+CC\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classgui_1_1_pago_c_c_a5db9560bd2751a330554d2170c4fae24}{Pago\+CC}} (Controller \mbox{\hyperlink{classgui_1_1_pago_c_c_a66d3b07fdfa3d1a7bf2da37129688e51}{controller}}, Pelicula p)
+\mbox{\hyperlink{classgui_1_1_pago_c_c_ac653165af0dc42bd32e6713ae8b37631}{Pago\+CC}} (Controller \mbox{\hyperlink{classgui_1_1_pago_c_c_a66d3b07fdfa3d1a7bf2da37129688e51}{controller}}, Pelicula p, double \mbox{\hyperlink{classgui_1_1_pago_c_c_aa5a897134b06b14968626bbe397d1ebb}{precioT}}, String \mbox{\hyperlink{classgui_1_1_pago_c_c_a0d2c90852d594bf8239905c02818342c}{horario}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classgui_1_1_pago_c_c_a90b94733a20a8ac359e0f6d514cc980b}{Copiar}} (File FOrigen, File FDestino)
+\item 
+static void \mbox{\hyperlink{classgui_1_1_pago_c_c_a80dcc9060d20245503f1073214bb45a2}{Copiar\+Fichero}} (File FOrigen, File FDestino)
+\item 
+static void \mbox{\hyperlink{classgui_1_1_pago_c_c_a8753aebe6dd5a4ecc332f9f22467ee9c}{abrir\+Fichero}} (File fichero)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classgui_1_1_pago_c_c_aedd9a8fdc69353cb287d6e51cc6278a7}{cantidad}}
 \item 
-int \mbox{\hyperlink{classgui_1_1_pago_c_c_ac0cbdf5f6112e802945e47b429443bc2}{preciot}}
+double \mbox{\hyperlink{classgui_1_1_pago_c_c_aa5a897134b06b14968626bbe397d1ebb}{precioT}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -38,6 +47,8 @@ int \mbox{\hyperlink{classgui_1_1_pago_c_c_a6151dec3598597631cf5fd75cdad99c3}{li
 \item 
 JText\+Field \mbox{\hyperlink{classgui_1_1_pago_c_c_a89dc5cef6c502f5188e15b28a6be5419}{text\+Nombre}}
 \item 
+String \mbox{\hyperlink{classgui_1_1_pago_c_c_a0d2c90852d594bf8239905c02818342c}{horario}}
+\item 
 Controller \mbox{\hyperlink{classgui_1_1_pago_c_c_a66d3b07fdfa3d1a7bf2da37129688e51}{controller}}
 \item 
 Pelicula \mbox{\hyperlink{classgui_1_1_pago_c_c_a8d9165a65e3d1badeda15142fdc49dcb}{peli}}
@@ -51,15 +62,33 @@ alex
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classgui_1_1_pago_c_c_a5db9560bd2751a330554d2170c4fae24}\label{classgui_1_1_pago_c_c_a5db9560bd2751a330554d2170c4fae24}} 
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_ac653165af0dc42bd32e6713ae8b37631}\label{classgui_1_1_pago_c_c_ac653165af0dc42bd32e6713ae8b37631}} 
 \index{gui.PagoCC@{gui.PagoCC}!PagoCC@{PagoCC}}
 \index{PagoCC@{PagoCC}!gui.PagoCC@{gui.PagoCC}}
 \doxysubsubsection{\texorpdfstring{PagoCC()}{PagoCC()}}
-{\footnotesize\ttfamily gui.\+Pago\+CC.\+Pago\+CC (\begin{DoxyParamCaption}\item[{Controller}]{controller,  }\item[{Pelicula}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily gui.\+Pago\+CC.\+Pago\+CC (\begin{DoxyParamCaption}\item[{Controller}]{controller,  }\item[{Pelicula}]{p,  }\item[{double}]{precioT,  }\item[{String}]{horario }\end{DoxyParamCaption})}
 
 Launch the application. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_a8753aebe6dd5a4ecc332f9f22467ee9c}\label{classgui_1_1_pago_c_c_a8753aebe6dd5a4ecc332f9f22467ee9c}} 
+\index{gui.PagoCC@{gui.PagoCC}!abrirFichero@{abrirFichero}}
+\index{abrirFichero@{abrirFichero}!gui.PagoCC@{gui.PagoCC}}
+\doxysubsubsection{\texorpdfstring{abrirFichero()}{abrirFichero()}}
+{\footnotesize\ttfamily static void gui.\+Pago\+CC.\+abrir\+Fichero (\begin{DoxyParamCaption}\item[{File}]{fichero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_a90b94733a20a8ac359e0f6d514cc980b}\label{classgui_1_1_pago_c_c_a90b94733a20a8ac359e0f6d514cc980b}} 
+\index{gui.PagoCC@{gui.PagoCC}!Copiar@{Copiar}}
+\index{Copiar@{Copiar}!gui.PagoCC@{gui.PagoCC}}
+\doxysubsubsection{\texorpdfstring{Copiar()}{Copiar()}}
+{\footnotesize\ttfamily static void gui.\+Pago\+CC.\+Copiar (\begin{DoxyParamCaption}\item[{File}]{FOrigen,  }\item[{File}]{FDestino }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_a80dcc9060d20245503f1073214bb45a2}\label{classgui_1_1_pago_c_c_a80dcc9060d20245503f1073214bb45a2}} 
+\index{gui.PagoCC@{gui.PagoCC}!CopiarFichero@{CopiarFichero}}
+\index{CopiarFichero@{CopiarFichero}!gui.PagoCC@{gui.PagoCC}}
+\doxysubsubsection{\texorpdfstring{CopiarFichero()}{CopiarFichero()}}
+{\footnotesize\ttfamily static void gui.\+Pago\+CC.\+Copiar\+Fichero (\begin{DoxyParamCaption}\item[{File}]{FOrigen,  }\item[{File}]{FDestino }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{classgui_1_1_pago_c_c_a078fbf28719dfef59790290fa2791825}\label{classgui_1_1_pago_c_c_a078fbf28719dfef59790290fa2791825}} 
 \index{gui.PagoCC@{gui.PagoCC}!initialize@{initialize}}
 \index{initialize@{initialize}!gui.PagoCC@{gui.PagoCC}}
@@ -94,6 +123,12 @@ Create the application.
 \doxysubsubsection{\texorpdfstring{frame3}{frame3}}
 {\footnotesize\ttfamily JFrame gui.\+Pago\+CC.\+frame3\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_a0d2c90852d594bf8239905c02818342c}\label{classgui_1_1_pago_c_c_a0d2c90852d594bf8239905c02818342c}} 
+\index{gui.PagoCC@{gui.PagoCC}!horario@{horario}}
+\index{horario@{horario}!gui.PagoCC@{gui.PagoCC}}
+\doxysubsubsection{\texorpdfstring{horario}{horario}}
+{\footnotesize\ttfamily String gui.\+Pago\+CC.\+horario\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classgui_1_1_pago_c_c_a6151dec3598597631cf5fd75cdad99c3}\label{classgui_1_1_pago_c_c_a6151dec3598597631cf5fd75cdad99c3}} 
 \index{gui.PagoCC@{gui.PagoCC}!limiteCCV@{limiteCCV}}
 \index{limiteCCV@{limiteCCV}!gui.PagoCC@{gui.PagoCC}}
@@ -112,11 +147,11 @@ Create the application.
 \doxysubsubsection{\texorpdfstring{peli}{peli}}
 {\footnotesize\ttfamily Pelicula gui.\+Pago\+CC.\+peli\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classgui_1_1_pago_c_c_ac0cbdf5f6112e802945e47b429443bc2}\label{classgui_1_1_pago_c_c_ac0cbdf5f6112e802945e47b429443bc2}} 
-\index{gui.PagoCC@{gui.PagoCC}!preciot@{preciot}}
-\index{preciot@{preciot}!gui.PagoCC@{gui.PagoCC}}
-\doxysubsubsection{\texorpdfstring{preciot}{preciot}}
-{\footnotesize\ttfamily int gui.\+Pago\+CC.\+preciot}
+\mbox{\Hypertarget{classgui_1_1_pago_c_c_aa5a897134b06b14968626bbe397d1ebb}\label{classgui_1_1_pago_c_c_aa5a897134b06b14968626bbe397d1ebb}} 
+\index{gui.PagoCC@{gui.PagoCC}!precioT@{precioT}}
+\index{precioT@{precioT}!gui.PagoCC@{gui.PagoCC}}
+\doxysubsubsection{\texorpdfstring{precioT}{precioT}}
+{\footnotesize\ttfamily double gui.\+Pago\+CC.\+precioT}
 
 \mbox{\Hypertarget{classgui_1_1_pago_c_c_a3340fa8da3cbe5afa425b1accf162a19}\label{classgui_1_1_pago_c_c_a3340fa8da3cbe5afa425b1accf162a19}} 
 \index{gui.PagoCC@{gui.PagoCC}!textCCV@{textCCV}}

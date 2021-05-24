@@ -62,12 +62,10 @@ Inheritance diagram for gui.InicioSesion:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9653fc027b0826cb41bdba92b0d5b9ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#a9653fc027b0826cb41bdba92b0d5b9ca">InicioSesion</a> (Controller <a class="el" href="classgui_1_1_inicio_sesion.html#a95457066fd7caffc7edc83ac48c24550">controller</a>)</td></tr>
-<tr class="separator:a9653fc027b0826cb41bdba92b0d5b9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5e9709f95d001d21d749b35f6f464e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#adb5e9709f95d001d21d749b35f6f464e">InicioSesion</a> (Controller <a class="el" href="classgui_1_1_inicio_sesion.html#a95457066fd7caffc7edc83ac48c24550">controller</a>, List&lt; Pelicula &gt; p)</td></tr>
+<tr class="separator:adb5e9709f95d001d21d749b35f6f464e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71a7f4b07d6c1b1ab25210b0878a2524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#a71a7f4b07d6c1b1ab25210b0878a2524">ventana</a> ()</td></tr>
 <tr class="separator:a71a7f4b07d6c1b1ab25210b0878a2524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abad9286a05d17dac83b2d071bf301c74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#abad9286a05d17dac83b2d071bf301c74">ejecutarVentana</a> ()</td></tr>
-<tr class="separator:abad9286a05d17dac83b2d071bf301c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -92,12 +90,16 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a95457066fd7caffc7edc83ac48c24550"><td class="memItemLeft" align="right" valign="top">Controller&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#a95457066fd7caffc7edc83ac48c24550">controller</a></td></tr>
 <tr class="separator:a95457066fd7caffc7edc83ac48c24550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55203eadd53e1482abc52844b5698b8e"><td class="memItemLeft" align="right" valign="top">List&lt; Pelicula &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#a55203eadd53e1482abc52844b5698b8e">peliculas</a></td></tr>
+<tr class="separator:a55203eadd53e1482abc52844b5698b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a67a536585bb7f50443ab68dcec94c"><td class="memItemLeft" align="right" valign="top">List&lt; Pelicula &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_inicio_sesion.html#ae6a67a536585bb7f50443ab68dcec94c">pelis</a></td></tr>
+<tr class="separator:ae6a67a536585bb7f50443ab68dcec94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ventana de Inicio de Sesion para Clientes </p><dl class="section author"><dt>Author</dt><dd>alex </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9653fc027b0826cb41bdba92b0d5b9ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9653fc027b0826cb41bdba92b0d5b9ca">&#9670;&nbsp;</a></span>InicioSesion()</h2>
+<a id="adb5e9709f95d001d21d749b35f6f464e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5e9709f95d001d21d749b35f6f464e">&#9670;&nbsp;</a></span>InicioSesion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,8 +108,18 @@ Private Attributes</h2></td></tr>
           <td class="memname">gui.InicioSesion.InicioSesion </td>
           <td>(</td>
           <td class="paramtype">Controller&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">List&lt; Pelicula &gt;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -116,23 +128,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abad9286a05d17dac83b2d071bf301c74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abad9286a05d17dac83b2d071bf301c74">&#9670;&nbsp;</a></span>ejecutarVentana()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gui.InicioSesion.ejecutarVentana </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9d5299909a9236617cf85553ffacc11a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d5299909a9236617cf85553ffacc11a">&#9670;&nbsp;</a></span>initialize()</h2>
 
@@ -245,6 +240,50 @@ Private Attributes</h2></td></tr>
           <td class="memname">JPasswordField gui.InicioSesion.passwordField</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55203eadd53e1482abc52844b5698b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55203eadd53e1482abc52844b5698b8e">&#9670;&nbsp;</a></span>peliculas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Pelicula&gt; gui.InicioSesion.peliculas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6a67a536585bb7f50443ab68dcec94c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a67a536585bb7f50443ab68dcec94c">&#9670;&nbsp;</a></span>pelis</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Pelicula&gt; gui.InicioSesion.pelis</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

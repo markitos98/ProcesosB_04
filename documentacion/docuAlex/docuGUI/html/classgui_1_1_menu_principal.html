@@ -62,10 +62,8 @@ Inheritance diagram for gui.MenuPrincipal:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a17a9066558a0e7a2b0b05999c076d593"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_menu_principal.html#a17a9066558a0e7a2b0b05999c076d593">MenuPrincipal</a> (Controller <a class="el" href="classgui_1_1_menu_principal.html#a3f67263faf6ec7f7a3c0aadbdd0b2658">controller</a>)</td></tr>
-<tr class="separator:a17a9066558a0e7a2b0b05999c076d593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace38a1a3e0df41ec75263a96d6c8ef10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_menu_principal.html#ace38a1a3e0df41ec75263a96d6c8ef10">ejecutarVentana</a> ()</td></tr>
-<tr class="separator:ace38a1a3e0df41ec75263a96d6c8ef10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193422c8497249b33192c52b6490a9dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_menu_principal.html#a193422c8497249b33192c52b6490a9dc">MenuPrincipal</a> (Controller <a class="el" href="classgui_1_1_menu_principal.html#a3f67263faf6ec7f7a3c0aadbdd0b2658">controller</a>, List&lt; Pelicula &gt; p)</td></tr>
+<tr class="separator:a193422c8497249b33192c52b6490a9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -85,6 +83,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a770ea3468c68f228e99da6fcef898027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f67263faf6ec7f7a3c0aadbdd0b2658"><td class="memItemLeft" align="right" valign="top">Controller&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_menu_principal.html#a3f67263faf6ec7f7a3c0aadbdd0b2658">controller</a></td></tr>
 <tr class="separator:a3f67263faf6ec7f7a3c0aadbdd0b2658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d153bf60dd9f2cac84f6d1824c9aad0"><td class="memItemLeft" align="right" valign="top">List&lt; Pelicula &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_menu_principal.html#a8d153bf60dd9f2cac84f6d1824c9aad0">peliculas</a></td></tr>
+<tr class="separator:a8d153bf60dd9f2cac84f6d1824c9aad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -94,8 +94,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ventana Principal donde se accede a cartelera y peliculas </p><dl class="section author"><dt>Author</dt><dd>marcos </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a17a9066558a0e7a2b0b05999c076d593"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a9066558a0e7a2b0b05999c076d593">&#9670;&nbsp;</a></span>MenuPrincipal()</h2>
+<a id="a193422c8497249b33192c52b6490a9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a193422c8497249b33192c52b6490a9dc">&#9670;&nbsp;</a></span>MenuPrincipal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -104,8 +104,18 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">gui.MenuPrincipal.MenuPrincipal </td>
           <td>(</td>
           <td class="paramtype">Controller&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">List&lt; Pelicula &gt;&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -113,23 +123,6 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ace38a1a3e0df41ec75263a96d6c8ef10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace38a1a3e0df41ec75263a96d6c8ef10">&#9670;&nbsp;</a></span>ejecutarVentana()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gui.MenuPrincipal.ejecutarVentana </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="adc23f44c2eb0508e3c1582a9b3adbe5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc23f44c2eb0508e3c1582a9b3adbe5f">&#9670;&nbsp;</a></span>ventana()</h2>
 
@@ -225,6 +218,28 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">JLabel gui.MenuPrincipal.lblPosM</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d153bf60dd9f2cac84f6d1824c9aad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d153bf60dd9f2cac84f6d1824c9aad0">&#9670;&nbsp;</a></span>peliculas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Pelicula&gt; gui.MenuPrincipal.peliculas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
