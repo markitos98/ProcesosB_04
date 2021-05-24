@@ -32,7 +32,7 @@ public class DeleteEntradaTest {
 		/*
 		 * s= new Sesion(16.40); p= new Pelicula(null, "accion", 2000, null, 240, null,
 		 * null, null, 3);
-		 */c= new Entrada(0,null,null,0,0,0,null);
+		*/ // c= new Entrada(0,null,null,0,0,0,null);
 		
 		textField1 = Mockito.mock(JTextField.class);
 		textField2 = Mockito.mock(JTextField.class);

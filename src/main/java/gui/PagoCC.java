@@ -182,8 +182,14 @@ public class PagoCC extends JFrame{
 				System.out.println((int)precioT);
 				System.out.println(textNombre.getText());
 				
-			//	controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
-				
+
+				try {
+					controller.anyadirEntrada(1, peli.getTitulo(), horario , 9, (int)precioT/9, (int)precioT, textNombre.getText());
+
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					
 			
 				try {
 				PDDocument entrada;
@@ -270,11 +276,11 @@ public class PagoCC extends JFrame{
 
 				int EntraInicial=0;
 				File entradapdf= new File(nombre);
-				abrirFichero(entradapdf);
 				File carpetaEntrada = new File("./Entradas/"+nombre);
 				Copiar(entradapdf,carpetaEntrada);
 				File f= new File(nombre);
-				
+				abrirFichero(carpetaEntrada);
+
 				f.delete();
 				
 		
