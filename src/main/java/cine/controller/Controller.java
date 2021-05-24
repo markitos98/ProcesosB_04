@@ -134,4 +134,13 @@ public class Controller {
 		return usuarios;
 	}
 	
+	
+	public void eliminarPelicula(Pelicula p) throws RemoteException{
+		try {
+		cl.getService().deletePelicula(p);
+		}catch(Exception e){
+    		e.printStackTrace();
+    	}
+	
+	}
 }

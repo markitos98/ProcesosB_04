@@ -13,6 +13,7 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 
 import clasesPelicula.Pelicula;
+import clasesUsuario.Usuario;
 
 
 /**
@@ -139,6 +140,31 @@ public class PeliculaDAO implements IPeliculaDAO {
 		}
 
 		return pelicula;
+	}
+	
+	
+	@Override
+	public void deletePelicula(Pelicula p) {
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try {
+			tx.begin();
+			System.out.println(" * Delete an pelicula: " + p);
+			
+			pm.deletePersistent(p);
+			
+			tx.commit();
+		} catch (Exception ex) {
+			System.out.println(" $ Error deleting an usuario: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			pm.close();
+		}
+		
 	}
 
 

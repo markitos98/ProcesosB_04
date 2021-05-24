@@ -147,4 +147,11 @@ public class Cine extends UnicastRemoteObject implements ICine {
 		return usuarios;
 	}
 	
+	@Override
+	public void deletePelicula(Pelicula	 pelicula) throws RemoteException {
+		
+	peliculaDAO.deletePelicula(pelicula);
+		
+	}
+	
 }

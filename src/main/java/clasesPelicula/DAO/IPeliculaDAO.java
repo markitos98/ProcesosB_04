@@ -12,5 +12,7 @@ public interface IPeliculaDAO {
 	public void anyadirPelicula(Pelicula p);
 	
 	public Pelicula getPelicula(String titulo);
+
+	void deletePelicula(Pelicula p);
 	
 }

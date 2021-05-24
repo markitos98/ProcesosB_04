@@ -22,6 +22,8 @@ public interface ICine extends Remote {
 	
 	public void deleteUsuario(String nombre) throws RemoteException;
 	
+	public void deletePelicula(Pelicula p) throws RemoteException;
+	
 	
 	public List<Pelicula> getPeliculas() throws RemoteException;
 	
