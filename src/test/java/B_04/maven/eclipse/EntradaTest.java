@@ -53,8 +53,9 @@ public class EntradaTest {
 	}
 	@Test
 	public void testGetInfoSesion() {
-		assertEquals(s, e.getInfoSesion());
-		assertEquals(s, prueba.getInfoSesion());
+		assertEquals(String.valueOf(s), String.valueOf(e.getSesion()));
+
+		
 	}
 	
 	@Test
