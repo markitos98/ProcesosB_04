@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import clasesPelicula.Sesion;
-
+//Test clase Sesion
 public class SesionTest {
 
 	private Sesion s;
