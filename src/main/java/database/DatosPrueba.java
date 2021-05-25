@@ -25,11 +25,11 @@ public class DatosPrueba {
 			
 			Cliente c=  new Cliente("alex","1234","alex@gmail.com","Alex","Anton","Mota","27/09/1999");
 			pm.makePersistent(c);
-			Pelicula p=  new Pelicula("Escape Room","TERROR",2019,"Seis desconocidos se encuentran en una habitación mortal en la que deberán usar su ingenio para sobrevivir.",198,"https://www.youtube.com/watch?v=qATdnx_x0bs&ab_channel=TrailersInSpanish","./src/main/resources/Imagenes/Escape room.jpg","posters/Escaperoom.jpg",1);
+			Pelicula p=  new Pelicula("Escape Room","TERROR",2019,"Seis desconocidos se encuentran en una habitación mortal en la que deberán usar su ingenio para sobrevivir.",198,"https://www.youtube.com/watch?v=qATdnx_x0bs","./src/main/resources/Imagenes/Escape room.jpg","posters/Escaperoom.jpg",1);
 			 Sesion s= new Sesion("22.00");
 			pm.makePersistent(p);
 		
-			Pelicula p1=  new Pelicula("Malasaña 32","TERROR",2020,"Manolo y Candela se instalan en el madrileño barri",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Malasaña 32.jpg","posters/Malasaña.jpg",2);
+			Pelicula p1=  new Pelicula("Malasaña 32","TERROR",2020,"Manolo y Candela se instalan en el madrileño barri",120,"https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailersVaDeTrailers","./src/main/resources/Imagenes/Malasaña 32.jpg","posters/Malasaña.jpg",2);
 			pm.makePersistent(p1);
 			
 			Pelicula p2=  new Pelicula("Fantasy Island","TERROR",2020,"El enigmático Sr. Roarke ",110,"https://www.youtube.com/watch?v=R6gYEuYhudc&ab_channel=SonyPicturesEspa%C3%B1a","./src/main/resources/Imagenes/Fantasy Island.jpg","posters/Malasaña.jpg",3);
@@ -49,16 +49,16 @@ public class DatosPrueba {
 			pm.makePersistent(p4);
 			
 			
-			Pelicula p5=  new Pelicula("Escuadron suicida","ACCION",2020,"Película de marvel",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Escuadron suicida.jpeg","posters/Malasaña.jpg",6);
+			Pelicula p5=  new Pelicula("Escuadron suicida","ACCION",2020,"Película de marvel",120,"hhttps://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Escuadron suicida.jpeg","posters/Malasaña.jpg",6);
 			pm.makePersistent(p5);
 			
-			Pelicula p6=  new Pelicula("Mortal Kombat","ACCION",2020,"En “Mortal Kombat”, Cole Young, el luchador de MMA, desconoce su ascendencia.",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/imagenes/Mortal kombat.jpeg","posters/Malasaña.jpg",7);
+			Pelicula p6=  new Pelicula("Mortal Kombat","ACCION",2020,"En “Mortal Kombat”, Cole Young, el luchador de MMA, desconoce su ascendencia.",120,"https://www.youtube.com/watch?v=64Qcp5K0_HE&ab_channel=TrailersInSpanishTrailersInSpanishVerificada","./src/main/resources/imagenes/Mortal kombat.jpeg","posters/Malasaña.jpg",7);
 			pm.makePersistent(p6);
 			
-			Pelicula p7=  new Pelicula("Soul","INFANTIL",2020,"Pixar te lleva en un viaje desde las calles de Nueva York a los reinos cósmicos.",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Soul.jpeg","posters/Malasaña.jpg",8);
+			Pelicula p7=  new Pelicula("Soul","INFANTIL",2020,"Pixar te lleva en un viaje desde las calles de Nueva York a los reinos cósmicos.",120,"https://youtu.be/85hY9bninqU","./src/main/resources/Imagenes/Soul.jpeg","posters/Malasaña.jpg",8);
 			pm.makePersistent(p7);
 			
-			Pelicula p8=  new Pelicula("Mulan","INFANTIL",2020,"Narra la historia de Mulán, una intrépida joven lo arriesga todo por amor a su familia",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Mulan.jpeg","posters/Malasaña.jpg",9);
+			Pelicula p8=  new Pelicula("Mulan","INFANTIL",2020,"Narra la historia de Mulán, una intrépida joven lo arriesga todo por amor a su familia",120,"https://youtu.be/qEoju9SbvcA","./src/main/resources/Imagenes/Mulan.jpeg","posters/Malasaña.jpg",9);
 			pm.makePersistent(p8);
 			
 			Pelicula p9=  new Pelicula("Oxygen","SUSPENSE",2020,"Una mujer despierta en una unidad criogénica médica.",120,"https://www.youtube.com/watch?v=ampK3e410J4&ab_channel=https://www.youtube.com/watch?v=TdhAMWX0ok4&ab_channel=VaDeTrailers","./src/main/resources/Imagenes/Oxygen.jpeg","posters/Malasaña.jpg",10);
