@@ -42,7 +42,7 @@ import clasesPelicula.Pelicula;
 
 /**
  * Ventana Cartelera donde se visualizan las películas, se obtiene una lista de las películas de la base de datos y en funcion de su posicion se establecen en los labels, únicamente se visualizará en caso de haber 12 peliculas en la base de datos
- * @author leire
+ * @author alex
  *
  */
 public class Cartelera extends JFrame {
