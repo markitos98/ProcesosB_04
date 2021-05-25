@@ -6,8 +6,10 @@ Base de datos:
 
 Crear un esquema llamado cinedb :
 
-CREATE SCHEMA `cinedb` ;
+CREATE SCHEMA `cinedb` ; 
+
 CREATE USER IF NOT EXISTS 'spq'@'localhost' IDENTIFIED BY 'spq';
+
 GRANT ALL ON cinedb.* TO 'spq'@'localhost';
 
 
