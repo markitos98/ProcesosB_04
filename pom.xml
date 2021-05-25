@@ -124,7 +124,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>../docs</outputDirectory>
+							<outputDirectory>${basedir}/docs</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/target/doxygen/html</directory>
