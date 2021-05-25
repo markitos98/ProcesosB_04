@@ -48,7 +48,7 @@ public class Registro extends JFrame {
 
 
 	/**
-	 * Create the application.
+	 * Crear la aplicación
 	 */
 	
 
@@ -60,7 +60,7 @@ public class Registro extends JFrame {
 	
 	
 	/**
-	 * Initialize the contents of the frame.
+	 * Inicializar la ventana
 	 */
 	private void ventana() {
 		getContentPane().setBackground(Color.GRAY);
@@ -110,9 +110,9 @@ public class Registro extends JFrame {
 				if(cmd.equals("Open70"))
 				{
 					 Registro.this.dispose();
-					//Abre Inicio de Sesion
-					
-
+				/** 
+				 * Abre inicio de sesion
+				 */
 				}
 			}
 		});
@@ -148,7 +148,9 @@ public class Registro extends JFrame {
 				if (!Character.isAlphabetic(c))
 
 					e.consume();
-
+				/**
+				 * Comprueba que el apellido es de tipo caracter
+				 */
 			}
 
 			public void keyPressed(KeyEvent arg0) {
@@ -171,7 +173,9 @@ public class Registro extends JFrame {
 				if (!Character.isAlphabetic(c))
 
 					e.consume();
-
+/**
+ * Comprueba que el segundo apellido es de tipo caracter
+ */
 			}
 
 			public void keyPressed(KeyEvent arg0) {
@@ -202,7 +206,9 @@ public class Registro extends JFrame {
 				if(cmd1.equals("Open1"))
 				{
 					 Registro.this.dispose();
-				
+				/**
+				 * Abre la ventana Registro
+				 */
 				}
 			}
 		});
@@ -227,7 +233,9 @@ public class Registro extends JFrame {
 				if (!Character.isAlphabetic(c))
 
 					e.consume();
-
+				/**
+				 * Comprueba que el nombre es de tipo Alfabetico
+				 */
 			}
 
 			public void keyPressed(KeyEvent arg0) {
@@ -285,7 +293,9 @@ public class Registro extends JFrame {
 				      JOptionPane.showMessageDialog(frame1, "Usuario registrado");
 				      Registro.this.dispose();
 				      
-				      
+				      /**
+				       * Registra un usuario a trabes del correo
+				       */
 				}else {
 					
 					JOptionPane.showMessageDialog(frame1, "Ya hay un usuario registrado con este correo");
@@ -307,6 +317,9 @@ public class Registro extends JFrame {
 	
 		
 			}
+	/** 
+	 * Ejecutar ventana Registro
+	 */
 	public void ejecutarVentana() {
 		try {
 			final Registro Ventana = new Registro(controller);
