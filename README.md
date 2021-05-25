@@ -50,6 +50,13 @@ Ejecutar test integracion:
 --------------------------
 mvn verify -Pintegration
 
+Generar Documentación Doxygen
+-----------------------------
+Generación de reporte de la documentación 
+
+mvn doxygen:report
+
+
 -----------------------------------
 Pasos para arrancar el programa ***
 -----------------------------------
@@ -58,18 +65,17 @@ Pasos para arrancar el programa ***
 *Abrir un cmd*
 
 1. En la ruta del proyecto llamar al rmi
------------------------------------------
 
 start rmiregistry -J-Djava.rmi.server.useCodebaseOnly=false
 
 2. Una vez arrancado
----------------------
+
 mvn exec:java -Pserver
 
 *Abrir otro cmd*
 
 3.En la ruta de el proyecto
-----------------------------
+
 mvn exec:java -Pcontroller
 
 
