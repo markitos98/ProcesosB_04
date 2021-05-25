@@ -1,11 +1,6 @@
-/* DELETE 'cinedb' database*/
-DROP SCHEMA IF EXISTS cinedb;
-/* DELETE USER 'spq' AT LOCAL SERVER*/
-DROP USER IF EXISTS 'spq'@'%';
-
-/* CREATE 'cinedb' DATABASE */
+/* CREATE 'cinedb' SCHEMA */
 CREATE SCHEMA cinedb;
 /* CREATE THE USER 'spq' AT LOCAL SERVER WITH PASSWORD 'spq' */
-CREATE USER IF NOT EXISTS 'spq'@'%' IDENTIFIED BY 'spq';
+CREATE USER IF NOT EXISTS 'spq'@'localhost' IDENTIFIED BY 'spq';
 
-GRANT ALL ON cinedb.* TO 'spq'@'%';
+GRANT ALL ON cinedb.* TO 'spq'@'localhost';
