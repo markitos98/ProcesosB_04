@@ -58,6 +58,7 @@ public class Pago extends JFrame {
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.constructor
 	 */
 	public Pago(Controller controller, Pelicula p, double precioT,String horario) {
 		this.controller = controller;
@@ -87,7 +88,7 @@ public class Pago extends JFrame {
 		getContentPane().setLayout(null);
 
 
-		JLabel lblIntroduceLosDatos = new JLabel("PAGO PAYPAL");
+		JLabel lblIntroduceLosDatos = new JLabel("PAGO");
 		lblIntroduceLosDatos.setForeground(Color.ORANGE);
 		lblIntroduceLosDatos.setBackground(Color.GRAY);
 		lblIntroduceLosDatos.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 28));
@@ -121,12 +122,16 @@ public class Pago extends JFrame {
 		getContentPane().add(btnCancel);
 		
 		JLabel lblNewLabel = new JLabel("",SwingConstants.CENTER);
+		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
+		lblNewLabel.setVerticalTextPosition(SwingConstants.TOP);
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 		
 			@Override
 			public void mousePressed(MouseEvent e) {
-				PagoPaypal paypal= new PagoPaypal();
-			
+				Pago.this.dispose();
+				PagoPaypal paypal= new PagoPaypal(controller, peli, precioT, horario);
+				
+				paypal.setVisible(true);
 				
 			}
 		});
@@ -136,7 +141,7 @@ public class Pago extends JFrame {
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon("./src/main/resources/Imagenes/paypal.png"));
-		lblNewLabel.setBounds(40, 40, 130, 153);
+		lblNewLabel.setBounds(48, 83, 166, 153);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -146,22 +151,7 @@ public class Pago extends JFrame {
 				
 				Pago.this.dispose();
 				PagoCC cc= new PagoCC(controller, peli, precioT, horario);
-				cc.setVisible(true);
-//				Usuario user = Database.getUsuario(persona);
-				
-//				PaymentEnum paymentType = user.getPaymentType();
-//				try{
-//					PaymentGatewayFactory.getInstance().create(paymentType).pay(persona, cantidad);
-//				}catch(Exception e) {
-//					
-//				}
-				
-				
-				/*Pago pago=new Pago();
-				pago.setDate(Calendar.getInstance().getTime());
-				pago.setExtraInfo(String.valueOf(amount));
-				Database.storePago(pago);*/
-				
+				cc.setVisible(true);	
 				
 			}
 		});

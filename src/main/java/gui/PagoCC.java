@@ -75,11 +75,6 @@ public class PagoCC extends JFrame{
 		
 	}
 
-	/**
-	 * Create the application.
-	 * @param cantidad2 
-	 * @param persona 
-	 */
 	
 	/**
 	 * Initialize the contents of the frame.
@@ -178,12 +173,6 @@ public class PagoCC extends JFrame{
 				numeros.clear();
 				numeros.add(ve.numAleatorio);
 				
-				System.out.println((int)Math.random());
-				System.out.println(peli.getTitulo());
-				System.out.println(horario);
-				System.out.println(((int)precioT/9));
-				System.out.println((int)precioT);
-				System.out.println(textNombre.getText());
 				
 
 				
