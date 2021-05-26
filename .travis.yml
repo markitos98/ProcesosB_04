@@ -5,9 +5,4 @@ jdk:
 script:
     - mvn test -DargLine="-Dcontiperf.active=false"
 
-branches:
-    only:
-        - development_junit
-    except:
-        - master
-        - development
+
