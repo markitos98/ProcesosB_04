@@ -37,7 +37,7 @@ jobs:
         run: mvn test
      -name: Test Integracion
         run: mvn exec:java -Pinte
-     -name Instalar doxygen
+     -name: Instalar doxygen
         run: sudo apt-get install -y doxygen
      -name: Generar documentacion
         run: mvn doxygen:report
