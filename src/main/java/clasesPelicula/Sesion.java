@@ -16,7 +16,7 @@ public class Sesion {
 	public Sesion() {
 		this.hora="18.00";
 	}
-
+//prueba
 	public Sesion(Sesion s) {
 
 		this.hora= s.hora;
