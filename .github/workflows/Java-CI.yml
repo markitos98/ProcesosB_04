@@ -34,7 +34,6 @@ jobs:
         with:
           java-version: 1.11
   
-        run: mvn --batch-mode --update-snapshots test org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - name: Build with Maven
         run: |
           mvn --batch-mode --update-snapshots compile 
