@@ -13,9 +13,9 @@ before_script:
     
 addons:
   sonarcloud:
-    organization: "markitos98"
+    organization: "Procesos"
     token:
-      secure: "78ed6c19b7d27209e40b06c6a9547e16a5593267" # encrypted value of your token
+      secure: "56dc1305fde02f57844bca58787075ea1a2f7e77" # encrypted value of your token
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
