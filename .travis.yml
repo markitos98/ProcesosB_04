@@ -12,7 +12,7 @@ services:
 before_script:
   - jdk_switcher use $JDK
   - cd stock_manager
-  - mysql -u root -e 'CREATE DATABASE cinedb;'
+  - mysql -u root -e 'CREATE DATABASE IF NOT EXISTS  cinedb;'
   - mysql -u root -e "CREATE USER 'spq'@'localhost' IDENTIFIED BY 'spq';"
   - mysql -u root -e "GRANT ALL ON cinedb.* TO 'spq'@'localhost';"
 
