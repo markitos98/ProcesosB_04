@@ -1,16 +1,6 @@
 language: java
 jdk:
     - openjdk8    
-    
-    addons:
-  apt:
-    packages:
-      - xvfb
-
-install:
-  - export DISPLAY=':99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-  
   
 services:
   - mysql
@@ -21,6 +11,13 @@ before_script:
       
     
 addons:
+ apt:
+    packages:
+      - xvfb
+
+install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   sonarcloud:
     organization: "markitos98"
     token:
