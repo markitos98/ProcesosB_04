@@ -21,14 +21,14 @@ Compilar el proyecto:
 ---------------------
 mvn compile
 
-Procesado de las clases de datos:
---------------------------------
-mvn datanucleus:enhance
-
-
 Crear las tablas en la BBDD:
 -----------------------------
 mvn datanucleus:schema-create
+
+Introducir datos en la BBDD:
+-----------------------------
+mvn exec:java -Pdatos
+
 
 Ejecutar los testes
 -------------------
@@ -42,9 +42,6 @@ Informe de Cobertura Jacoco:
 ----------------------------
 mvn jacoco:report
 
-Introducir datos en la BBDD:
------------------------------
-mvn exec:java -Pdatos
 
 Ejecutar test integracion:
 --------------------------
