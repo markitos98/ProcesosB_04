@@ -21,11 +21,6 @@ Compilar el proyecto:
 ---------------------
 mvn compile
 
-Procesado de las clases de datos:
---------------------------------
-mvn datanucleus:enhance
-
-
 Crear las tablas en la BBDD:
 -----------------------------
 mvn datanucleus:schema-create
