@@ -48,8 +48,8 @@ jobs:
           mysql -uroot -proot < src/main/resources/database.sql
           mvn --batch-mode --update-snapshots exec:java -P datos
           mvn --batch-mode --update-snapshots verify -P integration
-        env:
-    - name: Install doxygen
+
+     - name: Install doxygen
       run: sudo apt-get install -y doxygen
     - name: Install graphviz
       run: sudo apt-get install -y graphviz
