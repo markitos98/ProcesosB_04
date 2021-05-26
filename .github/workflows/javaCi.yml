@@ -55,9 +55,3 @@ jobs:
         run: mvn doxygen:report
       - name: validar
         run: mvn validate
-      - name: Publicar en Github Pages
-        uses: crazy-max/ghaction-github-pages@v2.3.0
-        with:
-          build_dir: docs/html
-        env:
-          GITHUB_TOKEN:: ${{ secrets.GITHUB }}
