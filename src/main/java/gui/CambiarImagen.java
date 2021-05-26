@@ -18,6 +18,8 @@ import clasesPelicula.Pelicula;
  * @author alex
  *
  */
+
+
 public class CambiarImagen {
 
 	static int contador=0;
@@ -25,7 +27,7 @@ public class CambiarImagen {
 	
 
 
-	
+//comentario 	
 	public static void main (Controller controller,List<Pelicula>	p) {
 
 
@@ -44,6 +46,7 @@ public class CambiarImagen {
 		cartelera.setVisible(true);
 
 		/**
+		 * 
 		 * Tarea que cambia las imágenes del menú principal cada x segundos
 		 */
 		tarea= new TimerTask() {
