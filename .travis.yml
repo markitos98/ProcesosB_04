@@ -6,7 +6,7 @@ jdk:
 services:
   - mysql
 before_script:
-  - mysql -u root -e 'CREATE DATABASE cinedb;'
+  - mysql -u root -e 'CREATE SCHEMA cinedb;'
   - mysql -u root -e "CREATE USER 'spq'@'localhost' IDENTIFIED BY 'spq';"
   - mysql -u root -e "GRANT ALL ON cinedb.* TO 'spq'@'localhost';"
       
