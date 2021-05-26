@@ -1,6 +1,11 @@
 /target/
 .classpath
 .project
+
+.log.out
+.log.out.2021-05-21
+.log.out.2021-05-26
+
 .settings/
 /bin/
 datanucleus.properties
