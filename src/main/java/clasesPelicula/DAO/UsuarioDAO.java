@@ -15,6 +15,12 @@ import org.apache.log4j.Logger;
 import clasesPelicula.Pelicula;
 import clasesUsuario.Cliente;
 import clasesUsuario.Usuario;
+/**
+ * 
+ * @author Marcos
+ *
+ */
+
 
 public class UsuarioDAO implements IUsuarioDAO {
 
@@ -28,6 +34,10 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 	
 	
+	
+	/**
+	 * Metodo para añadir usuario
+	 */
 	public void anyadirUsuario(Usuario u) {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -93,7 +103,9 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 
 
-	
+	/**
+	 * Metodo para borrar usuario
+	 */
 
 	@Override
 	public void deleteUsuario(Usuario usuario) {
@@ -119,6 +131,12 @@ public class UsuarioDAO implements IUsuarioDAO {
 		
 	}
 
+	
+	/**
+	 * Metodo que obtiene los usuario de la BBDD
+	 */
+	
+	
 	@Override
 	public List<Cliente> getUsuarios() {
 		PersistenceManager pm = pmf.getPersistenceManager();
