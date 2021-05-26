@@ -43,7 +43,9 @@ public class CambiarImagen {
 		MenuPrincipal cartelera = new MenuPrincipal(controller, p);
 		cartelera.setVisible(true);
 
-		//tarea para ir cambiando las imágenes del menú principal cada x segundos
+		/**
+		 * Tarea que cambia las imágenes del menú principal cada x segundos
+		 */
 		tarea= new TimerTask() {
 
 			@Override

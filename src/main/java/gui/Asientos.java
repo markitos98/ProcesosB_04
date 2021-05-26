@@ -5,6 +5,11 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
+/**
+ * Clase con método en la que se previsualiza la capacidad de las salas de cine
+ * @author alex
+ *
+ */
 public class Asientos {
 	public static void main(){
 		int size=6;

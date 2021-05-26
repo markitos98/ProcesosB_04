@@ -47,10 +47,7 @@ import clasesPelicula.Pelicula;
  */
 public class Cartelera extends JFrame {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+ static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private Controller controller;
 	List<Pelicula> peliculas;
@@ -91,41 +88,6 @@ public class Cartelera extends JFrame {
 
 		setContentPane(contentPane);
 		
-		
-
-		 
-//		if(peliculas.isEmpty() ) {
-//		
-//			Pelicula p1 = 	controller.getPelicula("Annabelle vuelve a casa");
-//			 
-//			 System.out.println(p1.toString());
-//			 
-//			 peliculas.add(p1);
-//		 	peliculas.add(controller.getPelicula("Escape Room"));
-//		 	peliculas.add(controller.getPelicula("Fantasy Island"));
-//		 	peliculas.add(controller.getPelicula("Malasaña 32"));
-//		 	peliculas.add(controller.getPelicula("Los Vengadores"));
-//		 	peliculas.add(controller.getPelicula("Escuadron suicida"));
-//		 	peliculas.add(controller.getPelicula("Mortal Kombat"));
-//		 	peliculas.add(controller.getPelicula("Mulan"));
-//		 	peliculas.add(controller.getPelicula("Oxygen"));
-//		 	peliculas.add(controller.getPelicula("Soul"));
-//		 	peliculas.add(controller.getPelicula("Stowaway"));
-//		 	peliculas.add(controller.getPelicula("Twist"));
-//		 	
-//		}
-			System.out.println(peliculas.get(0));
-		 	System.out.println(peliculas.get(1));
-		 	System.out.println(peliculas.get(2));
-		 	System.out.println(peliculas.get(3));
-		 	System.out.println(peliculas.get(4));
-		 	System.out.println(peliculas.get(5));
-		 	System.out.println(peliculas.get(6));
-		 	System.out.println(peliculas.get(7));
-		 	System.out.println(peliculas.get(8));
-		 	System.out.println(peliculas.get(9));
-		 	System.out.println(peliculas.get(10));
-		 	System.out.println(peliculas.get(11));
 	
 		 
 		JPanel panel = new JPanel();
@@ -141,7 +103,9 @@ public class Cartelera extends JFrame {
 		lblCartelera.setBackground(Color.ORANGE);
 
 
-
+/**
+ * Se invoca el método getPeliculas de PeliculaDAO y se coloca en los labels dependiendo de su posicion en List<Pelicula> peliculas
+ */
 		JLabel lblP1= new JLabel();
 
 		lblP1.setBorder(BorderFactory.createLineBorder(Color.ORANGE,4));
